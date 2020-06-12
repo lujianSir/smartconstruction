@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bwsk.mapper.UserMapper">
+
+    <!--添加用户  -->
+    <insert id="insertUserMessage" parameterType="com.bwsk.entity.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username != null and username!=''">
+                username,
+            </if>
+            <if test="utelphone != null and utelphone !=''">
+                utelphone,
+            </if>
+            <if test="password != null and password !=''">
+                password,
+            </if>
+            <if test="uposition != null and uposition !=''">
+                uposition,
+            </if>
+            <if test="upic != null and upic!=''">
+                upic,
+            </if>
+            <if test="wxid != null and wxid!=''">
+                wxid,
+            </if>
+            <if test="creattime != null and creattime!=''">
+                creattime,
+            </if>
+
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="username != null and username!=''">
+                #{username},
+            </if>
+            <if test="utelphone != null and utelphone !=''">
+                #{utelphone},
+            </if>
+            <if test="password != null and password !=''">
+                #{password},
+            </if>
+            <if test="uposition != null and uposition !=''">
+                #{uposition},
+            </if>
+            <if test="upic != null and upic!=''">
+                #{upic},
+            </if>
+            <if test="wxid != null and wxid!=''">
+                #{wxid},
+            </if>
+            <if test="creattime != null and creattime!=''">
+                #{creattime},
+            </if>
+
+        </trim>
+    </insert>
+
+    <!-- 查询用户是否存在-->
+    <select id="queryUserMessageByTel" resultType="com.bwsk.entity.User">
+        select * from user where utelphone =#{utelphone}
+    </select>
+</mapper>
