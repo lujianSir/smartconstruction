@@ -1,6 +1,7 @@
 server:
   port: 8080
 
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -37,4 +38,10 @@ mybatis:
     logImpl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:mapping/*Mapper.xml
   type-aliases-package: com.bwsk.entity
+
+logging:
+  level:
+    com.bwsk: DEBUG
+  file:
+    path: ./logs
 
