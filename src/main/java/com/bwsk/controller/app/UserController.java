@@ -49,7 +49,7 @@ public class UserController {
      * @param code
      * @return
      */
-    @RequestMapping(value = "inserUserMessage", method = RequestMethod.GET)
+    @RequestMapping(value = "inserUserMessage", method = RequestMethod.POST)
     public Result<?> insertUserMessage(User user, String code) {
         if (code != null && !code.equals("")) {
             String checkCode = stringRedisTemplate.opsForValue().get(user.getUtelphone());
@@ -68,4 +68,15 @@ public class UserController {
         }
     }
 
+    /**
+     * 修改用户信息
+     *
+     * @param user
+     * @return
+     */
+    @RequestMapping(value = "updateUserMessage", method = RequestMethod.POST)
+    public Result<?> updateUserMessage(User user) {
+
+        return userService.updateUserMessage(user);
+    }
 }

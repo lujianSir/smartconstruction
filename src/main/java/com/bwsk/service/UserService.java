@@ -10,4 +10,8 @@ public interface UserService {
 
     //添加用户信息
     Result<?> insertUserMessage(User user);
+
+    //修改用户信息
+    Result<?> updateUserMessage(User user);
+
 }

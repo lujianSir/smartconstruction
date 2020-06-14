@@ -59,4 +59,38 @@
     <select id="queryUserMessageByTel" resultType="com.bwsk.entity.User">
         select * from user where utelphone =#{utelphone}
     </select>
+
+    <!--修改用户信息-->
+    <update id="updateUserMessage" parameterType="com.bwsk.entity.User">
+        update user
+        <set>
+            <if test="username != null and username!=''">
+                username=#{username},
+            </if>
+            <if test="password != null and password !=''">
+                password=#{password},
+            </if>
+            <if test="uposition != null and uposition !=''">
+                uposition=#{uposition},
+            </if>
+            <if test="upic != null and upic!=''">
+                upic=#{upic},
+            </if>
+            <if test="wxid != null and wxid!=''">
+                wxid=#{wxid},
+            </if>
+            <if test="creattime != null and creattime!=''">
+                creattime=#{creattime},
+            </if>
+
+        </set>
+        <where>
+            <if test="uid != null and uid!=''">
+                and uid=#{uid}
+            </if>
+            <if test="utelphone != null and utelphone !=''">
+                and utelphone=#{utelphone}
+            </if>
+        </where>
+    </update>
 </mapper>

@@ -38,4 +38,23 @@ public class UserServiceImpl implements UserService {
         }
 
     }
+
+    @Override
+    public Result<?> updateUserMessage(User user) {
+        User u = userMapper.queryUserMessageByTel(user);
+        if (u != null) {
+            if (user.getPassword() != null && !user.getPassword().equals("")) {
+                user.setPassword(JavaTool.string2MD5(user.getPassword()));
+            }
+            int row = userMapper.updateUserMessage(user);
+            if (row > 0) {
+                return Result.success("修改成功");
+            } else {
+                return Result.error(500, "修改失败");
+            }
+        } else {
+            return Result.error(501, "手机号不存在");
+        }
+
+    }
 }

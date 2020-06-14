@@ -11,4 +11,7 @@ public interface UserMapper {
 
     //通过手机查询用户是否存在
     User queryUserMessageByTel(User user);
+
+    //修改用户信息
+    int updateUserMessage(User user);
 }
