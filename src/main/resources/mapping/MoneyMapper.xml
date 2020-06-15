@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bwsk.mapper.MoneyMapper">
+ 
+  	<!-- 删除所有 -->
+ 	<delete id="deleteCollectionMoney" parameterType="com.bwsk.entity.CollectionMoney">
+ 		delete from collectionmoney
+ 	</delete>
+ 
+	<!-- 批量插入 -->
+ 	<insert id="insertCollectionMoney" parameterType="java.util.List">
+ 		insert into collectionmoney (money,mtime,mcomment,mstatus,pid)
+ 		  values 
+	    <foreach collection="list" item="item" index="index" separator=",">
+	        (#{item.money},#{item.mtime},#{item.mcomment},#{item.mstatus},#{item.pid})
+	    </foreach>
+
+ 	</insert>
+ 	
+ 	<!-- 通过项目的ID查询所有的收款信息 -->
+ 	<select id="queryCollectionMoneys" resultType="com.bwsk.entity.CollectionMoney">
+ 		select * from collectionmoney where pid=#{collectionMoney.pid} 
+ 			<if test="type==1">
+ 				and mstatus=1
+ 			</if>
+ 		 ORDER BY mid
+ 	</select>
+</mapper>

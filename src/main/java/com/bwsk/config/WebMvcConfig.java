@@ -22,6 +22,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
         newrootPath = newrootPath.replaceAll("\\\\", "/");
         // System.out.println("file:/" + newrootPath + "/模型描述/");
         registry.addResourceHandler("/image/user/**").addResourceLocations("file:/" + newrootPath + "/user/");
+        registry.addResourceHandler("/image/video/**").addResourceLocations("file:/" + newrootPath + "/video/");
+        registry.addResourceHandler("/image/picture/**").addResourceLocations("file:/" + newrootPath + "/picture/");
 
         WebMvcConfigurer.super.addResourceHandlers(registry);
     }

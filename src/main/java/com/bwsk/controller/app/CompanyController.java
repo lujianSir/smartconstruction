@@ -45,7 +45,7 @@ public class CompanyController {
      * @param company
      * @return
      */
-    @RequestMapping("/insertOrUpdateCompany")
+    @RequestMapping(value = "/insertOrUpdateCompany", method = RequestMethod.POST)
     public Result<?> insertOrUpdateCompany(Company company) {
         int row = companyService.insertOrUpdateCompany(company);
         if (row > 0) {
@@ -61,7 +61,7 @@ public class CompanyController {
      * @param cid
      * @return
      */
-    @RequestMapping("/deleteCompanyByCid")
+    @RequestMapping(value = "/deleteCompanyByCid", method = RequestMethod.POST)
     public Result<?> deleteCompanyByCid(int cid) {
         int row = 0;
         Project project = new Project();

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bwsk.mapper.StatisticMapper">
+ 
+	 <!--  查询统计日期 -->
+   <select id="queryWeacher" resultType="com.bwsk.entity.Statistic">
+   		SELECT
+			a.name,	
+			IFNULL(t1.count1, 0) value
+		FROM
+			weather a
+		LEFT JOIN (
+			SELECT
+				count(weather) AS count1,
+				weather
+			FROM
+				daily
+			<where>
+				<if test="pid!=null and pid!='' ">
+					and pid =#{pid}
+				</if>
+				<if test="creatMouth!=null and creatMouth!='' ">
+					and creatMouth =#{creatMouth}
+				</if>
+				<if test="uid !=null and uid !='' ">
+					and uid=#{uid}
+				</if>	
+			</where>			 				
+			GROUP BY
+				weather
+		) t1 ON a.id = t1.weather
+   </select>
+   
+   <!-- 统计日报 -->
+   <select id="queryAttendancetody" resultType="com.bwsk.entity.Statistic">
+   		SELECT
+			 RIGHT(a.dtime,6) name,	
+			IFNULL(t1.count1, 0) value
+		FROM
+			everyday a
+		LEFT JOIN (
+			SELECT
+				sum(attendancetody) AS count1,
+				dtime
+			FROM
+				daily
+				<where>
+					<if test="pid!=null and pid!='' ">
+						and pid =#{pid}
+					</if>
+					<if test="creatMouth!=null and creatMouth!='' ">
+						and creatMouth =#{creatMouth}
+					</if>
+					<if test="uid !=null and uid !='' ">
+						and uid=#{uid}
+					</if>	
+				</where>		
+			GROUP BY
+				dtime
+			) t1 ON a.dtime = t1.dtime
+   			<where>
+   				<if test="creatMouth!=null and creatMouth!='' ">
+					and a.creatMouth =#{creatMouth}
+				</if>
+   			</where>
+   </select>
+   
+   <!-- 项目信息 -->
+   <select id="queryDailyStatistic" resultType="com.bwsk.entity.DailyStatistic">
+   		SELECT
+			a.*, (
+				SELECT
+					count(dtime)
+				FROM
+					(
+						SELECT
+							dtime
+						FROM
+							daily
+						<where>
+							<if test="pid!=null and pid!='' ">
+								and pid =#{pid}
+							</if>
+							<if test="creatMouth!=null and creatMouth!='' ">
+								and creatMouth =#{creatMouth}
+							</if>
+							<if test="uid !=null and uid !='' ">
+								and uid=#{uid}
+							</if>	
+						</where>
+						GROUP BY
+							dtime
+					) a
+			) dailyTody,
+			(
+				SELECT
+					count(did)
+				FROM
+					daily 
+				<where>
+					<if test="pid!=null and pid!='' ">
+						and pid =#{pid}
+					</if>
+					<if test="creatMouth!=null and creatMouth!='' ">
+						and creatMouth =#{creatMouth}
+					</if>
+					<if test="uid !=null and uid !='' ">
+						and uid=#{uid}
+					</if>	
+				</where>
+			) dailyTotal,
+			(
+				SELECT
+					sum(attendancetody)
+				FROM
+					daily 
+				<where>
+					<if test="pid!=null and pid!='' ">
+						and pid =#{pid}
+					</if>
+					<if test="creatMouth!=null and creatMouth!='' ">
+						and creatMouth =#{creatMouth}
+					</if>
+					<if test="uid !=null and uid !='' ">
+						and uid=#{uid}
+					</if>	
+				</where>
+			) totalPeople
+		FROM
+			project a
+   		<where>
+			<if test="pid!=null and pid!='' ">
+				and a.pid =#{pid}
+			</if>			
+		</where>
+   </select>
+   
+   <select id="queryDailyEquipment" resultType="com.bwsk.entity.Daily">
+   		select equipments from daily 
+   		<where>
+			<if test="pid!=null and pid!='' ">
+				and pid =#{pid}
+			</if>
+			<if test="creatMouth!=null and creatMouth!='' ">
+				and creatMouth =#{creatMouth}
+			</if>
+			<if test="uid !=null and uid !='' ">
+				and uid=#{uid}
+			</if>	
+		</where>
+   </select>
+   <!-- 个人查询 -->
+   	<select id="queryDailyStatisticByUid" resultType="com.bwsk.entity.DailyStatistic">
+   			SELECT
+			(
+				SELECT
+					count(dtime)
+				FROM
+					(
+						SELECT
+							dtime
+						FROM
+							daily
+							<where>						
+								<if test="creatMouth!=null and creatMouth!='' ">
+									and creatMouth =#{creatMouth}
+								</if>
+								<if test="uid !=null and uid !='' ">
+									and uid=#{uid}
+								</if>	
+							</where>					
+						GROUP BY
+							dtime
+					) a
+			) dailyTody,
+			(
+				SELECT
+					count(did)
+				FROM
+					daily
+					<where>						
+						<if test="creatMouth!=null and creatMouth!='' ">
+							and creatMouth =#{creatMouth}
+						</if>
+						<if test="uid !=null and uid !='' ">
+							and uid=#{uid}
+						</if>	
+					</where>	
+			) dailyTotal,
+			(
+				SELECT
+					sum(attendancetody)
+				FROM
+					daily
+					<where>						
+						<if test="creatMouth!=null and creatMouth!='' ">
+							and creatMouth =#{creatMouth}
+						</if>
+						<if test="uid !=null and uid !='' ">
+							and uid=#{uid}
+						</if>	
+					</where>	
+			) totalPeople,
+			(
+				SELECT
+					sum(amountody)
+				FROM
+					daily
+					<where>						
+						<if test="creatMouth!=null and creatMouth!='' ">
+							and creatMouth =#{creatMouth}
+						</if>
+						<if test="uid !=null and uid !='' ">
+							and uid=#{uid}
+						</if>	
+					</where>	
+			) amountodyTotal,
+			(
+				SELECT
+					sum(invoicetody)
+				FROM
+					daily
+					<where>						
+						<if test="creatMouth!=null and creatMouth!='' ">
+							and creatMouth =#{creatMouth}
+						</if>
+						<if test="uid !=null and uid !='' ">
+							and uid=#{uid}
+						</if>	
+					</where>	
+			) invoicetodyTotal
+		FROM
+			user a
+			<where>						
+
+				<if test="uid !=null and uid !='' ">
+					and a.uid=#{uid}
+				</if>	
+			</where>	
+   	</select>
+   	
+   	<select id="queryDailyByUid" resultType="com.bwsk.entity.Daily">
+   			SELECT
+				a.did,
+				a.uid,	
+				a.username,
+				a.uposition,
+				a.utelphone,
+				a.weather,
+				CASE WHEN a.weather = 1 THEN '晴' WHEN a.weather = 2 THEN '阴' WHEN a.weather = 3 THEN '雨' ELSE '未知' END weatherName,
+				 a.attendancetody,
+				 a.attendanceoneself,
+				 a.effectivework,
+				 CASE WHEN a.effectivework = 1 THEN '小于2小时' WHEN a.effectivework = 2 THEN '2-4小时' WHEN a.effectivework = 3 THEN '4-6小时' WHEN a.effectivework = 4 THEN '6-8小时' ELSE '大于8小时' END effectiveworkName,
+				 a.satisfactiondegree,
+				 CASE WHEN a.satisfactiondegree = 1 THEN '很不满意' WHEN a.satisfactiondegree = 2 THEN	'不太满意' WHEN a.satisfactiondegree = 3 THEN	'满意' WHEN a.satisfactiondegree = 4 THEN	'比较满意'ELSE '非常满意'END satisfactiondegreeName,
+				 a.equipments,
+				 a.workcomment,
+				 a.abnorname,
+				 a.dunning,
+				 a.dunningpic,
+				 a.amountody,
+				 a.invoicetody,
+				 a.dpic,
+				 a.dvoideo,
+				 a.dtime,
+				 a.pid,
+				 a.creattime,
+				 a.creatMouth,
+				 b.weixin
+				FROM
+					daily a LEFT JOIN project b on a.pid=b.pid
+				<where>						
+					<if test="creatMouth!=null and creatMouth!='' ">
+						and a.creatMouth =#{creatMouth}
+					</if>
+					<if test="uid !=null and uid !='' ">
+						and a.uid=#{uid}
+					</if>	
+				</where>	
+				 ORDER BY a.creattime desc
+   	</select>
+</mapper> 

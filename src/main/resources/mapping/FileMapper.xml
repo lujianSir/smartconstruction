@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bwsk.mapper.FileMapper">
+ 
+   <!--添加用户  -->
+   <insert id="insertFileInfo" parameterType="com.bwsk.entity.FileInfo">
+   		insert into fileinfo 
+   		<trim prefix="(" suffix=")" suffixOverrides=",">
+	   		<if test="fname != null and fname!=''">
+				fname,
+			</if>
+			<if test="frealurl != null and frealurl !=''">
+				frealurl,
+			</if>
+			<if test="fvirtualurl != null and fvirtualurl !=''">
+				fvirtualurl,
+			</if>
+			<if test="fuploadtime != null and fuploadtime!=''">
+				fuploadtime,
+			</if>
+						
+   		</trim>
+   		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="fname != null and fname!=''">
+				#{fname},
+			</if>
+			<if test="frealurl != null and frealurl !=''">
+				#{frealurl},
+			</if>
+			<if test="fvirtualurl != null and fvirtualurl !=''">
+				#{fvirtualurl},
+			</if>
+			<if test="fuploadtime != null and fuploadtime!=''">
+				#{fuploadtime},
+			</if>
+   		
+   		</trim>
+   </insert>
+   
+   <!-- 通过name查询 -->
+   <select id="queryFileInfoByName" resultType="com.bwsk.entity.FileInfo">
+   		select * from fileinfo where fvirtualurl=#{fvirtualurl}
+   </select>
+   
+   <!-- 通过ID删除 -->
+   <delete id="deleteFileInfoById" parameterType="int">
+   		delete from fileinfo where fid=#{fid}
+   </delete>
+   
+</mapper>
