@@ -18,7 +18,7 @@ import java.util.List;
  * @author lujian
  */
 @RestController
-@RequestMapping("/company")
+@RequestMapping("/app/company")
 public class CompanyController {
 
     @Autowired
