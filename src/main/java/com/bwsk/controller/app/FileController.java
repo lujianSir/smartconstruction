@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * 用户相关的接口
+ * 文件相关的接口
  *
  * @author lujian
  */

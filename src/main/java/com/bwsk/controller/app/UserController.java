@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 用户相关的接口
+ *
+ * @author lujian
+ */
 @RestController
 @RequestMapping("/app/user")
 public class UserController {

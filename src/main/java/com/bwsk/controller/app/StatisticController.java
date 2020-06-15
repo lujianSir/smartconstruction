@@ -10,6 +10,7 @@ import com.bwsk.service.StatisticService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ import java.util.Map.Entry;
  * @author lujian
  */
 @RestController
-@RequestMapping("/statistic")
+@RequestMapping("/app/statistic")
 public class StatisticController {
     @Autowired
     private StatisticService statisticService;
@@ -35,7 +36,7 @@ public class StatisticController {
      * @param daily
      * @return
      */
-    @RequestMapping("/queryWeacher")
+    @RequestMapping(value = "/queryWeacher", method = RequestMethod.POST)
     public Result<?> queryWeacher(Daily daily) {
         List<Statistic> list = statisticService.queryWeacher(daily);
         return Result.success(list);
@@ -48,7 +49,7 @@ public class StatisticController {
      * @param daily
      * @return
      */
-    @RequestMapping("/queryAttendancetody")
+    @RequestMapping(value = "/queryAttendancetody", method = RequestMethod.POST)
     public Result<?> queryAttendancetody(Daily daily) {
         List<Statistic> list = statisticService.queryAttendancetody(daily);
         return Result.success(list);
@@ -61,7 +62,7 @@ public class StatisticController {
      * @param daily
      * @return
      */
-    @RequestMapping("/queryDailyStatistic")
+    @RequestMapping(value = "/queryDailyStatistic", method = RequestMethod.POST)
     public Result<?> queryDailyStatistic(Daily daily) {
         List<DailyStatistic> list = statisticService.queryDailyStatistic(daily);
         return Result.success(list);
@@ -74,7 +75,7 @@ public class StatisticController {
      * @param daily
      * @return
      */
-    @RequestMapping("/queryDailyStatisticByUid")
+    @RequestMapping(value = "/queryDailyStatisticByUid", method = RequestMethod.POST)
     public Result<?> queryDailyStatisticByUid(Daily daily) {
         List<DailyStatistic> list = statisticService.queryDailyStatisticByUid(daily);
         return Result.success(list);
@@ -87,7 +88,7 @@ public class StatisticController {
      * @param daily
      * @return
      */
-    @RequestMapping("/queryDailyByUid")
+    @RequestMapping(value = "/queryDailyByUid", method = RequestMethod.POST)
     public Result<?> queryDailyByUid(Daily daily) {
         List<Daily> dailys = statisticService.queryDailyByUid(daily);
         for (int j = 0; j < dailys.size(); j++) {

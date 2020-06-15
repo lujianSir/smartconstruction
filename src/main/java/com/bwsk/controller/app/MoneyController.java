@@ -8,6 +8,7 @@ import com.bwsk.service.MoneyService;
 import com.bwsk.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
@@ -18,12 +19,12 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
- * 用户相关的接口
+ * 收款相关的接口
  *
  * @author lujian
  */
 @RestController
-@RequestMapping("/money")
+@RequestMapping("/app/money")
 public class MoneyController {
 
     @Autowired
@@ -36,7 +37,7 @@ public class MoneyController {
      * @param pid
      * @return
      */
-    @RequestMapping("/insertCollectionMoney")
+    @RequestMapping(value = "/insertCollectionMoney", method = RequestMethod.POST)
     public Result<?> insertCollectionMoney(String moneys, int pid) {
         List<CollectionMoney> list = new ArrayList<CollectionMoney>();
         JSONArray jsonArray = JSONArray.parseArray(new String(moneys));
@@ -81,7 +82,7 @@ public class MoneyController {
      * @return
      * @throws Exception
      */
-    @RequestMapping("/queryCollectionMoneys")
+    @RequestMapping(value = "/queryCollectionMoneys", method = RequestMethod.POST)
     public Result<?> queryCollectionMoneys(CollectionMoney collectionMoney, int type) throws Exception {
         List<CollectionMoney> list = moneyService.queryCollectionMoneys(collectionMoney, type);
         for (CollectionMoney collectionMoney2 : list) {

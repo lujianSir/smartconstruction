@@ -8,6 +8,7 @@ import com.bwsk.service.MaterialService;
 import com.bwsk.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -17,12 +18,12 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
- * 用户相关的接口
+ * 材料相关的接口
  *
  * @author lujian
  */
 @RestController
-@RequestMapping("/material")
+@RequestMapping("/app/material")
 public class MaterialController {
 
     @Autowired
@@ -31,10 +32,11 @@ public class MaterialController {
     /**
      * 添加或者修改材料信息
      *
-     * @param user
+     * @param materials
+     * @param pid
      * @return
      */
-    @RequestMapping("/insertMaterial")
+    @RequestMapping(value = "/insertMaterial", method = RequestMethod.POST)
     public Result<?> insertMaterial(String materials, int pid) {
         List<Material> list = new ArrayList<Material>();
         JSONArray jsonArray = JSONArray.parseArray(new String(materials));
@@ -79,7 +81,7 @@ public class MaterialController {
      * @return
      * @throws Exception
      */
-    @RequestMapping("/queryMaterials")
+    @RequestMapping(value = "/queryMaterials", method = RequestMethod.POST)
     public Result<?> queryMaterials(Material material, int type) throws Exception {
         List<Material> list = materialService.queryMaterials(material, type);
         for (Material material2 : list) {

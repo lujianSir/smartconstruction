@@ -8,6 +8,7 @@ import com.bwsk.util.Utils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -17,12 +18,12 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
- * 用户相关的接口
+ * 日报相关的接口
  *
  * @author lujian
  */
 @RestController
-@RequestMapping("/daily")
+@RequestMapping("/app/daily")
 public class DailyController {
 
     @Autowired
@@ -34,7 +35,7 @@ public class DailyController {
      * @param daily
      * @return
      */
-    @RequestMapping("/insertOrUpdateDaily")
+    @RequestMapping(value = "/insertOrUpdateDaily", method = RequestMethod.POST)
     public Result<?> insertOrUpdateDaily(Daily daily) {
 //		daily.setUid(3);
 //		daily.setUsername("dsadsadagse");
@@ -72,7 +73,7 @@ public class DailyController {
      * @param dtime
      * @return
      */
-    @RequestMapping("/queryEveryDay")
+    @RequestMapping(value = "/queryEveryDay", method = RequestMethod.POST)
     public Result<?> queryEveryDay(Daily daily, String dtime) {
         String[] dtimes = null;
         if (dtime != null && !dtime.equals("")) {
@@ -100,7 +101,7 @@ public class DailyController {
      * @param daily
      * @return
      */
-    @RequestMapping("/queryProject")
+    @RequestMapping(value = "/queryProject", method = RequestMethod.POST)
     public Result<?> queryProject(Daily daily) {
         List<ProjectInfo> list = dailyService.queryProject(daily);
         for (int i = 0; i < list.size(); i++) {
@@ -119,7 +120,7 @@ public class DailyController {
      * @param daily
      * @return
      */
-    @RequestMapping("/queryDaily")
+    @RequestMapping(value = "/queryDaily", method = RequestMethod.POST)
     public Result<?> queryDaily(Daily daily) {
         List<Daily> list = dailyService.queryDaily(daily);
         return Result.success(list);
@@ -131,7 +132,7 @@ public class DailyController {
      * @param daily
      * @return
      */
-    @RequestMapping("/queryDailyThumb")
+    @RequestMapping(value = "/queryDailyThumb", method = RequestMethod.POST)
     public Result<?> queryDailyThumb(Daily daily) {
         List<Daily> list = dailyService.queryDailyThumb(daily);
         for (int i = 0; i < list.size(); i++) {
@@ -147,7 +148,7 @@ public class DailyController {
      * @param thumb
      * @return
      */
-    @RequestMapping("/insertThumb")
+    @RequestMapping(value = "/insertThumb", method = RequestMethod.POST)
     public Result<?> insertThumb(Thumb thumb) {
         int row = dailyService.insertThumb(thumb);
         return Result.success(row);
@@ -159,7 +160,7 @@ public class DailyController {
      * @param comment
      * @return
      */
-    @RequestMapping("/insertComment")
+    @RequestMapping(value = "/insertComment", method = RequestMethod.POST)
     public Result<?> insertComment(Comment comment) {
         int row = dailyService.insertComment(comment);
         return Result.success(row);
@@ -171,7 +172,7 @@ public class DailyController {
      * @param comment
      * @return
      */
-    @RequestMapping("/queryComment")
+    @RequestMapping(value = "/queryComment", method = RequestMethod.POST)
     public Result<?> queryComment(Comment comment) {
         Comment c = dailyService.queryComment(comment);
         return Result.success(c);
@@ -183,7 +184,7 @@ public class DailyController {
      * @param comment
      * @return
      */
-    @RequestMapping("/deleteCommentByCmidAndCmuid")
+    @RequestMapping(value = "/deleteCommentByCmidAndCmuid", method = RequestMethod.POST)
     public Result<?> deleteCommentByCmidAndCmuid(Comment comment) {
         int row = dailyService.deleteCommentByCmidAndCmuid(comment);
         return Result.success(row);
@@ -196,7 +197,7 @@ public class DailyController {
      * @param creatMouth
      * @return
      */
-    @RequestMapping("/queryEveryDayByMonth")
+    @RequestMapping(value = "/queryEveryDayByMonth", method = RequestMethod.POST)
     public Result<?> queryEveryDayByMonth(Daily daily, String creatMouth) {
         String[] creatMouths = null;
         if (creatMouth != null && !creatMouth.equals("")) {
@@ -225,7 +226,7 @@ public class DailyController {
      * @param uid
      * @return
      */
-    @RequestMapping("/queryDailyByDidAndUid")
+    @RequestMapping(value = "/queryDailyByDidAndUid", method = RequestMethod.POST)
     public Result<?> queryDailyByDidAndUid(int did, int uid) {
         Daily daily = dailyService.queryDailyByDidAndUid(did, uid);
         daily = updateDicsAndDvoideos(daily);
@@ -238,7 +239,7 @@ public class DailyController {
      * @param did
      * @return
      */
-    @RequestMapping("/deleteDailyByDid")
+    @RequestMapping(value = "/deleteDailyByDid", method = RequestMethod.POST)
     public Result<?> deleteDailyByDid(int did) {
         int row = dailyService.deleteDailyByDid(did);
         return Result.success(row);
