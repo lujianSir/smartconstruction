@@ -7,6 +7,7 @@ import com.bwsk.service.UserService;
 import com.bwsk.util.JavaTool;
 import com.bwsk.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,6 +15,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    public StringRedisTemplate stringRedisTemplate;
 
     @Override
     public Result<?> insertUserMessage(User user) {
@@ -57,4 +61,31 @@ public class UserServiceImpl implements UserService {
         }
 
     }
+
+    @Override
+    public Result<?> loginUserByTelOrPassWord(User user, String code) {
+        User u = userMapper.queryUserMessageByTel(user);
+        if (u != null) {//账号存在
+            if (code != null && !code.equals("")) { //验证码登录
+                String checkCode = stringRedisTemplate.opsForValue().get(user.getUtelphone());
+                if (checkCode.equals(code)) {
+                    u.setPassword("");
+                    return Result.success(u);
+                } else {
+                    return Result.error(500, "验证码不正确");
+                }
+            } else {//账号密码登录
+                if (JavaTool.string2MD5(user.getPassword()).equals(u.getPassword())) {
+                    u.setPassword("");
+                    return Result.success(u);
+                } else {
+                    return Result.error(502, "密码不正确");
+                }
+            }
+
+        } else {
+            return Result.error(501, "手机号不存在");
+        }
+    }
+
 }

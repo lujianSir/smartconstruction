@@ -26,14 +26,14 @@ public class UserController {
     /**
      * 获取验证码
      *
-     * @param phone
+     * @param utelphone
      * @return
      */
     @RequestMapping(value = "/getCheckCode", method = RequestMethod.GET)
-    public Result<?> getCheckCode(String phone) {
-        Map<String, Object> map = SendMsg.sendMsgByTxPlatform(phone);
+    public Result<?> getCheckCode(String utelphone) {
+        Map<String, Object> map = SendMsg.sendMsgByTxPlatform(utelphone);
         if (Integer.parseInt(map.get("code").toString()) == 200) {
-            stringRedisTemplate.opsForValue().set(phone, map.get("sendCode").toString(), 60 * 10, TimeUnit.SECONDS);
+            stringRedisTemplate.opsForValue().set(utelphone, map.get("sendCode").toString(), 60 * 10, TimeUnit.SECONDS);
             return Result.success(map.get("sendCode"));
         } else if (Integer.parseInt(map.get("code").toString()) == 501) {
             return Result.error(500, map.get("msg").toString());
@@ -78,5 +78,18 @@ public class UserController {
     public Result<?> updateUserMessage(User user) {
 
         return userService.updateUserMessage(user);
+    }
+
+    /**
+     * 通过验证码或者密码登录
+     *
+     * @param user
+     * @param code
+     * @return
+     */
+    @RequestMapping(value = "loginUserByTelOrPassWord", method = RequestMethod.POST)
+    public Result<?> loginUserByTelOrPassWord(User user, String code) {
+
+        return userService.loginUserByTelOrPassWord(user, code);
     }
 }
