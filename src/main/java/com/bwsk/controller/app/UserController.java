@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 @RestController
-@RequestMapping("/app/user")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired

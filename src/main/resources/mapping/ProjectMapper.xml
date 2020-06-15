@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bwsk.mapper.ProjectMapper">
+
+    <resultMap id="projectResult" type="com.bwsk.entity.Project">
+        <id property="pid" column="pid"/>
+        <result property="pname" column="pname"/>
+        <result property="pabbreviation" column="pabbreviation"/>
+        <result property="pnumber" column="pnumber"/>
+        <result property="paddress" column="paddress"/>
+        <result property="pstatus" column="pstatus"/>
+        <result property="pstatusName" column="pstatusName"/>
+        <result property="cid" column="cid"/>
+        <result property="pcompany" column="pcompany"/>
+        <result property="ptype" column="ptype"/>
+        <result property="ptypeName" column="ptypeName"/>
+        <result property="contractamount" column="contractamount"/>
+        <result property="acceptedamount" column="acceptedamount"/>
+        <result property="acceptedinvoice" column="acceptedinvoice"/>
+        <result property="totalartificial" column="totalartificial"/>
+        <result property="approachDay" column="approachDay"/>
+        <result property="completeDay" column="completeDay"/>
+        <result property="paycondition" column="paycondition"/>
+        <result property="fineremarks" column="fineremarks"/>
+        <result property="creattime" column="creattime"/>
+        <result property="uid" column="uid"/>
+        <result property="userpower" column="userpower"/>
+        <result property="materialpower" column="materialpower"/>
+        <result property="weixin" column="weixin"/>
+        <result property="username" column="username"/>
+        <result property="cabbreviation" column="cabbreviation"/>
+        <collection property="userinfos" resultMap="userInfoResult"/>
+    </resultMap>
+
+    <resultMap id="userInfoResult" type="com.bwsk.entity.UserInfo">
+        <id property="userid" column="userid"/>
+        <result property="userpic" column="userpic"/>
+    </resultMap>
+
+
+    <!--添加用户  -->
+    <insert id="insertProject" parameterType="com.bwsk.entity.Project" useGeneratedKeys="true" keyProperty="pid">
+        insert into project
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pname != null and pname!=''">
+                pname,
+            </if>
+            <if test="pabbreviation != null and pabbreviation !=''">
+                pabbreviation,
+            </if>
+            <if test="pnumber != null and pnumber !=''">
+                pnumber,
+            </if>
+            <if test="paddress != null and paddress!=''">
+                paddress,
+            </if>
+            <if test="pstatus != null and pstatus!=''">
+                pstatus,
+            </if>
+            <if test="cid != null and cid!=''">
+                cid,
+            </if>
+            <if test="ptype != null and ptype!=''">
+                ptype,
+            </if>
+            <if test="contractamount != null and contractamount!=''">
+                contractamount,
+            </if>
+            <if test="acceptedamount != null and acceptedamount!=''">
+                acceptedamount,
+            </if>
+            <if test="acceptedinvoice != null and acceptedinvoice!=''">
+                acceptedinvoice,
+            </if>
+            <if test="totalartificial != null and totalartificial!=''">
+                totalartificial,
+            </if>
+            <if test="approachDay != null and approachDay!=''">
+                approachDay,
+            </if>
+            <if test="completeDay != null and completeDay!=''">
+                completeDay,
+            </if>
+            <if test="paycondition != null and paycondition!=''">
+                paycondition,
+            </if>
+            <if test="fineremarks != null and fineremarks!=''">
+                fineremarks,
+            </if>
+            <if test="creattime != null and creattime!=''">
+                creattime,
+            </if>
+            <if test="uid != null and uid!=''">
+                uid,
+            </if>
+            <if test="weixin != null and weixin!=''">
+                weixin,
+            </if>
+            <if test="materialuid != null and materialuid!=''">
+                materialuid,
+            </if>
+
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="pname != null and pname!=''">
+                #{pname},
+            </if>
+            <if test="pabbreviation != null and pabbreviation !=''">
+                #{pabbreviation},
+            </if>
+            <if test="pnumber != null and pnumber !=''">
+                #{pnumber},
+            </if>
+            <if test="paddress != null and paddress!=''">
+                #{paddress},
+            </if>
+            <if test="pstatus != null and pstatus!=''">
+                #{pstatus},
+            </if>
+            <if test="cid != null and cid!=''">
+                #{cid},
+            </if>
+            <if test="ptype != null and ptype!=''">
+                #{ptype},
+            </if>
+            <if test="contractamount != null and contractamount!=''">
+                #{contractamount},
+            </if>
+            <if test="acceptedamount != null and acceptedamount!=''">
+                #{acceptedamount},
+            </if>
+            <if test="acceptedinvoice != null and acceptedinvoice!=''">
+                #{acceptedinvoice},
+            </if>
+            <if test="totalartificial != null and totalartificial!=''">
+                #{totalartificial},
+            </if>
+            <if test="approachDay != null and approachDay!=''">
+                #{approachDay},
+            </if>
+            <if test="completeDay != null and completeDay!=''">
+                #{completeDay},
+            </if>
+            <if test="paycondition != null and paycondition!=''">
+                #{paycondition},
+            </if>
+            <if test="fineremarks != null and fineremarks!=''">
+                #{fineremarks},
+            </if>
+            <if test="creattime != null and creattime!=''">
+                #{creattime},
+            </if>
+            <if test="uid != null and uid!=''">
+                #{uid},
+            </if>
+            <if test="weixin != null and weixin!=''">
+                #{weixin},
+            </if>
+            <if test="materialuid != null and materialuid!=''">
+                #{materialuid},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 项目与用户绑定 -->
+    <insert id="insertProjectUser" parameterType="com.bwsk.entity.ProjectUser">
+        insert into projectuser (pid,uid) values (#{pid},#{uid});
+    </insert>
+
+    <select id="queryProjectUser" resultType="com.bwsk.entity.ProjectUser">
+        select * from projectuser where pid=#{pid} and uid=#{uid}
+    </select>
+
+    <select id="queryProjecByPid" resultType="com.bwsk.entity.Project">
+        select * from project where pid=#{pid}
+    </select>
+
+    <!-- 修改用户 -->
+    <update id="updateProject" parameterType="com.bwsk.entity.Project">
+        update project
+        <set>
+            <if test="pname != null and pname!=''">
+                pname=#{pname},
+            </if>
+            <if test="pabbreviation != null and pabbreviation !=''">
+                pabbreviation=#{pabbreviation},
+            </if>
+            <if test="pnumber != null and pnumber !=''">
+                pnumber=#{pnumber},
+            </if>
+            <if test="paddress != null and paddress=''">
+                paddress=#{paddress},
+            </if>
+            <if test="pstatus != null and pstatus!=''">
+                pstatus=#{pstatus},
+            </if>
+            <if test="cid != null and cid!=''">
+                cid=#{cid},
+            </if>
+            <if test="ptype != null and ptype!=''">
+                ptype=#{ptype},
+            </if>
+            <if test="contractamount != null and contractamount!=''">
+                contractamount=#{contractamount},
+            </if>
+            <if test="acceptedamount != null and acceptedamount!=''">
+                acceptedamount=#{acceptedamount},
+            </if>
+            <if test="acceptedinvoice != null and acceptedinvoice!=''">
+                acceptedinvoice=#{acceptedinvoice},
+            </if>
+            <if test="totalartificial != null and totalartificial!=''">
+                totalartificial=#{totalartificial},
+            </if>
+            <if test="approachDay != null and approachDay!=''">
+                approachDay=#{approachDay},
+            </if>
+            <if test="completeDay != null and completeDay!=''">
+                completeDay=#{completeDay},
+            </if>
+            <if test="paycondition != null and paycondition!=''">
+                paycondition=#{paycondition},
+            </if>
+            <if test="fineremarks != null and fineremarks!=''">
+                fineremarks=#{fineremarks},
+            </if>
+            <if test="creattime != null and creattime!=''">
+                creattime=#{creattime},
+            </if>
+            <if test="uid != null and uid!=''">
+                uid=#{uid},
+            </if>
+            <if test="weixin != null and weixin!=''">
+                weixin=#{weixin},
+            </if>
+            <if test="materialuid != null and materialuid!=''">
+                materialuid=#{materialuid},
+            </if>
+        </set>
+        where pid=#{pid}
+    </update>
+
+    <!-- 多种条件查询 -->
+    <select id="queryProject" parameterType="com.bwsk.entity.Project" resultMap="projectResult">
+        SELECT
+        DISTINCT(b.pid),
+        b.pname,
+        b.pabbreviation,
+        b.pnumber,
+        b.paddress,
+        b.pstatus,
+        case when b.pstatus=1 then '进行中' when b.pstatus=2 then '未开工' else '已完工' end pstatusName,
+        b.cid,
+        d.cname pcompany,
+        b.ptype,
+        case when b.ptype=1 then '工程项目' when b.ptype=2 then '部门项目' else '个人项目' end ptypeName,
+        b.contractamount,
+        b.acceptedamount,
+        b.acceptedinvoice,
+        b.totalartificial,
+        b.approachDay,
+        b.completeDay,
+        b.paycondition,
+        b.fineremarks,
+        b.creattime,
+        b.uid,
+        <if test="uid != null and uid != ''">
+            case when b.uid=#{uid} then '管理员' else '非管理员' end userpower,
+            case when b.materialuid =#{uid} then '计划管理员' else '非计划管理员' end materialpower,
+        </if>
+        b.weixin,
+        c.username,
+        c.upic,
+        d.cabbreviation,
+        e.uid userid,
+        f.upic userpic
+        FROM
+        projectuser a
+        LEFT JOIN project b ON a.pid = b.pid
+        LEFT JOIN user c ON b.uid = c.uid
+        LEFT JOIN company d on b.cid=d.cid
+        LEFT JOIN projectuser e on b.pid=e.pid
+        LEFT JOIN user f on e.uid=f.uid
+        <where>
+            <if test="pid != null and pid != ''">
+                and b.pid = #{pid}
+            </if>
+            <if test="uid != null and uid != ''">
+                and a.uid = #{uid}
+            </if>
+            <if test="pstatus != null and pstatus != ''">
+                and b.pstatus = #{pstatus}
+            </if>
+            <if test="cid != null and cid != ''">
+                and b.cid = #{cid}
+            </if>
+            <if test="ptype != null and ptype != ''">
+                and b.ptype = #{ptype}
+            </if>
+            <if test="pcompany != null and pcompany != ''">
+                and d.cname like CONCAT('%',#{pcompany},'%')
+            </if>
+            <if test="pname != null and pname != ''">
+                and b.pname like CONCAT('%',#{pname},'%')
+            </if>
+        </where>
+        order by creattime desc
+    </select>
+
+    <!-- 删除项目 -->
+    <delete id="deleteProject" parameterType="com.bwsk.entity.Project">
+        delete from project where pid=#{pid}
+    </delete>
+
+    <delete id="deleteDailyByPid" parameterType="com.bwsk.entity.Project">
+        delete from daily where pid=#{pid}
+    </delete>
+
+    <delete id="deleteprojectuser" parameterType="com.bwsk.entity.Project">
+        delete from projectuser where pid=#{pid}
+    </delete>
+</mapper>
