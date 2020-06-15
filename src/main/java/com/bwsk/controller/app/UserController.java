@@ -29,7 +29,7 @@ public class UserController {
      * @param utelphone
      * @return
      */
-    @RequestMapping(value = "/getCheckCode", method = RequestMethod.GET)
+    @RequestMapping(value = "/getCheckCode", method = RequestMethod.POST)
     public Result<?> getCheckCode(String utelphone) {
         Map<String, Object> map = SendMsg.sendMsgByTxPlatform(utelphone);
         if (Integer.parseInt(map.get("code").toString()) == 200) {
