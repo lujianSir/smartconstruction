@@ -97,4 +97,8 @@
     <select id="queryCompanyByCname" resultType="com.bwsk.entity.Company">
 		select * from company where cname=#{cname}
 	</select>
+
+    <select id="queryCompanyByCid" resultType="com.bwsk.entity.Company">
+        select * from company where cid=#{cid}
+    </select>
 </mapper>

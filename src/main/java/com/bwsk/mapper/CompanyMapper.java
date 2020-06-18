@@ -22,4 +22,7 @@ public interface CompanyMapper {
 
     //通过名称查询是否存在
     Company queryCompanyByCname(String cname);
+
+    //通过ID查询是否信息
+    Company queryCompanyByCid(int cid);
 }

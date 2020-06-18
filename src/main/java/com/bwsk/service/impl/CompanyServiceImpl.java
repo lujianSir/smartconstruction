@@ -27,8 +27,21 @@ public class CompanyServiceImpl implements CompanyService {
         // TODO Auto-generated method stub
 
         if (company.getCid() > 0) {// 存在 修改
-            companyMapper.updateCompany(company);
-            return Result.success("修改成功");
+            Company cpany = companyMapper.queryCompanyByCid(company.getCid());
+            if (company.getCname().equals(cpany.getCname())) {
+                companyMapper.updateCompany(company);
+                return Result.success("修改成功");
+            } else {
+                Company c = companyMapper.queryCompanyByCname(company.getCname());//是否重复
+                if (c != null) {
+                    return Result.error(500, "名称重复");
+                } else {
+                    companyMapper.updateCompany(company);
+                    return Result.success("修改成功");
+                }
+            }
+
+
         } else {
             Company cpany = companyMapper.queryCompanyByCname(company.getCname());
             if (cpany != null) {

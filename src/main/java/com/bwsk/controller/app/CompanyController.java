@@ -58,15 +58,14 @@ public class CompanyController {
      */
     @RequestMapping(value = "/deleteCompanyByCid", method = RequestMethod.POST)
     public Result<?> deleteCompanyByCid(int cid) {
-        int row = 0;
         Project project = new Project();
         project.setCid(cid);
         List<Project> list = projectService.queryProject(project);
         if (list.size() > 0) {
-            row = 2;
+            return Result.error(500, "有绑定数据");
         } else {
-            row = companyService.deleteCompanyByCid(cid);
+            companyService.deleteCompanyByCid(project.getCid());
+            return Result.success("删除成功");
         }
-        return Result.success(row);
     }
 }
