@@ -64,7 +64,7 @@ public class ProjectController {
      * @return
      */
     @RequestMapping(value = "/queryProject", method = RequestMethod.POST)
-    public Result<?> queryProject(Project project) {
+    public Result<?> queryProject(Project project, String contractaqueryProjectmount) {
         List<Project> list = projectService.queryProject(project);
         return Result.success(list);
     }

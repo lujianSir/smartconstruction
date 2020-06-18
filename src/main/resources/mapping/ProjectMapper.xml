@@ -14,7 +14,7 @@
         <result property="pcompany" column="pcompany"/>
         <result property="ptype" column="ptype"/>
         <result property="ptypeName" column="ptypeName"/>
-        <result property="contractamount" column="contractamount"/>
+        <result property="contractaqueryProjectmount" column="contractamount"/>
         <result property="acceptedamount" column="acceptedamount"/>
         <result property="acceptedinvoice" column="acceptedinvoice"/>
         <result property="totalartificial" column="totalartificial"/>

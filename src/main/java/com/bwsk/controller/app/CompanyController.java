@@ -47,12 +47,7 @@ public class CompanyController {
      */
     @RequestMapping(value = "/insertOrUpdateCompany", method = RequestMethod.POST)
     public Result<?> insertOrUpdateCompany(Company company) {
-        int row = companyService.insertOrUpdateCompany(company);
-        if (row > 0) {
-            return Result.success("操作成功");
-        } else {
-            return Result.error(500, "服务端错误");
-        }
+        return companyService.insertOrUpdateCompany(company);
     }
 
     /**
