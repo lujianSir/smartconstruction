@@ -106,4 +106,17 @@
 				a.pid = #{pid}
    			ORDER BY b.creattime DESC
    </select>
+
+    <!-- 通过手机或者ID查询用户信息 -->
+    <select id="queryUserByUidOrTel" resultType="com.bwsk.entity.User">
+        select * from user
+        <where>
+            <if test="uid !=null and  uid !=''">
+                and uid=#{uid}
+            </if>
+            <if test="utelphone !=null and utelphone !=''">
+                and utelphone=#{utelphone}
+            </if>
+        </where>
+    </select>
 </mapper>

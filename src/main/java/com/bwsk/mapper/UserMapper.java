@@ -20,4 +20,7 @@ public interface UserMapper {
 
     // 通过项目ID以及用户ID查询用户
     List<User> queryUserByUidAndPid(@Param("uid") int uid, @Param("pid") int pid);
+
+    //通过手机或者ID查询用户信息
+    User queryUserByUidOrTel(User user);
 }

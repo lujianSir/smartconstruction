@@ -111,4 +111,15 @@ public class UserController {
         List<User> list = userService.queryUserByUidAndPid(uid, pid);
         return Result.success(list);
     }
+
+    /**
+     * 通过手机或者ID查询用户信息
+     *
+     * @param user
+     * @return
+     */
+    @RequestMapping(value = "/queryUserByUidOrTel", method = RequestMethod.POST)
+    public Result<?> queryUserByUidOrTel(User user) {
+        return userService.queryUserByUidOrTel(user);
+    }
 }

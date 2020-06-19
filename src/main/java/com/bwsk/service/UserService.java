@@ -21,4 +21,8 @@ public interface UserService {
 
     // 通过项目ID以及用户ID查询用户
     List<User> queryUserByUidAndPid(int uid, int pid);
+
+    //通过手机或者ID查询用户信息
+    Result<?> queryUserByUidOrTel(User user);
+
 }

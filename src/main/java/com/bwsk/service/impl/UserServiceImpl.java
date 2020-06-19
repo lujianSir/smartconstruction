@@ -95,4 +95,9 @@ public class UserServiceImpl implements UserService {
         return userMapper.queryUserByUidAndPid(uid, pid);
     }
 
+    @Override
+    public Result<?> queryUserByUidOrTel(User user) {
+        return Result.success(userMapper.queryUserByUidOrTel(user));
+    }
+
 }
