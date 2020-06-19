@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bwsk.mapper.MaterialMapper">
- 
-  	<!-- 删除所有 -->
- 	<delete id="deleteMaterial" parameterType="com.bwsk.entity.Material">
- 		delete from material
- 	</delete>
- 
-	<!-- 批量插入 -->
- 	<insert id="insertMaterial" parameterType="java.util.List">
- 		insert into material (mtname,mttime,mttype,mtremark,mtstatus,pid)
- 		  values 
-	    <foreach collection="list" item="item" index="index" separator=",">
-	        (#{item.mtname},#{item.mttime},#{item.mttype},#{item.mtremark},#{item.mtstatus},#{item.pid})
-	    </foreach>
 
- 	</insert>
- 	
- 	<!-- 通过项目的ID查询所有的材料信息 -->
- 	<select id="queryMaterials" resultType="com.bwsk.entity.Material">
- 		SELECT
-			mtid,
-			mtname,
-			mttime,
-			mttype,
-			case when mttype=1 then '结构部分' else '维护部分' end mttypename,
-			mtremark,
-			mtstatus,
-		 case when mtstatus=1 then '已进场' else '未进场' end mtstatusname,
-			pid
-		FROM
-			material  where pid=#{material.pid} 
-			<if test="type==1">
-			 and mtstatus=1
-			</if>
-			ORDER BY mtid
- 	</select>
+    <!-- 删除所有 -->
+    <delete id="deleteMaterial" parameterType="com.bwsk.entity.Material">
+ 		delete from material where pid=#{pid}
+ 	</delete>
+
+    <!-- 批量插入 -->
+    <insert id="insertMaterial" parameterType="java.util.List">
+        insert into material (mtname,mttime,mttype,mtremark,mtstatus,pid)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.mtname},#{item.mttime},#{item.mttype},#{item.mtremark},#{item.mtstatus},#{item.pid})
+        </foreach>
+
+    </insert>
+
+    <!-- 通过项目的ID查询所有的材料信息 -->
+    <select id="queryMaterials" resultType="com.bwsk.entity.Material">
+        SELECT
+        mtid,
+        mtname,
+        mttime,
+        mttype,
+        case when mttype=1 then '结构部分' else '维护部分' end mttypename,
+        mtremark,
+        mtstatus,
+        case when mtstatus=1 then '已进场' else '未进场' end mtstatusname,
+        pid
+        FROM
+        material where pid=#{material.pid}
+        <if test="type==1">
+            and mtstatus=1
+        </if>
+        ORDER BY mtid
+    </select>
 </mapper>

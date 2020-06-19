@@ -64,7 +64,7 @@ public class MaterialController {
 //		material.setMtstatus(0);
 //		material.setPid(11);
 //		list.add(material);
-        int row = materialService.insertMaterial(list);
+        int row = materialService.insertMaterial(list, pid);
         if (row > 0) {
             return Result.success("操作成功");
         } else {

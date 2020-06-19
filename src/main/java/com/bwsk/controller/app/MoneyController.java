@@ -66,7 +66,7 @@ public class MoneyController {
 //		collectionMoney.setPid(11);
 //		list.add(collectionMoney);
 
-        int row = moneyService.insertCollectionMoney(list);
+        int row = moneyService.insertCollectionMoney(list, pid);
         if (row > 0) {
             return Result.success("操作成功");
         } else {

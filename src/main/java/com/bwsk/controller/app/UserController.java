@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -96,5 +97,18 @@ public class UserController {
     public Result<?> loginUserByTelOrPassWord(User user, String code) {
 
         return userService.loginUserByTelOrPassWord(user, code);
+    }
+
+    /**
+     * 通过项目ID以及用户ID查询用户
+     *
+     * @param uid
+     * @param pid
+     * @return
+     */
+    @RequestMapping(value = "/queryUserByUidAndPid", method = RequestMethod.POST)
+    public Result<?> queryUserByUidAndPid(int uid, int pid) {
+        List<User> list = userService.queryUserByUidAndPid(uid, pid);
+        return Result.success(list);
     }
 }

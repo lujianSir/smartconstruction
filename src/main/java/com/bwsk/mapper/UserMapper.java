@@ -1,7 +1,10 @@
 package com.bwsk.mapper;
 
 import com.bwsk.entity.User;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface UserMapper {
@@ -15,6 +18,6 @@ public interface UserMapper {
     //修改用户信息
     int updateUserMessage(User user);
 
-    // 通过微信ID或者用户ID查询关联的信息
-    User queryUserByWxIdOrUid(User user);
+    // 通过项目ID以及用户ID查询用户
+    List<User> queryUserByUidAndPid(@Param("uid") int uid, @Param("pid") int pid);
 }
