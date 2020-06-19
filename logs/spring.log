@@ -1842,3 +1842,103 @@ Field error in object 'daily' on field 'pid': rejected value [undefined]; codes 
 2020-06-19 16:20:31.303  INFO 12680 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
 2020-06-19 16:20:31.368  INFO 12680 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 2020-06-19 16:20:31.473  INFO 12680 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-19 16:48:45.645  WARN 15348 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/D:/kaifa/jdk1.8/maven/Maven-Repository/org/json/json/20170516/json-20170516.jar!/org/json/JSONObject.class
+	jar:file:/D:/kaifa/jdk1.8/maven/Maven-Repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-06-19 16:48:45.679  INFO 15348 --- [main] c.b.SmartconstructionApplicationTests    : Starting SmartconstructionApplicationTests on SW131 with PID 15348 (started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-06-19 16:48:45.679 DEBUG 15348 --- [main] c.b.SmartconstructionApplicationTests    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-19 16:48:45.680  INFO 15348 --- [main] c.b.SmartconstructionApplicationTests    : No active profile set, falling back to default profiles: default
+2020-06-19 16:48:46.331  INFO 15348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-19 16:48:46.335  INFO 15348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-06-19 16:48:46.381  INFO 15348 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 Redis repository interfaces.
+2020-06-19 16:48:48.931  INFO 15348 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-19 16:48:49.234  WARN 15348 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-06-19 16:48:49.470  INFO 15348 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-19 16:48:49.521  INFO 15348 --- [main] c.b.SmartconstructionApplicationTests    : Started SmartconstructionApplicationTests in 4.319 seconds (JVM running for 5.762)
+2020-06-19 16:48:50.650  INFO 15348 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-06-19 16:48:50.651  INFO 15348 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-19 16:54:55.952  INFO 8456 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 8456 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-06-19 16:54:55.954 DEBUG 8456 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-19 16:54:55.955  INFO 8456 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-06-19 16:54:56.670  INFO 8456 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-19 16:54:56.672  INFO 8456 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-06-19 16:54:56.708  INFO 8456 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23ms. Found 0 Redis repository interfaces.
+2020-06-19 16:54:57.117  INFO 8456 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-06-19 16:54:57.124  INFO 8456 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-19 16:54:57.124  INFO 8456 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-19 16:54:57.217  INFO 8456 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-19 16:54:57.217  INFO 8456 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1228 ms
+2020-06-19 16:54:57.886  INFO 8456 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-19 16:54:57.969  WARN 8456 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-06-19 16:54:58.053  INFO 8456 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-19 16:54:58.085  INFO 8456 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-06-19 16:54:58.095  INFO 8456 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.489 seconds (JVM running for 3.078)
+2020-06-19 17:41:37.417  INFO 8456 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-19 17:41:37.417  INFO 8456 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-19 17:41:37.421  INFO 8456 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-06-19 17:41:37.472  INFO 8456 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-19 17:41:37.811  INFO 8456 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-19 17:44:58.669  INFO 10996 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 10996 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-06-19 17:44:58.671 DEBUG 10996 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-19 17:44:58.672  INFO 10996 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-06-19 17:44:59.305  INFO 10996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-19 17:44:59.306  INFO 10996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-06-19 17:44:59.340  INFO 10996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21ms. Found 0 Redis repository interfaces.
+2020-06-19 17:44:59.739  INFO 10996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-06-19 17:44:59.746  INFO 10996 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-19 17:44:59.746  INFO 10996 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-19 17:44:59.842  INFO 10996 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-19 17:44:59.843  INFO 10996 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1129 ms
+2020-06-19 17:45:00.497  INFO 10996 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-19 17:45:00.581  WARN 10996 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-06-19 17:45:00.665  INFO 10996 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-19 17:45:00.697  INFO 10996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-06-19 17:45:00.709  INFO 10996 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.402 seconds (JVM running for 2.956)
+2020-06-19 17:45:04.345  INFO 10996 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-19 17:45:04.345  INFO 10996 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-19 17:45:04.352  INFO 10996 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-06-19 17:45:04.432  INFO 10996 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-06-19 17:45:04.530  INFO 10996 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-19 18:18:44.991  WARN 8548 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/D:/kaifa/jdk1.8/maven/Maven-Repository/org/json/json/20170516/json-20170516.jar!/org/json/JSONObject.class
+	jar:file:/D:/kaifa/jdk1.8/maven/Maven-Repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-06-19 18:18:45.007  INFO 8548 --- [main] c.b.SmartconstructionApplicationTests    : Starting SmartconstructionApplicationTests on SW131 with PID 8548 (started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-06-19 18:18:45.007 DEBUG 8548 --- [main] c.b.SmartconstructionApplicationTests    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-19 18:18:45.008  INFO 8548 --- [main] c.b.SmartconstructionApplicationTests    : No active profile set, falling back to default profiles: default
+2020-06-19 18:18:45.669  INFO 8548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-19 18:18:45.672  INFO 8548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-06-19 18:18:45.710  INFO 8548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 0 Redis repository interfaces.
+2020-06-19 18:18:47.608  INFO 8548 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-19 18:18:47.852  WARN 8548 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-06-19 18:18:48.042  INFO 8548 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-19 18:18:48.104  INFO 8548 --- [main] c.b.SmartconstructionApplicationTests    : Started SmartconstructionApplicationTests in 3.448 seconds (JVM running for 4.379)
+2020-06-19 18:18:48.350  INFO 8548 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-06-19 18:18:48.351  INFO 8548 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-19 18:24:44.365  INFO 12300 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 12300 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-06-19 18:24:44.368 DEBUG 12300 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-19 18:24:44.369  INFO 12300 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-06-19 18:24:45.073  INFO 12300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-19 18:24:45.076  INFO 12300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-06-19 18:24:45.115  INFO 12300 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 Redis repository interfaces.
+2020-06-19 18:24:45.568  INFO 12300 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-06-19 18:24:45.575  INFO 12300 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-19 18:24:45.575  INFO 12300 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-19 18:24:45.666  INFO 12300 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-19 18:24:45.666  INFO 12300 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1254 ms
+2020-06-19 18:24:46.437  INFO 12300 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-19 18:24:46.530  WARN 12300 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-06-19 18:24:46.618  INFO 12300 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-19 18:24:46.653  INFO 12300 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-06-19 18:24:46.665  INFO 12300 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.768 seconds (JVM running for 3.321)
