@@ -4,114 +4,125 @@ import java.math.BigDecimal;
 
 public class CollectionMoney {
 
-	private int mid;// id
+    private int mid;// id
 
-	private BigDecimal money;// 收款的金额
+    private BigDecimal money;// 收款的金额
 
-	private String moneychinese;// 金额中文
+    private String moneychinese;// 金额中文
 
-	private String mtime;// 收款的日期
+    private String mtime;// 收款的日期
 
-	private String mtimerub;// 时间搓
+    private String mtimerub;// 时间搓
 
-	private String mtimechinese;// 收款日期 (年、月、日)
+    private String mtimechinese;// 收款日期 (年、月、日)
 
-	private String mcomment;// 收款的内容
+    private String mcomment;// 收款的内容
 
-	private String remindcomment;// 提醒内容
+    private String remindcomment;// 提醒内容
 
-	private int remindstatus;// 提醒状态
+    private int remindstatus;// 提醒状态
 
-	private int mstatus;// 是否开启
+    private int mstatus;// 是否开启
 
-	private int pid;// 项目ID
+    private boolean flag;//是否开启
 
-	public String getMtimerub() {
-		return mtimerub;
-	}
+    private int pid;// 项目ID
 
-	public void setMtimerub(String mtimerub) {
-		this.mtimerub = mtimerub;
-	}
 
-	public String getMoneychinese() {
-		return moneychinese;
-	}
+    public boolean isFlag() {
+        return flag;
+    }
 
-	public void setMoneychinese(String moneychinese) {
-		this.moneychinese = moneychinese;
-	}
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
 
-	public String getRemindcomment() {
-		return remindcomment;
-	}
+    public String getMtimerub() {
+        return mtimerub;
+    }
 
-	public void setRemindcomment(String remindcomment) {
-		this.remindcomment = remindcomment;
-	}
+    public void setMtimerub(String mtimerub) {
+        this.mtimerub = mtimerub;
+    }
 
-	public int getRemindstatus() {
-		return remindstatus;
-	}
+    public String getMoneychinese() {
+        return moneychinese;
+    }
 
-	public void setRemindstatus(int remindstatus) {
-		this.remindstatus = remindstatus;
-	}
+    public void setMoneychinese(String moneychinese) {
+        this.moneychinese = moneychinese;
+    }
 
-	public String getMtimechinese() {
-		return mtimechinese;
-	}
+    public String getRemindcomment() {
+        return remindcomment;
+    }
 
-	public void setMtimechinese(String mtimechinese) {
-		this.mtimechinese = mtimechinese;
-	}
+    public void setRemindcomment(String remindcomment) {
+        this.remindcomment = remindcomment;
+    }
 
-	public int getMid() {
-		return mid;
-	}
+    public int getRemindstatus() {
+        return remindstatus;
+    }
 
-	public void setMid(int mid) {
-		this.mid = mid;
-	}
+    public void setRemindstatus(int remindstatus) {
+        this.remindstatus = remindstatus;
+    }
 
-	public BigDecimal getMoney() {
-		return money;
-	}
+    public String getMtimechinese() {
+        return mtimechinese;
+    }
 
-	public void setMoney(BigDecimal money) {
-		this.money = money;
-	}
+    public void setMtimechinese(String mtimechinese) {
+        this.mtimechinese = mtimechinese;
+    }
 
-	public String getMtime() {
-		return mtime;
-	}
+    public int getMid() {
+        return mid;
+    }
 
-	public void setMtime(String mtime) {
-		this.mtime = mtime;
-	}
+    public void setMid(int mid) {
+        this.mid = mid;
+    }
 
-	public String getMcomment() {
-		return mcomment;
-	}
+    public BigDecimal getMoney() {
+        return money;
+    }
 
-	public void setMcomment(String mcomment) {
-		this.mcomment = mcomment;
-	}
+    public void setMoney(BigDecimal money) {
+        this.money = money;
+    }
 
-	public int getMstatus() {
-		return mstatus;
-	}
+    public String getMtime() {
+        return mtime;
+    }
 
-	public void setMstatus(int mstatus) {
-		this.mstatus = mstatus;
-	}
+    public void setMtime(String mtime) {
+        this.mtime = mtime;
+    }
 
-	public int getPid() {
-		return pid;
-	}
+    public String getMcomment() {
+        return mcomment;
+    }
 
-	public void setPid(int pid) {
-		this.pid = pid;
-	}
+    public void setMcomment(String mcomment) {
+        this.mcomment = mcomment;
+    }
+
+    public int getMstatus() {
+        return mstatus;
+    }
+
+    public void setMstatus(int mstatus) {
+        this.mstatus = mstatus;
+    }
+
+    public int getPid() {
+        return pid;
+    }
+
+    public void setPid(int pid) {
+        this.pid = pid;
+    }
 
 }

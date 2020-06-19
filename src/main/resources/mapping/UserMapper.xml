@@ -93,4 +93,18 @@
             </if>
         </where>
     </update>
+
+    <!-- 通过微信ID或者用户ID查询关联的信息 -->
+    <select id="queryUserByWxIdOrUid" resultType="com.bwsk.entity.User">
+        select uid,username,utelphone,uposition,upic,wxid,creattime from user
+        <where>
+            <if test="uid != null and uid != ''">
+                and uid = #{uid}
+            </if>
+            <if test="wxid != null and wxid != ''">
+                and wxid = #{wxid}
+            </if>
+        </where>
+        order by creattime desc
+    </select>
 </mapper>

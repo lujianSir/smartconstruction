@@ -88,4 +88,9 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public User queryUserByWxIdOrUid(User user) {
+        return userMapper.queryUserByWxIdOrUid(user);
+    }
+
 }

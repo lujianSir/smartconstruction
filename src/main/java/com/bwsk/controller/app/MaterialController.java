@@ -48,10 +48,10 @@ public class MaterialController {
             for (Entry<String, Object> entry : map.entrySet()) {
                 m.put(entry.getKey(), entry.getValue());
             }
-            material.setMtname(m.get("money").toString());
-            material.setMttime(m.get("date").toString());
-            material.setMtremark(m.get("content1").toString());
-            material.setMtstatus(Integer.parseInt((m.get("status").toString())));
+            material.setMtname(m.get("mtname").toString());
+            material.setMttime(m.get("mttime").toString());
+            material.setMtremark(m.get("mtremark").toString());
+            material.setMtstatus(Integer.parseInt((m.get("mtstatus").toString())));
             material.setPid(pid);
             list.add(material);
         }
@@ -86,6 +86,11 @@ public class MaterialController {
         List<Material> list = materialService.queryMaterials(material, type);
         for (Material material2 : list) {
             material2.setMttimerub(Utils.timeToStamp(material2.getMttime()));
+            if (material2.getMtstatus() == 1) {
+                material2.setFlag(true);
+            } else {
+                material2.setFlag(false);
+            }
         }
         return Result.success(list);
     }

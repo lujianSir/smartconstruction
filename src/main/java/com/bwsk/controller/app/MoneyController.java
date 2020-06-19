@@ -50,9 +50,9 @@ public class MoneyController {
                 m.put(entry.getKey(), entry.getValue());
             }
             collectionMoney.setMoney(new BigDecimal(m.get("money").toString()));
-            collectionMoney.setMtime(m.get("date").toString());
-            collectionMoney.setMcomment(m.get("content1").toString());
-            collectionMoney.setMstatus(Integer.parseInt(m.get("status").toString()));
+            collectionMoney.setMtime(m.get("mtime").toString());
+            collectionMoney.setMcomment(m.get("mcomment").toString());
+            collectionMoney.setMstatus(Integer.parseInt(m.get("mstatus").toString()));
             collectionMoney.setPid(pid);
             list.add(collectionMoney);
         }
@@ -87,6 +87,11 @@ public class MoneyController {
         List<CollectionMoney> list = moneyService.queryCollectionMoneys(collectionMoney, type);
         for (CollectionMoney collectionMoney2 : list) {
             collectionMoney2.setMtimerub(Utils.timeToStamp(collectionMoney2.getMtime()));
+            if (collectionMoney2.getMstatus() == 1) {
+                collectionMoney2.setFlag(true);
+            } else {
+                collectionMoney2.setFlag(false);
+            }
         }
         return Result.success(list);
     }

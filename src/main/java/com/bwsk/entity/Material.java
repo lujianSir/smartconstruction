@@ -2,134 +2,144 @@ package com.bwsk.entity;
 
 public class Material {
 
-	private int mtid;// 材料ID
+    private int mtid;// 材料ID
 
-	private String mtname;// 材料名称
+    private String mtname;// 材料名称
 
-	private String mttime;// 进场时间
+    private String mttime;// 进场时间
 
-	private String mttimerub;// 进场时间搓
+    private String mttimerub;// 进场时间搓
 
-	private String mttimechinese;// 收款日期 (年、月、日)
+    private String mttimechinese;// 收款日期 (年、月、日)
 
-	private int mttype;// 类型 1结构部分 2 维护部分
+    private int mttype;// 类型 1结构部分 2 维护部分
 
-	private String mttypename;// 类型名称
+    private String mttypename;// 类型名称
 
-	private String mtremark;// 备注
+    private String mtremark;// 备注
 
-	private String remindcomment;// 提醒内容
+    private String remindcomment;// 提醒内容
 
-	private int remindstatus;// 提醒状态
+    private int remindstatus;// 提醒状态
 
-	private int mtstatus;// 0.未进场 1.已进场
+    private int mtstatus;// 0.未进场 1.已进场
 
-	private String mtstatusname;// 名称
+    private String mtstatusname;// 名称
 
-	private int pid;// 项目的ID
+    private int pid;// 项目的ID
 
-	public String getMttimerub() {
-		return mttimerub;
-	}
+    private boolean flag;//
 
-	public void setMttimerub(String mttimerub) {
-		this.mttimerub = mttimerub;
-	}
+    public boolean isFlag() {
+        return flag;
+    }
 
-	public String getMttypename() {
-		return mttypename;
-	}
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
 
-	public void setMttypename(String mttypename) {
-		this.mttypename = mttypename;
-	}
+    public String getMttimerub() {
+        return mttimerub;
+    }
 
-	public String getMtstatusname() {
-		return mtstatusname;
-	}
+    public void setMttimerub(String mttimerub) {
+        this.mttimerub = mttimerub;
+    }
 
-	public void setMtstatusname(String mtstatusname) {
-		this.mtstatusname = mtstatusname;
-	}
+    public String getMttypename() {
+        return mttypename;
+    }
 
-	public int getMtid() {
-		return mtid;
-	}
+    public void setMttypename(String mttypename) {
+        this.mttypename = mttypename;
+    }
 
-	public void setMtid(int mtid) {
-		this.mtid = mtid;
-	}
+    public String getMtstatusname() {
+        return mtstatusname;
+    }
 
-	public String getMtname() {
-		return mtname;
-	}
+    public void setMtstatusname(String mtstatusname) {
+        this.mtstatusname = mtstatusname;
+    }
 
-	public void setMtname(String mtname) {
-		this.mtname = mtname;
-	}
+    public int getMtid() {
+        return mtid;
+    }
 
-	public String getMttime() {
-		return mttime;
-	}
+    public void setMtid(int mtid) {
+        this.mtid = mtid;
+    }
 
-	public void setMttime(String mttime) {
-		this.mttime = mttime;
-	}
+    public String getMtname() {
+        return mtname;
+    }
 
-	public int getMttype() {
-		return mttype;
-	}
+    public void setMtname(String mtname) {
+        this.mtname = mtname;
+    }
 
-	public void setMttype(int mttype) {
-		this.mttype = mttype;
-	}
+    public String getMttime() {
+        return mttime;
+    }
 
-	public String getMtremark() {
-		return mtremark;
-	}
+    public void setMttime(String mttime) {
+        this.mttime = mttime;
+    }
 
-	public void setMtremark(String mtremark) {
-		this.mtremark = mtremark;
-	}
+    public int getMttype() {
+        return mttype;
+    }
 
-	public int getMtstatus() {
-		return mtstatus;
-	}
+    public void setMttype(int mttype) {
+        this.mttype = mttype;
+    }
 
-	public void setMtstatus(int mtstatus) {
-		this.mtstatus = mtstatus;
-	}
+    public String getMtremark() {
+        return mtremark;
+    }
 
-	public int getPid() {
-		return pid;
-	}
+    public void setMtremark(String mtremark) {
+        this.mtremark = mtremark;
+    }
 
-	public void setPid(int pid) {
-		this.pid = pid;
-	}
+    public int getMtstatus() {
+        return mtstatus;
+    }
 
-	public String getMttimechinese() {
-		return mttimechinese;
-	}
+    public void setMtstatus(int mtstatus) {
+        this.mtstatus = mtstatus;
+    }
 
-	public void setMttimechinese(String mttimechinese) {
-		this.mttimechinese = mttimechinese;
-	}
+    public int getPid() {
+        return pid;
+    }
 
-	public String getRemindcomment() {
-		return remindcomment;
-	}
+    public void setPid(int pid) {
+        this.pid = pid;
+    }
 
-	public void setRemindcomment(String remindcomment) {
-		this.remindcomment = remindcomment;
-	}
+    public String getMttimechinese() {
+        return mttimechinese;
+    }
 
-	public int getRemindstatus() {
-		return remindstatus;
-	}
+    public void setMttimechinese(String mttimechinese) {
+        this.mttimechinese = mttimechinese;
+    }
 
-	public void setRemindstatus(int remindstatus) {
-		this.remindstatus = remindstatus;
-	}
+    public String getRemindcomment() {
+        return remindcomment;
+    }
+
+    public void setRemindcomment(String remindcomment) {
+        this.remindcomment = remindcomment;
+    }
+
+    public int getRemindstatus() {
+        return remindstatus;
+    }
+
+    public void setRemindstatus(int remindstatus) {
+        this.remindstatus = remindstatus;
+    }
 
 }

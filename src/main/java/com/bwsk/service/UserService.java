@@ -16,4 +16,7 @@ public interface UserService {
 
     //通过手机验证码或者手机密码登录
     Result<?> loginUserByTelOrPassWord(User user, String code);
+
+    // 通过微信ID或者用户ID查询关联的信息
+    User queryUserByWxIdOrUid(User user);
 }
