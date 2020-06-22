@@ -18,4 +18,6 @@ public interface MoneyMapper {
     // 通过项目的ID查询所有的收款信息
     List<CollectionMoney> queryCollectionMoneys(@Param("collectionMoney") CollectionMoney collectionMoney,
                                                 @Param("type") int type);
+
+    int deletAllMoney(int pid);
 }

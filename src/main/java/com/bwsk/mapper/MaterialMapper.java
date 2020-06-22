@@ -19,4 +19,6 @@ public interface MaterialMapper {
     // 删除所有的数据
     void deleteMaterial(int pid);
 
+    int deleteAllMaterial(int pid);
+
 }

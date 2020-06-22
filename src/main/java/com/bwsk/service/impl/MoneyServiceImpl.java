@@ -43,4 +43,9 @@ public class MoneyServiceImpl implements MoneyService {
         return collectionMoneys;
     }
 
+    @Override
+    public int deletAllMoney(int pid) {
+        return moneyMapper.deletAllMoney(pid);
+    }
+
 }

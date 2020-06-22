@@ -64,12 +64,13 @@ public class MaterialController {
 //		material.setMtstatus(0);
 //		material.setPid(11);
 //		list.add(material);
-        int row = materialService.insertMaterial(list, pid);
-        if (row > 0) {
-            return Result.success("操作成功");
+        int row = 0;
+        if (list.size() > 0) {
+            row = materialService.insertMaterial(list, pid);
         } else {
-            return Result.error(500, "服务端错误");
+            row = materialService.deleteAllMaterial(pid);
         }
+        return Result.success("操作成功");
 
     }
 

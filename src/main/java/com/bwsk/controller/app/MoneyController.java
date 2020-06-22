@@ -65,14 +65,13 @@ public class MoneyController {
 //		collectionMoney.setMcomment("测试数据");
 //		collectionMoney.setPid(11);
 //		list.add(collectionMoney);
-
-        int row = moneyService.insertCollectionMoney(list, pid);
-        if (row > 0) {
-            return Result.success("操作成功");
+        int row = 0;
+        if (list.size() > 0) {
+            row = moneyService.insertCollectionMoney(list, pid);
         } else {
-            return Result.error(500, "服务端错误");
+            row = moneyService.deletAllMoney(pid);
         }
-
+        return Result.success("操作成功");
     }
 
     /**

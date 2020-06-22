@@ -25,4 +25,9 @@
         </if>
         ORDER BY mid
     </select>
+
+    <delete id="deletAllMoney" parameterType="int">
+
+        delete  from  collectionmoney where pid=#{pid}
+    </delete>
 </mapper>

@@ -36,4 +36,8 @@
         </if>
         ORDER BY mtid
     </select>
+
+    <delete id="deleteAllMaterial" parameterType="int">
+        delete  from material where pid=#{pid}
+    </delete>
 </mapper>

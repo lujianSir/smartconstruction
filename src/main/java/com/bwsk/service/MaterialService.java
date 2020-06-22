@@ -11,4 +11,6 @@ public interface MaterialService {
 
     // 通过项目的ID查询所有的材料信息
     List<Material> queryMaterials(Material material, int type) throws Exception;
+
+    int deleteAllMaterial(int pid);
 }
