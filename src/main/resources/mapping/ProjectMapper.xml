@@ -188,10 +188,10 @@
             <if test="pnumber != null and pnumber !=''">
                 pnumber=#{pnumber},
             </if>
-            <if test="paddress != null and paddress=''">
+            <if test="paddress != null and paddress!=''">
                 paddress=#{paddress},
             </if>
-            <if test="pstatus != null and pstatus!=''">
+            <if test="pstatus != null ">
                 pstatus=#{pstatus},
             </if>
             <if test="cid != null and cid!=''">
@@ -200,28 +200,28 @@
             <if test="ptype != null and ptype!=''">
                 ptype=#{ptype},
             </if>
-            <if test="contractamount != null and contractamount!=''">
+            <if test="contractamount != null ">
                 contractamount=#{contractamount},
             </if>
-            <if test="acceptedamount != null and acceptedamount!=''">
+            <if test="acceptedamount != null">
                 acceptedamount=#{acceptedamount},
             </if>
-            <if test="acceptedinvoice != null and acceptedinvoice!=''">
+            <if test="acceptedinvoice != null">
                 acceptedinvoice=#{acceptedinvoice},
             </if>
-            <if test="totalartificial != null and totalartificial!=''">
+            <if test="totalartificial != null">
                 totalartificial=#{totalartificial},
             </if>
-            <if test="approachDay != null and approachDay!=''">
+            <if test="approachDay != null ">
                 approachDay=#{approachDay},
             </if>
-            <if test="completeDay != null and completeDay!=''">
+            <if test="completeDay != null">
                 completeDay=#{completeDay},
             </if>
-            <if test="paycondition != null and paycondition!=''">
+            <if test="paycondition != null ">
                 paycondition=#{paycondition},
             </if>
-            <if test="fineremarks != null and fineremarks!=''">
+            <if test="fineremarks != null ">
                 fineremarks=#{fineremarks},
             </if>
             <if test="creattime != null and creattime!=''">
