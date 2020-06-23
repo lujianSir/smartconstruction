@@ -82,7 +82,9 @@
             <if test="creattime != null and creattime!=''">
                 creattime=#{creattime},
             </if>
-
+            <if test="frequency != null and frequency!=''">
+                frequency=#{frequency},
+            </if>
         </set>
         <where>
             <if test="uid != null and uid!=''">

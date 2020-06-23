@@ -32,6 +32,16 @@ public class User implements Serializable {
 
     private int currentuser;// 当前用户 自己管理自己
 
+    private int frequency;//登录次数
+
+    public int getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(int frequency) {
+        this.frequency = frequency;
+    }
+
     public String getPassword() {
         return password;
     }

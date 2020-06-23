@@ -78,6 +78,11 @@ public class UserServiceImpl implements UserService {
                 }
             } else {//账号密码登录
                 if (JavaTool.string2MD5(user.getPassword()).equals(u.getPassword())) {
+                    int frequency = u.getFrequency();
+                    user.setFrequency(frequency + 1);
+                    user.setPassword("");
+                    userMapper.updateUserMessage(user);
+                    u.setFrequency(frequency);
                     u.setPassword("");
                     return Result.success(u);
                 } else {
