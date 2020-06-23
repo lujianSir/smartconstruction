@@ -344,7 +344,8 @@
         a.attendancetody,
         a.attendanceoneself,
         a.effectivework,
-        CASE WHEN a.effectivework = 1 THEN '小于2小时' WHEN a.effectivework = 2 THEN '2-4小时' WHEN a.effectivework = 3 THEN
+        CASE WHEN a.effectivework = 1 THEN '&lt; 2小时' WHEN a.effectivework = 2 THEN '2-4小时' WHEN a.effectivework = 3
+        THEN
         '4-6小时' WHEN a.effectivework = 4 THEN '6-8小时' ELSE '大于8小时' END effectiveworkName,
         a.satisfactiondegree,
         CASE WHEN a.satisfactiondegree = 1 THEN '很不满意' WHEN a.satisfactiondegree = 2 THEN '不太满意' WHEN
@@ -402,7 +403,8 @@
         a.attendancetody,
         a.attendanceoneself,
         a.effectivework,
-        CASE WHEN a.effectivework = 1 THEN '小于2小时' WHEN a.effectivework = 2 THEN '2-4小时' WHEN a.effectivework = 3 THEN
+        CASE WHEN a.effectivework = 1 THEN '&lt; 2小时' WHEN a.effectivework = 2 THEN '2-4小时' WHEN a.effectivework = 3
+        THEN
         '4-6小时' WHEN a.effectivework = 4 THEN '6-8小时' ELSE '大于8小时' END effectiveworkName,
         a.satisfactiondegree,
         CASE WHEN a.satisfactiondegree = 1 THEN '很不满意' WHEN a.satisfactiondegree = 2 THEN '不太满意' WHEN
@@ -464,7 +466,8 @@
         a.attendancetody,
         a.attendanceoneself,
         a.effectivework,
-        CASE WHEN a.effectivework = 1 THEN '小于2小时' WHEN a.effectivework = 2 THEN '2-4小时' WHEN a.effectivework = 3 THEN
+        CASE WHEN a.effectivework = 1 THEN '&lt; 2小时' WHEN a.effectivework = 2 THEN '2-4小时' WHEN a.effectivework = 3
+        THEN
         '4-6小时' WHEN a.effectivework = 4 THEN '6-8小时' WHEN a.effectivework = 5 THEN '大于8小时' END effectiveworkName,
         a.satisfactiondegree,
         CASE WHEN a.satisfactiondegree = 1 THEN '很不满意' WHEN a.satisfactiondegree = 2 THEN '不太满意' WHEN
@@ -537,7 +540,8 @@
         a.attendancetody,
         a.attendanceoneself,
         a.effectivework,
-        CASE WHEN a.effectivework = 1 THEN '小于2小时' WHEN a.effectivework = 2 THEN '2-4小时' WHEN a.effectivework = 3 THEN
+        CASE WHEN a.effectivework = 1 THEN '&lt; 2小时' WHEN a.effectivework = 2 THEN '2-4小时' WHEN a.effectivework = 3
+        THEN
         '4-6小时' WHEN a.effectivework = 4 THEN '6-8小时' ELSE '大于8小时' END effectiveworkName,
         a.satisfactiondegree,
         CASE WHEN a.satisfactiondegree = 1 THEN '很不满意' WHEN a.satisfactiondegree = 2 THEN '不太满意' WHEN
@@ -595,7 +599,8 @@
         a.attendancetody,
         a.attendanceoneself,
         a.effectivework,
-        CASE WHEN a.effectivework = 1 THEN '小于2小时' WHEN a.effectivework = 2 THEN '2-4小时' WHEN a.effectivework = 3 THEN
+        CASE WHEN a.effectivework = 1 THEN '&lt; 2小时' WHEN a.effectivework = 2 THEN '2-4小时' WHEN a.effectivework = 3
+        THEN
         '4-6小时' WHEN a.effectivework = 4 THEN '6-8小时' WHEN a.effectivework = 5 THEN '大于8小时' END effectiveworkName,
         a.satisfactiondegree,
         CASE WHEN a.satisfactiondegree = 1 THEN '很不满意' WHEN a.satisfactiondegree = 2 THEN '不太满意' WHEN
@@ -681,7 +686,7 @@
 				 a.attendancetody,
 				 a.attendanceoneself,
 				 a.effectivework,
-				 CASE WHEN a.effectivework = 1 THEN '小于2小时' WHEN a.effectivework = 2 THEN '2-4小时' WHEN a.effectivework = 3 THEN '4-6小时' WHEN a.effectivework = 4 THEN '6-8小时' ELSE '大于8小时' END effectiveworkName,
+				 CASE WHEN a.effectivework = 1 THEN '&lt; 2小时' WHEN a.effectivework = 2 THEN '2-4小时' WHEN a.effectivework = 3 THEN '4-6小时' WHEN a.effectivework = 4 THEN '6-8小时' ELSE '大于8小时' END effectiveworkName,
 				 a.satisfactiondegree,
 				 CASE WHEN a.satisfactiondegree = 1 THEN '很不满意' WHEN a.satisfactiondegree = 2 THEN	'不太满意' WHEN a.satisfactiondegree = 3 THEN	'比较满意' WHEN a.satisfactiondegree = 4 THEN	'满意' WHEN a.satisfactiondegree = 5 THEN '非常满意'  ELSE ''END satisfactiondegreeName,
 				 a.equipments,

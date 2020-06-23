@@ -335,7 +335,7 @@
         FROM
         project a
         LEFT JOIN company b ON a.cid = b.cid
-        LEFT JOIN USER c ON a.uid = c.uid
+        LEFT JOIN user c ON a.uid = c.uid
         <where>
             <if test="str!=null and str !=''">
                 a.pname like concat('%',#{str},'%') or a.pnumber like concat('%',#{str},'%')
