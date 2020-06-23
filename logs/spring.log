@@ -2186,3 +2186,24 @@ java.sql.SQLSyntaxErrorException: Table 'construction.USER' doesn't exist
 2020-06-23 18:26:51.327  INFO 6616 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
 2020-06-23 18:26:51.377  INFO 6616 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 2020-06-23 18:26:51.742  INFO 6616 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-06-23 18:27:50.543  WARN 10900 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/D:/kaifa/jdk1.8/maven/Maven-Repository/org/json/json/20170516/json-20170516.jar!/org/json/JSONObject.class
+	jar:file:/D:/kaifa/jdk1.8/maven/Maven-Repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-06-23 18:27:50.559  INFO 10900 --- [main] c.b.SmartconstructionApplicationTests    : Starting SmartconstructionApplicationTests on SW131 with PID 10900 (started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-06-23 18:27:50.560 DEBUG 10900 --- [main] c.b.SmartconstructionApplicationTests    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-23 18:27:50.560  INFO 10900 --- [main] c.b.SmartconstructionApplicationTests    : No active profile set, falling back to default profiles: default
+2020-06-23 18:27:51.156  INFO 10900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-23 18:27:51.159  INFO 10900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-06-23 18:27:51.198  INFO 10900 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 Redis repository interfaces.
+2020-06-23 18:27:53.151  INFO 10900 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-23 18:27:53.391  WARN 10900 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-06-23 18:27:53.623  INFO 10900 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-06-23 18:27:53.692  INFO 10900 --- [main] c.b.SmartconstructionApplicationTests    : Started SmartconstructionApplicationTests in 3.48 seconds (JVM running for 4.378)
+2020-06-23 18:27:53.943  INFO 10900 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-06-23 18:27:53.944  INFO 10900 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
