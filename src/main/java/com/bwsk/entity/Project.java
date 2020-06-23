@@ -68,6 +68,25 @@ public class Project {
 
     private String contractaqueryProjectmount;
 
+    private int agreestatus;//通过状态  1 通过 2 没有
+
+    private int applystatus;//申请状态  1 正在申请 2 没有
+
+    public int getApplystatus() {
+        return applystatus;
+    }
+
+    public void setApplystatus(int applystatus) {
+        this.applystatus = applystatus;
+    }
+
+    public int getAgreestatus() {
+        return agreestatus;
+    }
+
+    public void setAgreestatus(int agreestatus) {
+        this.agreestatus = agreestatus;
+    }
 
     public List<UserInfo> getUserinfos() {
         return userinfos;

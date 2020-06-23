@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
                 user.setPassword(JavaTool.string2MD5(user.getPassword()));
             }
             int radom = (int) (1 + Math.random() * (10 - 1 + 1));
-            String pic = "/image/user/" + radom + ".png";
+            String pic = "/image/user/" + radom + ".jpg";
             user.setUpic(pic);
             int row = userMapper.insertUserMessage(user);
             if (row > 0) {

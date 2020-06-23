@@ -1,5 +1,6 @@
 package com.bwsk.controller.app;
 
+import com.bwsk.entity.ApplayProjectUser;
 import com.bwsk.entity.Project;
 import com.bwsk.entity.Result;
 import com.bwsk.service.ProjectService;
@@ -79,5 +80,34 @@ public class ProjectController {
     public Result<?> deleteProject(Project project) {
         int row = projectService.deleteProject(project);
         return Result.success(row);
+    }
+
+    /**
+     * 通过名称或者编号模糊查询
+     *
+     * @param str
+     * @return
+     */
+    @RequestMapping(value = "queryAllProjectByPnameOrPnumber", method = RequestMethod.POST)
+    public Result<?> queryAllProjectByPnameOrPnumber(String str, int uid) {
+        List<Project> list = projectService.queryAllProjectByPnameOrPnumber(str, uid);
+        return Result.success(list);
+    }
+
+    /**
+     * 发起申请
+     *
+     * @param applayProjectUser
+     * @return
+     */
+    @RequestMapping(value = "insertApplayProjectUser", method = RequestMethod.POST)
+    public Result<?> insertApplayProjectUser(ApplayProjectUser applayProjectUser) {
+        try {
+            projectService.insertApplayProjectUser(applayProjectUser);
+            return Result.success("操作成功");
+        } catch (Exception e) {
+            return Result.error(500, "服务器错误");
+        }
+
     }
 }

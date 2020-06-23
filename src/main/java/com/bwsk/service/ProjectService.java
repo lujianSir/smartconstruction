@@ -1,5 +1,6 @@
 package com.bwsk.service;
 
+import com.bwsk.entity.ApplayProjectUser;
 import com.bwsk.entity.Project;
 
 import java.util.List;
@@ -17,4 +18,10 @@ public interface ProjectService {
 
     // 查询项目是否绑定
     Project queryProjecByPid(int pid);
+
+    //通过项目名称或者编号模糊查询
+    List<Project> queryAllProjectByPnameOrPnumber(String str, int uid);
+
+    //添加发起申请
+    int insertApplayProjectUser(ApplayProjectUser applayProjectUser);
 }

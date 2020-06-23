@@ -1,5 +1,6 @@
 package com.bwsk.service.impl;
 
+import com.bwsk.entity.ApplayProjectUser;
 import com.bwsk.entity.Project;
 import com.bwsk.entity.ProjectUser;
 import com.bwsk.mapper.ProjectMapper;
@@ -62,6 +63,18 @@ public class ProjectServiceImpl implements ProjectService {
     public Project queryProjecByPid(int pid) {
         // TODO Auto-generated method stub
         return projectMapper.queryProjecByPid(pid);
+    }
+
+    @Override
+    public List<Project> queryAllProjectByPnameOrPnumber(String str, int uid) {
+        return projectMapper.queryAllProjectByPnameOrPnumber(str, uid);
+    }
+
+    @Override
+    public int insertApplayProjectUser(ApplayProjectUser applayProjectUser) {
+        String creattime = Utils.getCurrentHMS();
+        applayProjectUser.setCreattime(creattime);
+        return projectMapper.insertApplayProjectUser(applayProjectUser);
     }
 
 }

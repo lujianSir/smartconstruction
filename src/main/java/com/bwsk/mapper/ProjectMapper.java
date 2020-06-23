@@ -1,7 +1,9 @@
 package com.bwsk.mapper;
 
+import com.bwsk.entity.ApplayProjectUser;
 import com.bwsk.entity.Project;
 import com.bwsk.entity.ProjectUser;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -37,4 +39,9 @@ public interface ProjectMapper {
     void deleteprojectuser(Project project);
 
 
+    //通过项目名称或者编号模糊查询
+    List<Project> queryAllProjectByPnameOrPnumber(@Param("str") String str, @Param("uid") int uid);
+
+    //添加发起申请
+    int insertApplayProjectUser(ApplayProjectUser applayProjectUser);
 }
