@@ -64,13 +64,13 @@
     <update id="updateUserMessage" parameterType="com.bwsk.entity.User">
         update user
         <set>
-            <if test="username != null and username!=''">
+            <if test="username != null">
                 username=#{username},
             </if>
             <if test="password != null and password !=''">
                 password=#{password},
             </if>
-            <if test="uposition != null and uposition !=''">
+            <if test="uposition != null">
                 uposition=#{uposition},
             </if>
             <if test="upic != null and upic!=''">

@@ -110,4 +110,16 @@ public class ProjectController {
         }
 
     }
+
+    /**
+     * 通过项目ID查询所有的申请人员
+     *
+     * @param pid
+     * @return
+     */
+    @RequestMapping(value = "queryApplayProjectUserByPid", method = RequestMethod.POST)
+    public Result<?> queryApplayProjectUserByPid(int pid) {
+        List<ApplayProjectUser> list = projectService.queryApplayProjectUserByPid(pid);
+        return Result.success(list);
+    }
 }

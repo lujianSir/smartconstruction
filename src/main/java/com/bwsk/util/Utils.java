@@ -25,6 +25,13 @@ public class Utils {
     }
 
     // 获取当前的时间(年月日，时分秒)
+    public static String getPnumber() {
+        SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");// 设置日期格式
+        String currentTime = df.format(new Date());// new Date()为获取当前系统时间
+        return currentTime;
+    }
+
+    // 获取当前的时间(年月日，时分秒)
     public static String getCurrentymd() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");// 设置日期格式
         String currentTime = df.format(new Date());// new Date()为获取当前系统时间
@@ -174,18 +181,20 @@ public class Utils {
     }
 
     public static void main(String[] args) throws Exception {
-        String startday = "2020-03-13";// 到期时间
-        String endday = "2020-03-13";// 当前时间
-        Map<String, Object> DistanceDays = getDistanceDays(startday, endday);// 两个时间之间相差距离多少天
-        System.out.println(DistanceDays);
-//		String timeStamp = timeStamp();
-//		String date = timeStampDate(timeStamp, null);
-//		String date2 = timeStampDate2(timeStamp, null);
-//		System.out.println(date);
-//		System.out.println(date2);
-        String timeStemp = timeToStampshot("2020-03");
-        String date = timeStampDateChineseshot(timeStemp, null);
-        System.out.println(timeStemp);
-        System.out.println(date);
+//        String startday = "2020-03-13";// 到期时间
+//        String endday = "2020-03-13";// 当前时间
+//        Map<String, Object> DistanceDays = getDistanceDays(startday, endday);// 两个时间之间相差距离多少天
+//        System.out.println(DistanceDays);
+////		String timeStamp = timeStamp();
+////		String date = timeStampDate(timeStamp, null);
+////		String date2 = timeStampDate2(timeStamp, null);
+////		System.out.println(date);
+////		System.out.println(date2);
+//        String timeStemp = timeToStampshot("2020-03");
+//        String date = timeStampDateChineseshot(timeStemp, null);
+//        System.out.println(timeStemp);
+//        System.out.println(date);
+        String number = getPnumber();
+        System.out.println(number);
     }
 }

@@ -34,6 +34,7 @@ public class ProjectServiceImpl implements ProjectService {
         } else {// 不存在 添加
             String currentTime = Utils.getCurrent();
             project.setCreattime(currentTime);
+            project.setPnumber(Utils.getPnumber());
             project.setMaterialuid(project.getUid());
             projectMapper.insertProject(project);
 
@@ -75,6 +76,11 @@ public class ProjectServiceImpl implements ProjectService {
         String creattime = Utils.getCurrentHMS();
         applayProjectUser.setCreattime(creattime);
         return projectMapper.insertApplayProjectUser(applayProjectUser);
+    }
+
+    @Override
+    public List<ApplayProjectUser> queryApplayProjectUserByPid(int pid) {
+        return projectMapper.queryApplayProjectUserByPid(pid);
     }
 
 }

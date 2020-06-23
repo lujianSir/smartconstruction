@@ -16,6 +16,8 @@ public interface UserService {
     //修改用户信息
     Result<?> updateUserMessage(User user);
 
+    Result<?> updateUserMessageByUid(User user);
+
     //通过手机验证码或者手机密码登录
     Result<?> loginUserByTelOrPassWord(User user, String code);
 

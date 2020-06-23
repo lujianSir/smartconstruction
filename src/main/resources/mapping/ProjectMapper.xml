@@ -327,6 +327,7 @@
         a.pid,
         a.pabbreviation,
         a.pnumber,
+        a.creattime,
         b.cname pcompany,
         c.username,
         CASE when a.pid in (select pid FROM projectuser where uid =#{uid}) then 1 else 0 end agreestatus,
@@ -340,11 +341,16 @@
                 a.pname like concat('%',#{str},'%') or a.pnumber like concat('%',#{str},'%')
             </if>
         </where>
-
+        order by a.creattime desc
     </select>
 
     <!--发起申请-->
     <insert id="insertApplayProjectUser" parameterType="com.bwsk.entity.ApplayProjectUser">
         insert  into applayprojectuser (pid,uid,rmark,creattime) values(#{pid},#{uid},#{rmark},#{creattime})
     </insert>
+
+    <!--通过项目ID查询所有的申请人员-->
+    <select id="queryApplayProjectUserByPid" resultType="com.bwsk.entity.ApplayProjectUser">
+          select * from applayprojectuser where pid =#{pid}
+    </select>
 </mapper>

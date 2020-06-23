@@ -87,6 +87,18 @@ public class UserController {
     }
 
     /**
+     * 通过ID修改用户信息
+     *
+     * @param user
+     * @return
+     */
+    @RequestMapping(value = "updateUserMessageByUid", method = RequestMethod.POST)
+    public Result<?> updateUserMessageByUid(User user) {
+
+        return userService.updateUserMessageByUid(user);
+    }
+
+    /**
      * 通过验证码或者密码登录
      *
      * @param user

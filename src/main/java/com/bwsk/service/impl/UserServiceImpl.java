@@ -65,6 +65,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Result<?> updateUserMessageByUid(User user) {
+        int row = userMapper.updateUserMessage(user);
+        if (row > 0) {
+            return Result.success(user);
+        } else {
+            return Result.error(500, "服务器错误");
+        }
+    }
+
+    @Override
     public Result<?> loginUserByTelOrPassWord(User user, String code) {
         User u = userMapper.queryUserMessageByTel(user);
         if (u != null) {//账号存在

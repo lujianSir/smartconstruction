@@ -24,4 +24,7 @@ public interface ProjectService {
 
     //添加发起申请
     int insertApplayProjectUser(ApplayProjectUser applayProjectUser);
+
+    //通过项目的ID查询所有的申请人员
+    List<ApplayProjectUser> queryApplayProjectUserByPid(int pid);
 }
