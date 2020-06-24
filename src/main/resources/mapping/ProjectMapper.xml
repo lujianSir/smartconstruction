@@ -330,7 +330,7 @@
         a.creattime,
         b.cname pcompany,
         c.username,
-        CASE when a.pid in (select pid FROM projectuser wqueryApplayProjectUserByPidhere uid =#{uid}) then 1 else 0 end
+        CASE when a.pid in (select pid FROM projectuser where uid =#{uid}) then 1 else 0 end
         agreestatus,
         CASE when a.pid in (select pid FROM applayprojectuser where uid =#{uid}) then 1 else 0 end applystatus
         FROM
