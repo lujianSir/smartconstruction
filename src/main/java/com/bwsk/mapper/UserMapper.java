@@ -1,5 +1,6 @@
 package com.bwsk.mapper;
 
+import com.bwsk.entity.ImageUrl;
 import com.bwsk.entity.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -23,4 +24,7 @@ public interface UserMapper {
 
     //通过手机或者ID查询用户信息
     User queryUserByUidOrTel(User user);
+
+    //查询所有的m默认图片
+    List<ImageUrl> queryImageUrls();
 }

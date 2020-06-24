@@ -115,4 +115,9 @@ public class UserServiceImpl implements UserService {
         return Result.success(userMapper.queryUserByUidOrTel(user));
     }
 
+    @Override
+    public Result<?> queryImageUrls() {
+        return Result.success(userMapper.queryImageUrls());
+    }
+
 }

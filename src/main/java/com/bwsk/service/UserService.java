@@ -27,4 +27,6 @@ public interface UserService {
     //通过手机或者ID查询用户信息
     Result<?> queryUserByUidOrTel(User user);
 
+    //查询所有的默认图片
+    Result<?> queryImageUrls();
 }

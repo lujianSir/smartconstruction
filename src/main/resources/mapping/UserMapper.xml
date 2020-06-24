@@ -121,4 +121,8 @@
             </if>
         </where>
     </select>
+
+    <select id="queryImageUrls" resultType="com.bwsk.entity.ImageUrl">
+        select  * from imageurl
+    </select>
 </mapper>

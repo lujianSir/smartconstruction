@@ -134,4 +134,14 @@ public class UserController {
     public Result<?> queryUserByUidOrTel(User user) {
         return userService.queryUserByUidOrTel(user);
     }
+
+    /**
+     * 查询所有的默认图片
+     *
+     * @return
+     */
+    @RequestMapping(value = "/queryImageUrls", method = RequestMethod.POST)
+    public Result<?> queryImageUrls() {
+        return userService.queryImageUrls();
+    }
 }
