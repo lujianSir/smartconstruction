@@ -50,7 +50,15 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public List<Project> queryProject(Project project) {
         // TODO Auto-generated method stub
-        return projectMapper.queryProject(project);
+        List<Project> list = projectMapper.queryProject(project);
+        if (list.size() > 0) {
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i).getPid() == 0) {
+                    list.remove(i);
+                }
+            }
+        }
+        return list;
     }
 
     @Override
