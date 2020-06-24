@@ -3,6 +3,7 @@ package com.bwsk.service.impl;
 import com.bwsk.entity.ApplayProjectUser;
 import com.bwsk.entity.Project;
 import com.bwsk.entity.ProjectUser;
+import com.bwsk.entity.Result;
 import com.bwsk.mapper.ProjectMapper;
 import com.bwsk.service.ProjectService;
 import com.bwsk.util.Utils;
@@ -81,6 +82,22 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public List<ApplayProjectUser> queryApplayProjectUserByPid(int pid) {
         return projectMapper.queryApplayProjectUserByPid(pid);
+    }
+
+    @Override
+    public Result<?> agreeApplayUser(ApplayProjectUser applayProjectUser) {
+        projectMapper.deleteApplayProjectUser(applayProjectUser);
+        ProjectUser projectuser = new ProjectUser();
+        projectuser.setPid(applayProjectUser.getPid());
+        projectuser.setUid(applayProjectUser.getUid());
+        projectMapper.insertProjectUser(projectuser);
+        return Result.success("操作成功");
+    }
+
+    @Override
+    public Result<?> cancelApplayUser(ApplayProjectUser applayProjectUser) {
+        projectMapper.deleteApplayProjectUser(applayProjectUser);
+        return Result.success("操作成功");
     }
 
 }

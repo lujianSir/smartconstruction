@@ -9,8 +9,26 @@ public class ApplayProjectUser implements Serializable {
 
     private int pid;//项目ID
     private int uid;//用户ID
+    private String username;//姓名
     private String rmark;//评论
     private String creattime;//创建时间
+    private String telphone;//手机
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getTelphone() {
+        return telphone;
+    }
+
+    public void setTelphone(String telphone) {
+        this.telphone = telphone;
+    }
 
     public int getPid() {
         return pid;

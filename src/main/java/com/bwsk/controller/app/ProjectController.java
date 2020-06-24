@@ -122,4 +122,26 @@ public class ProjectController {
         List<ApplayProjectUser> list = projectService.queryApplayProjectUserByPid(pid);
         return Result.success(list);
     }
+
+    /**
+     * 同意申请
+     *
+     * @param applayProjectUser
+     * @return
+     */
+    @RequestMapping(value = "agreeApplayUser", method = RequestMethod.POST)
+    public Result<?> agreeApplayUser(ApplayProjectUser applayProjectUser) {
+        return projectService.agreeApplayUser(applayProjectUser);
+    }
+
+    /**
+     * 拒绝申请
+     *
+     * @param applayProjectUser
+     * @return
+     */
+    @RequestMapping(value = "cancelApplayUser", method = RequestMethod.POST)
+    public Result<?> cancelApplayUser(ApplayProjectUser applayProjectUser) {
+        return projectService.cancelApplayUser(applayProjectUser);
+    }
 }

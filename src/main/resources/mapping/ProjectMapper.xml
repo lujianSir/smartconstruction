@@ -330,7 +330,8 @@
         a.creattime,
         b.cname pcompany,
         c.username,
-        CASE when a.pid in (select pid FROM projectuser where uid =#{uid}) then 1 else 0 end agreestatus,
+        CASE when a.pid in (select pid FROM projectuser wqueryApplayProjectUserByPidhere uid =#{uid}) then 1 else 0 end
+        agreestatus,
         CASE when a.pid in (select pid FROM applayprojectuser where uid =#{uid}) then 1 else 0 end applystatus
         FROM
         project a
@@ -351,6 +352,10 @@
 
     <!--通过项目ID查询所有的申请人员-->
     <select id="queryApplayProjectUserByPid" resultType="com.bwsk.entity.ApplayProjectUser">
-          select * from applayprojectuser where pid =#{pid}
+          select a.*,b.username,b.utelphone telphone from applayprojectuser a LEFT JOIN user b on a.uid=b.uid where a.pid =#{pid}
     </select>
+
+    <delete id="deleteApplayProjectUser" parameterType="com.bwsk.entity.ApplayProjectUser">
+        delete  from applayprojectuser where uid=#{uid} and pid=#{pid}
+    </delete>
 </mapper>

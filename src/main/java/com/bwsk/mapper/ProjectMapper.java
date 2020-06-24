@@ -47,4 +47,8 @@ public interface ProjectMapper {
 
     //通过项目的ID查询所有的申请人员
     List<ApplayProjectUser> queryApplayProjectUserByPid(int pid);
+
+    //删除申请
+    int deleteApplayProjectUser(ApplayProjectUser applayProjectUser);
+
 }

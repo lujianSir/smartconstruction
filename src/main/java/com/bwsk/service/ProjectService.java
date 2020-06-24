@@ -2,6 +2,7 @@ package com.bwsk.service;
 
 import com.bwsk.entity.ApplayProjectUser;
 import com.bwsk.entity.Project;
+import com.bwsk.entity.Result;
 
 import java.util.List;
 
@@ -27,4 +28,10 @@ public interface ProjectService {
 
     //通过项目的ID查询所有的申请人员
     List<ApplayProjectUser> queryApplayProjectUserByPid(int pid);
+
+    //同意申请
+    Result<?> agreeApplayUser(ApplayProjectUser applayProjectUser);
+
+    //取消申请
+    Result<?> cancelApplayUser(ApplayProjectUser applayProjectUser);
 }
