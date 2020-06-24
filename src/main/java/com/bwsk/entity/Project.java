@@ -60,9 +60,9 @@ public class Project {
 
     private String weixin;// 项目绑定的微信ID
 
-    private String userpower;// 项目负责人(编辑项目、收款管理)
+    private int userpower;// 项目负责人(编辑项目、收款管理)   1 代表是  0代表不是
 
-    private String materialpower;// 计划负责人(计划管理)
+    private int materialpower;// 计划负责人(计划管理)   1 代表是  0代表不是
 
     private List<UserInfo> userinfos;// 项目绑定的人
 
@@ -112,19 +112,19 @@ public class Project {
         this.cabbreviation = cabbreviation;
     }
 
-    public String getUserpower() {
+    public int getUserpower() {
         return userpower;
     }
 
-    public void setUserpower(String userpower) {
+    public void setUserpower(int userpower) {
         this.userpower = userpower;
     }
 
-    public String getMaterialpower() {
+    public int getMaterialpower() {
         return materialpower;
     }
 
-    public void setMaterialpower(String materialpower) {
+    public void setMaterialpower(int materialpower) {
         this.materialpower = materialpower;
     }
 
