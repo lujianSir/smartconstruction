@@ -186,6 +186,7 @@
     <!-- 个人查询 -->
     <select id="queryDailyStatisticByUid" resultType="com.bwsk.entity.DailyStatistic">
         SELECT
+        a.username,
         (
         SELECT
         count(dtime)
@@ -305,7 +306,8 @@
         a.pid,
         a.creattime,
         a.creatMouth,
-        b.weixin
+        b.weixin,
+        b.pname
         FROM
         daily a LEFT JOIN project b on a.pid=b.pid
         <where>

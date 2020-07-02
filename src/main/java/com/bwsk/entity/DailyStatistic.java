@@ -21,6 +21,18 @@ public class DailyStatistic extends Project {
 
     private List<Equipment> equipments;// 装备材料
 
+    private String username;//用户的名称
+
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    @Override
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public int getTotalAmountody() {
         return totalAmountody;
     }
