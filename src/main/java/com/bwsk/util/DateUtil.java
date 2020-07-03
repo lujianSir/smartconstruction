@@ -58,19 +58,42 @@ public class DateUtil {
         return calendar.getTimeInMillis();
     }
 
-    public static void main(String[] args) throws ParseException {
 
-        System.out.println(getCurrentMillis() / 1000);
+    public static String dayForWeek(String pTime) throws Throwable {
 
-        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
-        long cur = calendar.getTimeInMillis();
-        System.out.println(cur);
-        calendar.setTime(parseStringToDate("2018-09-28 16:00:03"));
-        long l = calendar.getTimeInMillis();
-        System.out.println(l);
+        Date tmpDate = format.parse(pTime);
 
-        System.out.println((cur - l) / 1000);
+        Calendar cal = Calendar.getInstance();
+
+        String[] weekDays = {"星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"};
+
+        try {
+
+            cal.setTime(tmpDate);
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        int w = cal.get(Calendar.DAY_OF_WEEK) - 1; // 指示一个星期中的某天。
+
+        if (w < 0)
+
+            w = 0;
+
+        return weekDays[w];
+
+    }
+
+    public static void main(String[] args) throws Throwable {
+
+        String a = dayForWeek("2020-07-03");
+
+        System.out.println(a);
 
     }
 }
