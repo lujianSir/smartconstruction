@@ -1,0 +1,19 @@
+package com.bwsk.service;
+
+import com.bwsk.entity.AddressMessage;
+import com.bwsk.entity.Result;
+
+public interface ClockRuleService {
+
+    //添加考勤地点信息
+    Result<?> insertAddreeMessage(AddressMessage addressMessage);
+
+    //根据ID修改考勤地点的信息
+    Result<?> updateAddreeMessageByAmId(AddressMessage addressMessage);
+
+    //根据ID删除考勤地址
+    Result<?> deleteAddreeMessageByAmId(AddressMessage addressMessage);
+
+    //根据ID查询考勤地址
+    Result<?> queryAddreeMessageByAmId(AddressMessage addressMessage);
+}

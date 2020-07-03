@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bwsk.mapper.DeptMapper">
+    <!--添加部门-->
+    <insert id="insertDept" parameterType="com.bwsk.entity.Dept">
+        insert  into dept (deptname,deptremark,cid) values(#{deptname},#{deptremark},#{cid})
+    </insert>
+
+    <!--修改部门-->
+    <update id="updateDeptByDeptId" parameterType="com.bwsk.entity.Dept">
+        update dept
+        <set>
+            <if test="deptname != null and deptname!=''">
+                deptname=#{deptname},
+            </if>
+            <if test="deptremark != null and deptremark !=''">
+                deptremark=#{deptremark},
+            </if>
+        </set>
+        where deptid=#{deptid}
+    </update>
+
+    <!--删除部门-->
+    <delete id="deleteDeptByDeptId" parameterType="com.bwsk.entity.Dept">
+        delete  from dept where deptid=#{deptid}
+    </delete>
+
+    <!--查询部门-->
+    <select id="queryDeptByDeptId" resultType="com.bwsk.entity.Dept">
+        select  * from dept where deptid=#{deptid}
+    </select>
+
+    <!--用户绑定部门-->
+    <insert id="insertDeptByUsers" parameterType="java.util.List">
+        insert into deptuser
+        ( deptid,uid)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.deptid},
+            #{item.uid}
+            )
+        </foreach>
+    </insert>
+
+    <!--部门与用户解绑-->
+    <delete id="deleteDeptByUserId" parameterType="com.bwsk.entity.DeptUser">
+        delete  from  deptuser where  deptid=#{deptid} and uid=#{uid}
+    </delete>
+
+    <!--通过部门ID查询对应的人员-->
+    <select id="queryUserByDeptId" resultType="com.bwsk.entity.DeptUser">
+        select a.*,b.username from deptuser a left join user b on a.uid=b.uid
+    </select>
+</mapper>

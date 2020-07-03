@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bwsk.mapper.ClockRuleMapper">
+    <!--添加位置信息-->
+    <insert id="insertAddreeMessage" parameterType="com.bwsk.entity.AddressMessage" useGeneratedKeys="true"
+            keyProperty="amid">
+        insert into addressmessage
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="amname != null and amname!=''">
+                amname,
+            </if>
+            <if test="amrange != null and amrange !=''">
+                amrange,
+            </if>
+            <if test="amdetail != null and amdetail !=''">
+                amdetail,
+            </if>
+            <if test="amlatitude != null and amlatitude!=''">
+                amlatitude,
+            </if>
+            <if test="amlongitude != null and amlongitude!=''">
+                amlongitude,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="amname != null and amname!=''">
+                #{amname},
+            </if>
+            <if test="amrange != null and amrange !=''">
+                #{amrange},
+            </if>
+            <if test="amdetail != null and amdetail !=''">
+                #{amdetail},
+            </if>
+            <if test="amlatitude != null and amlatitude!=''">
+                #{amlatitude},
+            </if>
+            <if test="amlongitude != null and amlongitude!=''">
+                #{amlongitude},
+            </if>
+        </trim>
+    </insert>
+
+    <!--修改位置信息-->
+    <update id="updateAddreeMessageByAmId" parameterType="com.bwsk.entity.AddressMessage">
+        update addressmessage
+        <set>
+            <if test="amname != null and amname!=''">
+                amname=#{amname},
+            </if>
+            <if test="amrange != null and amrange !=''">
+                amrange=#{amrange},
+            </if>
+            <if test="amdetail != null and amdetail !=''">
+                amdetail=#{amdetail},
+            </if>
+            <if test="amlatitude != null and amlatitude!=''">
+                amlatitude=#{amlatitude},
+            </if>
+            <if test="amlongitude != null and amlongitude!=''">
+                amlongitude=#{amlongitude},
+            </if>
+        </set>
+        where amid=#{amid}
+    </update>
+
+    <!--删除位置信息-->
+    <delete id="deleteAddreeMessageByAmId" parameterType="com.bwsk.entity.AddressMessage">
+        delete from addressmessage where amid=#{amid}
+    </delete>
+
+    <!--查询位置信息-->
+    <select id="queryAddreeMessageByAmId" resultType="com.bwsk.entity.AddressMessage">
+        select *from addressmessage where amid=#{amid}
+    </select>
+
+</mapper>

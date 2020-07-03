@@ -7,6 +7,8 @@ public class DeptUser {
 
     private int uid;//用户ID
 
+    private String username;//用户名称
+
     private int deptid;//部门ID
 
     public int getUid() {
@@ -23,5 +25,13 @@ public class DeptUser {
 
     public void setDeptid(int deptid) {
         this.deptid = deptid;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
