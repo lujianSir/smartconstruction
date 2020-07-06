@@ -3,6 +3,7 @@ package com.bwsk.controller.app;
 import com.bwsk.entity.AddressMessage;
 import com.bwsk.entity.ClockRule;
 import com.bwsk.entity.Result;
+import com.bwsk.entity.RuleUser;
 import com.bwsk.service.ClockRuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -73,5 +74,22 @@ public class ClockRuleController {
     public Result<?> insertClockRule(ClockRule clockRule) {
         return clockRuleService.insertClockRule(clockRule);
     }
+
+
+    /**
+     * 查询打卡规则
+     *
+     * @param currentTime
+     * @param ruleUser
+     * @param x2
+     * @param y2
+     * @return
+     * @throws Throwable
+     */
+    @RequestMapping(value = "/queryClockRuleByUidAndCid", method = RequestMethod.POST)
+    public Result<?> queryClockRuleByUidAndCid(String currentTime, RuleUser ruleUser, String x2, String y2) throws Throwable {
+        return clockRuleService.queryClockRuleByUidAndCid(currentTime, ruleUser, x2, y2);
+    }
+
 
 }

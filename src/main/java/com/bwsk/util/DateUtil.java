@@ -1,11 +1,13 @@
 package com.bwsk.util;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author: jenkinwang
@@ -100,13 +102,13 @@ public class DateUtil {
 
 
     /**
-     * 获取当月的工作日
+     * 获取当月的工作日的次数
      *
      * @param year
      * @param month
      * @return
      */
-    public static List<Date> getDates(int year, int month) {
+    public static int getDates(int year, int month) {
         List<Date> dates = new ArrayList<Date>();
 
         Calendar cal = Calendar.getInstance();
@@ -124,19 +126,67 @@ public class DateUtil {
             }
             cal.add(Calendar.DATE, 1);
         }
-        return dates;
+        return dates.size();
+    }
+
+    public static String requestHoliday(String httpArg) {
+        String httpUrl = "http://tool.bitefu.net/jiari/";
+        BufferedReader reader = null;
+        String result = null;
+        StringBuffer sbf = new StringBuffer();
+        httpUrl = httpUrl + "?d=" + httpArg;
+        try {
+            URL url = new URL(httpUrl);
+            HttpURLConnection connection = (HttpURLConnection) url
+                    .openConnection();
+            connection.setRequestMethod("GET");
+            connection.connect();
+            InputStream is = connection.getInputStream();
+            reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            String strRead = null;
+            while ((strRead = reader.readLine()) != null) {
+                sbf.append(strRead);
+            }
+            reader.close();
+            result = sbf.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    //获取是否是工作日以及周几
+    public static Map<String, String> getWeeKMsg(String httpArg) throws Throwable {
+        String jsonResult = requestHoliday(httpArg);
+        Map<String, String> map = new HashMap<String, String>();
+        // 0 上班  1周末 2节假日
+        if ("0".equals(jsonResult)) {
+            map.put("data", dayForWeek(httpArg));
+            map.put("msg", "上班");
+        }
+        if ("1".equals(jsonResult)) {
+            map.put("data", dayForWeek(httpArg));
+            map.put("msg", "周末");
+        }
+        if ("2".equals(jsonResult)) {
+            map.put("data", dayForWeek(httpArg));
+            map.put("msg", "节假日");
+        }
+        return map;
     }
 
     public static void main(String[] args) throws Throwable {
 
-        String a = dayForWeek("2020-07-06");
+//        String a = dayForWeek("2020-07-06");
+//
+//        System.out.println(a);
+//        List<Date> dates = getDates(2020, 7);
+//        for (Date date : dates) {
+//            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+//            System.out.println(format.format(date));
+//        }
 
-        System.out.println(a);
-        List<Date> dates = getDates(2020, 7);
-        for (Date date : dates) {
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-            System.out.println(format.format(date));
-        }
-
+        String httpArg = "2020-05-01";
+        System.out.println(getWeeKMsg(httpArg));
     }
 }

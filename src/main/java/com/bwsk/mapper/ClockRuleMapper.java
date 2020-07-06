@@ -23,6 +23,9 @@ public interface ClockRuleMapper {
     //根据ID查询考勤地址
     AddressMessage queryAddreeMessageByAmId(AddressMessage addressMessage);
 
+    //通过多个ID查询考勤地址
+    List<AddressMessage> queryAddressMessageByAmids(@Param("amids") String[] amids);
+
     //通过企业的ID和用户的ID判断用户是否已经有绑定的打卡
     List<RuleUser> queryRuleUserByUidAndCid(@Param("cid") int cid, @Param("users") String[] users);
 
@@ -33,4 +36,7 @@ public interface ClockRuleMapper {
 
     //批量添加用户与打卡
     int insertRuleUsers(List<RuleUser> list);
+
+    //查询当前用户打卡规则
+    ClockRule queryClockRuleByUidAndCid(RuleUser ruleUser);
 }

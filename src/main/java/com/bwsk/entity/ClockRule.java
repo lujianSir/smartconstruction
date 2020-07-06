@@ -35,6 +35,26 @@ public class ClockRule implements Serializable {
 
     private String ruledata;//日期设置
 
+    private int holidaystatus;//法定节假日是否休息  1-休息 2-打卡
+
+    private boolean flag = false;//判断是否在打卡范围
+
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+
+    public int getHolidaystatus() {
+        return holidaystatus;
+    }
+
+    public void setHolidaystatus(int holidaystatus) {
+        this.holidaystatus = holidaystatus;
+    }
+
     public int getCrid() {
         return crid;
     }

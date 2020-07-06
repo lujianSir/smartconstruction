@@ -12,9 +12,9 @@ public class AddressMessage implements Serializable {
 
     private String amdetail;//地址的详细位置
 
-    private String amlatitude;//纬度
+    private String amlatitude;//经度
 
-    private String amlongitude;//经度
+    private String amlongitude;//纬度
 
     public int getAmid() {
         return amid;

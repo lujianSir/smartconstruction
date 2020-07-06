@@ -142,6 +142,9 @@
             <if test="ruledata != null and ruledata!=''">
                 ruledata,
             </if>
+            <if test="holidaystatus != null and holidaystatus!=''">
+                holidaystatus,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="cid != null and cid!=''">
@@ -183,6 +186,9 @@
             <if test="ruledata != null and ruledata!=''">
                 #{ruledata},
             </if>
+            <if test="holidaystatus != null and holidaystatus!=''">
+                #{holidaystatus},
+            </if>
         </trim>
     </insert>
 
@@ -194,4 +200,24 @@
             (#{item.crid},#{item.uid},#{item.cid})
         </foreach>
     </insert>
+
+    <!--查询当前用户打卡规则-->
+    <select id="queryClockRuleByUidAndCid" resultType="com.bwsk.entity.ClockRule">
+        SELECT
+            a.*, b.uid
+        FROM
+            clockrule a
+        LEFT JOIN ruleuser b ON a.crid = b.crid
+        WHERE
+            a.cid = #{cid}
+        AND b.uid = #{uid}
+    </select>
+
+    <!--通过多个ID查询考勤地址-->
+    <select id="queryAddressMessageByAmids" resultType="com.bwsk.entity.AddressMessage">
+        select * from addressmessage where amid in
+        <foreach collection="amids" item="amid" open="(" close=")" separator=",">
+            #{amid}
+        </foreach>
+    </select>
 </mapper>
