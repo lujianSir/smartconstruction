@@ -25,4 +25,7 @@ public interface DeptService {
 
     //通过部门ID查询里面的人员
     Result<?> queryUserByDeptId(int deptid);
+
+    //查询用户不在部门的
+    Result<?> queryUserNotDept();
 }

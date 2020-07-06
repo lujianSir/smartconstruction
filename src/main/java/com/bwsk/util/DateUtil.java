@@ -2,8 +2,10 @@ package com.bwsk.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author: jenkinwang
@@ -59,6 +61,13 @@ public class DateUtil {
     }
 
 
+    /**
+     * 查询当前是星期几
+     *
+     * @param pTime
+     * @return
+     * @throws Throwable
+     */
     public static String dayForWeek(String pTime) throws Throwable {
 
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -89,11 +98,45 @@ public class DateUtil {
 
     }
 
+
+    /**
+     * 获取当月的工作日
+     *
+     * @param year
+     * @param month
+     * @return
+     */
+    public static List<Date> getDates(int year, int month) {
+        List<Date> dates = new ArrayList<Date>();
+
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, year);
+        cal.set(Calendar.MONTH, month - 1);
+        cal.set(Calendar.DATE, 1);
+
+
+        while (cal.get(Calendar.YEAR) == year &&
+                cal.get(Calendar.MONTH) < month) {
+            int day = cal.get(Calendar.DAY_OF_WEEK);
+
+            if (!(day == Calendar.SUNDAY || day == Calendar.SATURDAY)) {
+                dates.add((Date) cal.getTime().clone());
+            }
+            cal.add(Calendar.DATE, 1);
+        }
+        return dates;
+    }
+
     public static void main(String[] args) throws Throwable {
 
-        String a = dayForWeek("2020-07-03");
+        String a = dayForWeek("2020-07-06");
 
         System.out.println(a);
+        List<Date> dates = getDates(2020, 7);
+        for (Date date : dates) {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            System.out.println(format.format(date));
+        }
 
     }
 }

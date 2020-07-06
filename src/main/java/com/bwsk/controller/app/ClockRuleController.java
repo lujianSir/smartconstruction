@@ -1,6 +1,7 @@
 package com.bwsk.controller.app;
 
 import com.bwsk.entity.AddressMessage;
+import com.bwsk.entity.ClockRule;
 import com.bwsk.entity.Result;
 import com.bwsk.service.ClockRuleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,6 +61,17 @@ public class ClockRuleController {
     @RequestMapping(value = "/queryAddreeMessageByAmId", method = RequestMethod.POST)
     public Result<?> queryAddreeMessageByAmId(AddressMessage addressMessage) {
         return clockRuleService.queryAddreeMessageByAmId(addressMessage);
+    }
+
+    /**
+     * 添加规则
+     *
+     * @param clockRule
+     * @return
+     */
+    @RequestMapping(value = "/insertClockRule", method = RequestMethod.POST)
+    public Result<?> insertClockRule(ClockRule clockRule) {
+        return clockRuleService.insertClockRule(clockRule);
     }
 
 }

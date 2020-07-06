@@ -74,4 +74,124 @@
         select *from addressmessage where amid=#{amid}
     </select>
 
+    <!--通过企业的ID和用户的ID判断用户是否已经有绑定的打卡-->
+    <select id="queryRuleUserByUidAndCid" resultType="com.bwsk.entity.RuleUser">
+        SELECT
+        a.*, b.username,c.crname
+        FROM
+        ruleuser a
+        LEFT JOIN USER b ON a.uid = b.uid LEFT JOIN clockrule c on a.crid=c.crid where a.cid=#{cid} and a.uid in
+        <foreach collection="users" item="uid" open="(" close=")" separator=",">
+            #{uid}
+        </foreach>
+    </select>
+
+    <!--通过企业的ID和用户的ID判断用户是否已经有绑定的打卡-->
+    <select id="queryRuleUserListByUidAndCid" resultType="com.bwsk.entity.RuleUser">
+        SELECT
+        a.*, b.username,c.crname
+        FROM
+        ruleuser a
+        LEFT JOIN USER b ON a.uid = b.uid LEFT JOIN clockrule c on a.crid=c.crid where a.cid=#{cid} and a.uid in
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+            #{item}
+        </foreach>
+    </select>
+
+    <!--添加打卡规则-->
+    <insert id="insertClockRule" parameterType="com.bwsk.entity.ClockRule" useGeneratedKeys="true"
+            keyProperty="crid">
+        insert into clockrule
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="cid != null and cid!=''">
+                cid,
+            </if>
+            <if test="crname != null and crname !=''">
+                crname,
+            </if>
+            <if test="crstyle != null and crstyle !=''">
+                crstyle,
+            </if>
+            <if test="amids != null and amids!=''">
+                amids,
+            </if>
+            <if test="userrulestyle != null and userrulestyle!=''">
+                userrulestyle,
+            </if>
+            <if test="users != null and users!=''">
+                users,
+            </if>
+            <if test="deptids != null and deptids!=''">
+                deptids,
+            </if>
+            <if test="firsttime != null and firsttime!=''">
+                firsttime,
+            </if>
+            <if test="sencondtime != null and sencondtime!=''">
+                sencondtime,
+            </if>
+            <if test="tsstyle != null and tsstyle!=''">
+                tsstyle,
+            </if>
+            <if test="threetime != null and threetime!=''">
+                threetime,
+            </if>
+            <if test="fourtime != null and fourtime!=''">
+                fourtime,
+            </if>
+            <if test="ruledata != null and ruledata!=''">
+                ruledata,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="cid != null and cid!=''">
+                #{cid},
+            </if>
+            <if test="crname != null and crname !=''">
+                #{crname},
+            </if>
+            <if test="crstyle != null and crstyle !=''">
+                #{crstyle},
+            </if>
+            <if test="amids != null and amids!=''">
+                #{amids},
+            </if>
+            <if test="userrulestyle != null and userrulestyle!=''">
+                #{userrulestyle},
+            </if>
+            <if test="users != null and users!=''">
+                #{users},
+            </if>
+            <if test="deptids != null and deptids!=''">
+                #{deptids},
+            </if>
+            <if test="firsttime != null and firsttime!=''">
+                #{firsttime},
+            </if>
+            <if test="sencondtime != null and sencondtime!=''">
+                #{sencondtime},
+            </if>
+            <if test="tsstyle != null and tsstyle!=''">
+                #{tsstyle},
+            </if>
+            <if test="threetime != null and threetime!=''">
+                #{threetime},
+            </if>
+            <if test="fourtime != null and fourtime!=''">
+                #{fourtime},
+            </if>
+            <if test="ruledata != null and ruledata!=''">
+                #{ruledata},
+            </if>
+        </trim>
+    </insert>
+
+    <!--批量添加用户与打卡-->
+    <insert id="insertRuleUsers" parameterType="com.bwsk.entity.RuleUser">
+        insert into ruleuser (crid,uid,cid)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.crid},#{item.uid},#{item.cid})
+        </foreach>
+    </insert>
 </mapper>

@@ -7,11 +7,13 @@ import com.bwsk.mapper.DeptMapper;
 import com.bwsk.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Transactional
 public class DeptServiceImpl implements DeptService {
 
     @Autowired
@@ -93,5 +95,10 @@ public class DeptServiceImpl implements DeptService {
     public Result<?> queryUserByDeptId(int deptid) {
         List<DeptUser> list = deptMapper.queryUserByDeptId(deptid);
         return Result.success(list);
+    }
+
+    @Override
+    public Result<?> queryUserNotDept() {
+        return Result.success(deptMapper.queryUserNotDept());
     }
 }

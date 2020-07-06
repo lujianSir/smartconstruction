@@ -1,6 +1,7 @@
 package com.bwsk.service;
 
 import com.bwsk.entity.AddressMessage;
+import com.bwsk.entity.ClockRule;
 import com.bwsk.entity.Result;
 
 public interface ClockRuleService {
@@ -16,4 +17,8 @@ public interface ClockRuleService {
 
     //根据ID查询考勤地址
     Result<?> queryAddreeMessageByAmId(AddressMessage addressMessage);
+
+
+    //添加打卡规则
+    Result<?> insertClockRule(ClockRule clockRule);
 }

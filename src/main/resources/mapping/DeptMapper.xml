@@ -50,6 +50,11 @@
 
     <!--通过部门ID查询对应的人员-->
     <select id="queryUserByDeptId" resultType="com.bwsk.entity.DeptUser">
-        select a.*,b.username from deptuser a left join user b on a.uid=b.uid
+        select a.*,b.username from deptuser a left join user b on a.uid=b.uid where a.deptid=#{deptid}
+    </select>
+
+    <!--查询用户不在部门的-->
+    <select id="queryUserNotDept" resultType="com.bwsk.entity.User">
+        select * from user where uid not in (select uid from deptuser)
     </select>
 </mapper>

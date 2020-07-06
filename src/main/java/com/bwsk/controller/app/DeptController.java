@@ -97,4 +97,13 @@ public class DeptController {
         return deptService.queryUserByDeptId(deptid);
     }
 
+    /**
+     * 查询没有绑定部门的用户
+     *
+     * @return
+     */
+    @RequestMapping(value = "/queryUserNotDept", method = RequestMethod.POST)
+    public Result<?> queryUserNotDept() {
+        return deptService.queryUserNotDept();
+    }
 }

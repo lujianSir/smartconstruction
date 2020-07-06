@@ -2,6 +2,7 @@ package com.bwsk.mapper;
 
 import com.bwsk.entity.Dept;
 import com.bwsk.entity.DeptUser;
+import com.bwsk.entity.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -29,4 +30,7 @@ public interface DeptMapper {
 
     //通过部门ID查询对应的人员
     List<DeptUser> queryUserByDeptId(int deptid);
+
+    //查询用户不在部门的
+    List<User> queryUserNotDept();
 }
