@@ -204,13 +204,21 @@
     <!--查询当前用户打卡规则-->
     <select id="queryClockRuleByUidAndCid" resultType="com.bwsk.entity.ClockRule">
         SELECT
-            a.*, b.uid
+        a.*, b.uid
         FROM
-            clockrule a
+        clockrule a
         LEFT JOIN ruleuser b ON a.crid = b.crid
-        WHERE
-            a.cid = #{cid}
-        AND b.uid = #{uid}
+        <where>
+            <if test="crid!=null and crid !=''">
+                and a.crid=#{crid}
+            </if>
+            <if test="uid!=null and uid !=''">
+                and b.uid = #{uid}
+            </if>
+            <if test="cid!=null and cid !=''">
+                and a.cid = #{cid}
+            </if>
+        </where>
     </select>
 
     <!--通过多个ID查询考勤地址-->
@@ -219,5 +227,25 @@
         <foreach collection="amids" item="amid" open="(" close=")" separator=",">
             #{amid}
         </foreach>
+    </select>
+
+    <!--查询用户是否打卡过-->
+    <select id="queryClockUserByUidAndCid" resultType="com.bwsk.entity.ClockUser">
+        select * from clockuser
+        <where>
+            <if test="crid!=null and crid !=''">
+                and crid=#{crid}
+            </if>
+            <if test="uid!=null and uid !=''">
+                and uid=#{uid}
+            </if>
+            <if test="cid!=null and cid !=''">
+                and cid=#{cid}
+            </if>
+
+            <if test="currentday!=null and currentday !=''">
+                and currentday=#{currentday}
+            </if>
+        </where>
     </select>
 </mapper>

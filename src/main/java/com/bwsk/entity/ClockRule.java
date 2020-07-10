@@ -39,6 +39,16 @@ public class ClockRule implements Serializable {
 
     private boolean flag = false;//判断是否在打卡范围
 
+    private int isclock;//是否已经打卡过
+
+    public int getIsclock() {
+        return isclock;
+    }
+
+    public void setIsclock(int isclock) {
+        this.isclock = isclock;
+    }
+
     public boolean isFlag() {
         return flag;
     }

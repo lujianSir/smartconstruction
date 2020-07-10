@@ -129,6 +129,7 @@ public class ClockRuleServiceImpl implements ClockRuleService {
     @Override
     public Result<?> queryClockRuleByUidAndCid(String currentTime, RuleUser ruleUser, String x2, String y2) throws Throwable {
         ClockRule clockRule = clockRuleMapper.queryClockRuleByUidAndCid(ruleUser);
+        //判断该用户是否存在打卡规则
         if (clockRule == null) {
             return Result.error(500, "当前没有打卡规则，请联系管理员!");
         }
@@ -145,6 +146,8 @@ public class ClockRuleServiceImpl implements ClockRuleService {
         if (ruledata.indexOf(currentdata) == -1) {//不包括  也是不在这个范围内
             return Result.error(502, "周末不需要打卡");
         }
+
+        //判断是否在打卡范围内
         String amids = clockRule.getAmids();//获取当前打卡的范围
         List<AddressMessage> addressMessages = new ArrayList<AddressMessage>();
         if (amids != null && !amids.equals("")) {
@@ -158,9 +161,43 @@ public class ClockRuleServiceImpl implements ClockRuleService {
                 boolean flag = LocationUtils.checkDistance(Double.parseDouble(x1), Double.parseDouble(y1), Double.parseDouble(x2), Double.parseDouble(y2), addressMessages.get(i).getAmrange());
                 if (flag) {
                     clockRule.setFlag(true);
+                    break;
                 }
             }
         }
+        //判断当日是否已经打卡过
+        ClockUser clockUser = new ClockUser();
+        clockUser.setCurrentday(currentTime.substring(0, 9));
+        clockUser.setUid(ruleUser.getUid());
+        clockUser.setCid(ruleUser.getCid());
+        clockUser = clockRuleMapper.queryClockUserByUidAndCid(clockUser);
+        if (clockUser.getCuid() > 0) {
+            clockRule.setIsclock(clockUser.getCuid());
+        }
         return Result.success(clockRule);
+    }
+
+    @Override
+    public Result<?> insertOrUpdateClockUser(ClockUser clockUser) {
+        RuleUser ruleUser = new RuleUser();
+        ruleUser.setCrid(clockUser.getCrid());
+        ClockRule clockRule = clockRuleMapper.queryClockRuleByUidAndCid(ruleUser);
+        if (clockRule.getTsstyle() == 1) {//4次打卡
+            String standardfourtime = clockRule.getFourtime();//标准最后一次打卡时间
+            if (standardfourtime != null && !standardfourtime.equals("")) {//到最后一次打卡
+                if (clockUser.getFourstyle() == 1) {//正常打卡  为2则早退 不存在加班
+                    String actualfourtime = clockUser.getFourtime();//实际最后一次打卡时间
+                }
+            }
+
+        } else {//2次打卡
+            String standardsecondtime = clockRule.getSencondtime();//标准最后一次打卡时间
+            if (standardsecondtime != null && !standardsecondtime.equals("")) {
+                if (clockUser.getSencondstyle() == 1) {//正常打卡  为2则早退 不存在加班
+                    String actualsecondtime = clockUser.getSencondtime();//
+                }
+            }
+        }
+        return null;
     }
 }

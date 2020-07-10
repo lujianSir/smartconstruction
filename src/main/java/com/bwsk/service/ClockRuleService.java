@@ -1,9 +1,6 @@
 package com.bwsk.service;
 
-import com.bwsk.entity.AddressMessage;
-import com.bwsk.entity.ClockRule;
-import com.bwsk.entity.Result;
-import com.bwsk.entity.RuleUser;
+import com.bwsk.entity.*;
 
 public interface ClockRuleService {
 
@@ -25,4 +22,7 @@ public interface ClockRuleService {
 
     //查询当前用户的打卡规则
     Result<?> queryClockRuleByUidAndCid(String currentTime, RuleUser ruleUser, String x2, String y2) throws Throwable;
+
+    //打卡操作
+    Result<?> insertOrUpdateClockUser(ClockUser clockUser);
 }

@@ -2,6 +2,7 @@ package com.bwsk.mapper;
 
 import com.bwsk.entity.AddressMessage;
 import com.bwsk.entity.ClockRule;
+import com.bwsk.entity.ClockUser;
 import com.bwsk.entity.RuleUser;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -39,4 +40,7 @@ public interface ClockRuleMapper {
 
     //查询当前用户打卡规则
     ClockRule queryClockRuleByUidAndCid(RuleUser ruleUser);
+
+    //判断用户是否打卡过
+    ClockUser queryClockUserByUidAndCid(ClockUser clockUser);
 }
