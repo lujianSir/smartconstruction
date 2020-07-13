@@ -2,6 +2,7 @@ package com.bwsk.mapper;
 
 import com.bwsk.entity.ApplayCompanyUser;
 import com.bwsk.entity.Company;
+import com.bwsk.entity.CompanyUser;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -31,4 +32,17 @@ public interface CompanyMapper {
     int insertApplayCompanyUser(ApplayCompanyUser applayCompanyUser);
 
     List<Company> queryCompanyByCnameOrCabbreviation(Company company);
+
+    //用户创建企业的时候进行绑定
+    void insertCompanyUser(CompanyUser companyUser);
+
+    //删除申请人
+    void deleteApplayCompanyUser(CompanyUser companyUser);
+
+    //查询所有的申请人员
+    List<ApplayCompanyUser> queryApplayCompanyUser(ApplayCompanyUser applayCompanyUser);
+
+    //查询已经加入的人员
+    List<CompanyUser> queryCompanyUser(CompanyUser companyUser);
+
 }

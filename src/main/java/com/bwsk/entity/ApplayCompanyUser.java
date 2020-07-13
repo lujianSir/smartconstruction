@@ -9,8 +9,26 @@ public class ApplayCompanyUser implements Serializable {
 
     private int cid;//企业ID
     private int uid;//用户ID
+    private String username;//用户名称
+    private String telphone;//电话
     private String remark;//备注
     private String creattime;//创建时间
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getTelphone() {
+        return telphone;
+    }
+
+    public void setTelphone(String telphone) {
+        this.telphone = telphone;
+    }
 
     public int getCid() {
         return cid;

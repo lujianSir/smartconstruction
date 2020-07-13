@@ -2,6 +2,7 @@ package com.bwsk.service;
 
 import com.bwsk.entity.ApplayCompanyUser;
 import com.bwsk.entity.Company;
+import com.bwsk.entity.CompanyUser;
 import com.bwsk.entity.Result;
 
 import java.util.List;
@@ -22,4 +23,16 @@ public interface CompanyService {
 
     //通过名称或者简称查询
     Result<?> queryCompanyByCnameOrCabbreviation(Company company);
+
+    //查询申请加入的人
+    Result<?> queryApplayCompanyUser(ApplayCompanyUser applayCompanyUser);
+
+    //同意申请，添加公司与用户绑定
+    Result<?> insertCompanyUser(CompanyUser companyUser);
+
+    //拒绝申请
+    Result<?> deleteApplayCompanyUser(CompanyUser companyUser);
+
+    //查询已经加入的人
+    Result<?> queryCompanyUser(CompanyUser companyUser);
 }

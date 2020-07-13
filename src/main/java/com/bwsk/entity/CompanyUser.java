@@ -11,6 +11,26 @@ public class CompanyUser implements Serializable {
 
     private int uid;//用户ID
 
+    private String username;//用户名称
+
+    private String url;//图片
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     public int getCid() {
         return cid;
     }

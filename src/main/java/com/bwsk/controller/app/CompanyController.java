@@ -1,9 +1,6 @@
 package com.bwsk.controller.app;
 
-import com.bwsk.entity.ApplayCompanyUser;
-import com.bwsk.entity.Company;
-import com.bwsk.entity.Project;
-import com.bwsk.entity.Result;
+import com.bwsk.entity.*;
 import com.bwsk.service.CompanyService;
 import com.bwsk.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,5 +87,50 @@ public class CompanyController {
     @RequestMapping(value = "/queryCompanyByCnameOrCabbreviation", method = RequestMethod.POST)
     public Result<?> insertApplayCompanyUser(Company company) {
         return companyService.queryCompanyByCnameOrCabbreviation(company);
+    }
+
+    /**
+     * 查询申请加入企业的人
+     *
+     * @param applayCompanyUser
+     * @return
+     */
+    @RequestMapping(value = "/queryApplayCompanyUser", method = RequestMethod.POST)
+    public Result<?> queryApplayCompanyUser(ApplayCompanyUser applayCompanyUser) {
+        return companyService.queryApplayCompanyUser(applayCompanyUser);
+    }
+
+    /**
+     * 查询已经加入的人
+     *
+     * @param companyUser
+     * @return
+     */
+    @RequestMapping(value = "/queryCompanyUser", method = RequestMethod.POST)
+    public Result<?> queryCompanyUser(CompanyUser companyUser) {
+        return companyService.queryCompanyUser(companyUser);
+    }
+
+
+    /**
+     * 同意，用户与公司绑定
+     *
+     * @param companyUser
+     * @return
+     */
+    @RequestMapping(value = "/insertCompanyUser", method = RequestMethod.POST)
+    public Result<?> insertCompanyUser(CompanyUser companyUser) {
+        return companyService.insertCompanyUser(companyUser);
+    }
+
+    /**
+     * 拒绝
+     *
+     * @param companyUser
+     * @return
+     */
+    @RequestMapping(value = "/deleteApplayCompanyUser", method = RequestMethod.POST)
+    public Result<?> deleteApplayCompanyUser(CompanyUser companyUser) {
+        return companyService.deleteApplayCompanyUser(companyUser);
     }
 }

@@ -2,6 +2,7 @@ package com.bwsk.service.impl;
 
 import com.bwsk.entity.ApplayCompanyUser;
 import com.bwsk.entity.Company;
+import com.bwsk.entity.CompanyUser;
 import com.bwsk.entity.Result;
 import com.bwsk.mapper.CompanyMapper;
 import com.bwsk.service.CompanyService;
@@ -53,6 +54,10 @@ public class CompanyServiceImpl implements CompanyService {
                 String currentTime = Utils.getCurrent();
                 company.setCreattime(currentTime);
                 companyMapper.insertCompany(company);
+                CompanyUser companyUser = new CompanyUser();
+                companyUser.setCid(company.getCid());
+                companyUser.setUid(company.getUid());
+                companyMapper.insertCompanyUser(companyUser);
                 return Result.success("添加成功");
             }
         }
@@ -80,6 +85,31 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public Result<?> queryCompanyByCnameOrCabbreviation(Company company) {
         return Result.success(companyMapper.queryCompanyByCnameOrCabbreviation(company));
+    }
+
+    @Override
+    public Result<?> queryApplayCompanyUser(ApplayCompanyUser applayCompanyUser) {
+        List<ApplayCompanyUser> list = companyMapper.queryApplayCompanyUser(applayCompanyUser);
+        return Result.success(list);
+    }
+
+    @Override
+    public Result<?> insertCompanyUser(CompanyUser companyUser) {
+        companyMapper.insertCompanyUser(companyUser);
+        companyMapper.deleteApplayCompanyUser(companyUser);
+        return Result.success("操作成功");
+    }
+
+    @Override
+    public Result<?> deleteApplayCompanyUser(CompanyUser companyUser) {
+        companyMapper.deleteApplayCompanyUser(companyUser);
+        return Result.success("操作成功");
+    }
+
+    @Override
+    public Result<?> queryCompanyUser(CompanyUser companyUser) {
+        List<CompanyUser> list = companyMapper.queryCompanyUser(companyUser);
+        return Result.success(list);
     }
 
 }

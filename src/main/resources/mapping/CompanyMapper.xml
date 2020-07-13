@@ -3,7 +3,7 @@
 <mapper namespace="com.bwsk.mapper.CompanyMapper">
 
     <!--添加公司信息  -->
-    <insert id="insertCompany" parameterType="com.bwsk.entity.Company">
+    <insert id="insertCompany" parameterType="com.bwsk.entity.Company" useGeneratedKeys="true" keyProperty="cid">
         insert into company
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="cname != null and cname!=''">
@@ -129,5 +129,26 @@
             </if>
         </where>
         order by a.creattime desc
+    </select>
+
+    <!--用户和企业绑定-->
+    <insert id="insertCompanyUser" parameterType="com.bwsk.entity.CompanyUser">
+        insert into companyuser (cid,uid) values (#{cid},#{uid})
+    </insert>
+
+    <!--查询申请的人-->
+    <select id="queryApplayCompanyUser" parameterType="com.bwsk.entity.ApplayCompanyUser">
+          select a.*,b.username username ,b.utelphone telphone from applaycompanyuser a LEFT JOIN user b on a.uid=b.uid
+          where a.cid=#{cid}  ORDER BY a.creattime desc
+    </select>
+
+    <!--删除申请的人-->
+    <delete id="deleteApplayCompanyUser" parameterType="com.bwsk.entity.CompanyUser">
+        delete from applaycompanyuser where uid=#{uid} and cid=#{cid}
+    </delete>
+
+    <!--查询已加入的人-->
+    <select id="queryCompanyUser" parameterType="com.bwsk.entity.CompanyUser">
+        select a.*,b.username username ,b.upic url from companyuser a LEFT JOIN user b on a.uid=b.uid   where a.cid=#{cid}
     </select>
 </mapper>
