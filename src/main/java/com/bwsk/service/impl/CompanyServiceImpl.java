@@ -1,5 +1,6 @@
 package com.bwsk.service.impl;
 
+import com.bwsk.entity.ApplayCompanyUser;
 import com.bwsk.entity.Company;
 import com.bwsk.entity.Result;
 import com.bwsk.mapper.CompanyMapper;
@@ -62,6 +63,23 @@ public class CompanyServiceImpl implements CompanyService {
     public int deleteCompanyByCid(int cid) {
         // TODO Auto-generated method stub
         return companyMapper.deleteCompanyByCid(cid);
+    }
+
+    @Override
+    public Result<?> insertApplayCompanyUser(ApplayCompanyUser applayCompanyUser) {
+        String creattime = Utils.getCurrentHMS();
+        applayCompanyUser.setCreattime(creattime);
+        int row = companyMapper.insertApplayCompanyUser(applayCompanyUser);
+        if (row > 0) {
+            return Result.success("申请成功");
+        } else {
+            return Result.error(500, "申请失败");
+        }
+    }
+
+    @Override
+    public Result<?> queryCompanyByCnameOrCabbreviation(Company company) {
+        return Result.success(companyMapper.queryCompanyByCnameOrCabbreviation(company));
     }
 
 }

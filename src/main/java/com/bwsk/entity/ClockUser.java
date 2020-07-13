@@ -18,19 +18,59 @@ public class ClockUser implements Serializable {
 
     private int firststatus;//是否迟到(1-正常，2-迟到)
 
+    private String firstrrmark;//第一次迟到备注
+
     private String sencondtime;//第二次打卡时间
 
     private int sencondstyle;//是否迟到(1-正常，2-早退)
+
+    private String sencondrmark;//第二次早退备注
 
     private String threetime;//第三次打卡时间
 
     private int threestatus;//是否迟到(1-正常，2-迟到)
 
+    private String threeremark;//第三次迟到备注
+
     private String fourtime;//第四次打卡时间
 
     private int fourstyle;//是否迟到(1-正常，2-早退)
 
+    private String fourremark;//第四次早退备注
+
     private String workovertime;//加班时长(按分钟计算)
+
+    public String getFirstrrmark() {
+        return firstrrmark;
+    }
+
+    public void setFirstrrmark(String firstrrmark) {
+        this.firstrrmark = firstrrmark;
+    }
+
+    public String getSencondrmark() {
+        return sencondrmark;
+    }
+
+    public void setSencondrmark(String sencondrmark) {
+        this.sencondrmark = sencondrmark;
+    }
+
+    public String getThreeremark() {
+        return threeremark;
+    }
+
+    public void setThreeremark(String threeremark) {
+        this.threeremark = threeremark;
+    }
+
+    public String getFourremark() {
+        return fourremark;
+    }
+
+    public void setFourremark(String fourremark) {
+        this.fourremark = fourremark;
+    }
 
     public String getCurrentday() {
         return currentday;

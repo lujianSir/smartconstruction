@@ -28,6 +28,30 @@ public class Company implements Serializable {
 
     private String creattime;// 创建的时间
 
+    private int applaystatus;//是否申请
+
+    private int creatstatus;//是否是新建
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public int getApplaystatus() {
+        return applaystatus;
+    }
+
+    public void setApplaystatus(int applaystatus) {
+        this.applaystatus = applaystatus;
+    }
+
+    public int getCreatstatus() {
+        return creatstatus;
+    }
+
+    public void setCreatstatus(int creatstatus) {
+        this.creatstatus = creatstatus;
+    }
+
     public int getCid() {
         return cid;
     }

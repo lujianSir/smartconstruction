@@ -1,5 +1,6 @@
 package com.bwsk.mapper;
 
+import com.bwsk.entity.ApplayCompanyUser;
 import com.bwsk.entity.Company;
 import org.springframework.stereotype.Repository;
 
@@ -25,4 +26,9 @@ public interface CompanyMapper {
 
     //通过ID查询是否信息
     Company queryCompanyByCid(int cid);
+
+    //发起申请
+    int insertApplayCompanyUser(ApplayCompanyUser applayCompanyUser);
+
+    List<Company> queryCompanyByCnameOrCabbreviation(Company company);
 }

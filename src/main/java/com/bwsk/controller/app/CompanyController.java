@@ -1,5 +1,6 @@
 package com.bwsk.controller.app;
 
+import com.bwsk.entity.ApplayCompanyUser;
 import com.bwsk.entity.Company;
 import com.bwsk.entity.Project;
 import com.bwsk.entity.Result;
@@ -67,5 +68,27 @@ public class CompanyController {
             companyService.deleteCompanyByCid(project.getCid());
             return Result.success("删除成功");
         }
+    }
+
+    /**
+     * 发起申请
+     *
+     * @param applayCompanyUser
+     * @return
+     */
+    @RequestMapping(value = "/insertApplayCompanyUser", method = RequestMethod.POST)
+    public Result<?> insertApplayCompanyUser(ApplayCompanyUser applayCompanyUser) {
+        return companyService.insertApplayCompanyUser(applayCompanyUser);
+    }
+
+    /**
+     * 通过企业名称模糊查询
+     *
+     * @param company
+     * @return
+     */
+    @RequestMapping(value = "/queryCompanyByCnameOrCabbreviation", method = RequestMethod.POST)
+    public Result<?> insertApplayCompanyUser(Company company) {
+        return companyService.queryCompanyByCnameOrCabbreviation(company);
     }
 }

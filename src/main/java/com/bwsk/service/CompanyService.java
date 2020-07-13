@@ -1,5 +1,6 @@
 package com.bwsk.service;
 
+import com.bwsk.entity.ApplayCompanyUser;
 import com.bwsk.entity.Company;
 import com.bwsk.entity.Result;
 
@@ -16,4 +17,9 @@ public interface CompanyService {
     // 通过企业的ID删除企业
     int deleteCompanyByCid(int cid);
 
+    //发起申请
+    Result<?> insertApplayCompanyUser(ApplayCompanyUser applayCompanyUser);
+
+    //通过名称或者简称查询
+    Result<?> queryCompanyByCnameOrCabbreviation(Company company);
 }

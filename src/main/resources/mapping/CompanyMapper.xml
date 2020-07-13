@@ -101,4 +101,33 @@
     <select id="queryCompanyByCid" resultType="com.bwsk.entity.Company">
         select * from company where cid=#{cid}
     </select>
+
+    <!--发起申请-->
+    <insert id="insertApplayCompanyUser" parameterType="com.bwsk.entity.ApplayCompanyUser">
+        insert into applaycompanyuser (cid,uid,remark,creattime) values (#{cid},#{uid},#{remark},#{creattime})
+    </insert>
+
+    <select id="queryCompanyByCnameOrCabbreviation" resultType="com.bwsk.entity.Company">
+        SELECT
+        a.cid,
+        a.cname,
+        a.cabbreviation,
+        a.weixin,
+        a.uid,
+        <if test="uid!=null and uid !=''">
+            case when a.cid in (SELECT cid from applaycompanyuser where uid =#{uid}) then 1 else 0 end applaystatus,
+            case when a.cid in (SELECT cid from companyuser where uid=#{uid}) then 1 else 0 end creatstatus,
+        </if>
+        a.creattime,
+        b.username
+        FROM
+        company a
+        LEFT JOIN user b ON a.uid = b.uid
+        <where>
+            <if test="cname != null and cname != ''">
+                and a.cname like concat('%',#{cname},'%')
+            </if>
+        </where>
+        order by a.creattime desc
+    </select>
 </mapper>
