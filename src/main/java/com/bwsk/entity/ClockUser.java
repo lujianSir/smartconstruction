@@ -30,7 +30,7 @@ public class ClockUser implements Serializable {
 
     private int fourstyle;//是否迟到(1-正常，2-早退)
 
-    private String workovertime;//加班时长(分)
+    private String workovertime;//加班时长(按分钟计算)
 
     public String getCurrentday() {
         return currentday;

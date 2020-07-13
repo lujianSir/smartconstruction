@@ -248,4 +248,140 @@
             </if>
         </where>
     </select>
+
+    <!--添加用户打卡信息-->
+    <insert id="insertClockUser" parameterType="com.bwsk.entity.ClockUser">
+        insert into clockuser
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="uid != null and uid!=''">
+                uid,
+            </if>
+            <if test="crid != null and crid !=''">
+                crid,
+            </if>
+            <if test="firsttime != null and firsttime !=''">
+                firsttime,
+            </if>
+            <if test="firststatus != null and firststatus!=''">
+                firststatus,
+            </if>
+            <if test="sencondtime != null and sencondtime!=''">
+                sencondtime,
+            </if>
+            <if test="sencondstyle != null and sencondstyle!=''">
+                sencondstyle,
+            </if>
+            <if test="threetime != null and threetime!=''">
+                threetime,
+            </if>
+            <if test="threestatus != null and threestatus!=''">
+                threestatus,
+            </if>
+            <if test="fourtime != null and fourtime!=''">
+                fourtime,
+            </if>
+            <if test="fourstyle != null and fourstyle!=''">
+                fourstyle,
+            </if>
+            <if test="workovertime != null and workovertime!=''">
+                workovertime,
+            </if>
+            <if test="cid != null and cid!=''">
+                cid,
+            </if>
+            <if test="currentday != null and currentday!=''">
+                currentday,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="uid != null and uid!=''">
+                #{uid},
+            </if>
+            <if test="crid != null and crid !=''">
+                #{crid},
+            </if>
+            <if test="firsttime != null and firsttime !=''">
+                #{firsttime},
+            </if>
+            <if test="firststatus != null and firststatus!=''">
+                #{firststatus},
+            </if>
+            <if test="sencondtime != null and sencondtime!=''">
+                #{sencondtime},
+            </if>
+            <if test="sencondstyle != null and sencondstyle!=''">
+                #{sencondstyle},
+            </if>
+            <if test="threetime != null and threetime!=''">
+                #{threetime},
+            </if>
+            <if test="threestatus != null and threestatus!=''">
+                #{threestatus},
+            </if>
+            <if test="fourtime != null and fourtime!=''">
+                #{fourtime},
+            </if>
+            <if test="fourstyle != null and fourstyle!=''">
+                #{fourstyle},
+            </if>
+            <if test="workovertime != null and workovertime!=''">
+                #{workovertime},
+            </if>
+            <if test="cid != null and cid!=''">
+                #{cid},
+            </if>
+            <if test="currentday != null and currentday!=''">
+                #{currentday},
+            </if>
+        </trim>
+    </insert>
+
+
+    <!--修改用户打卡信息-->
+    <update id="updateClockUser" parameterType="com.bwsk.entity.ClockUser">
+        update clockuser
+        <set>
+            <if test="uid != null and uid!=''">
+                uid= #{uid},
+            </if>
+            <if test="crid != null and crid !=''">
+                crid=#{crid},
+            </if>
+            <if test="firsttime != null and firsttime !=''">
+                firsttime=#{firsttime},
+            </if>
+            <if test="firststatus != null and firststatus!=''">
+                firststatus=#{firststatus},
+            </if>
+            <if test="sencondtime != null and sencondtime!=''">
+                sencondtime=#{sencondtime},
+            </if>
+            <if test="sencondstyle != null and sencondstyle!=''">
+                sencondstyle=#{sencondstyle},
+            </if>
+            <if test="threetime != null and threetime!=''">
+                threetime=#{threetime},
+            </if>
+            <if test="threestatus != null and threestatus!=''">
+                threestatus=#{threestatus},
+            </if>
+            <if test="fourtime != null and fourtime!=''">
+                fourtime=#{fourtime},
+            </if>
+            <if test="fourstyle != null and fourstyle!=''">
+                fourstyle=#{fourstyle},
+            </if>
+            <if test="workovertime != null and workovertime!=''">
+                workovertime=#{workovertime},
+            </if>
+            <if test="cid != null and cid!=''">
+                cid=#{cid},
+            </if>
+            <if test="currentday != null and currentday!=''">
+                currentday=#{currentday},
+            </if>
+        </set>
+        where cuid=#{cuid}
+    </update>
+
 </mapper>

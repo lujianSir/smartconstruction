@@ -43,4 +43,10 @@ public interface ClockRuleMapper {
 
     //判断用户是否打卡过
     ClockUser queryClockUserByUidAndCid(ClockUser clockUser);
+
+    //添加用户打卡信息
+    int insertClockUser(ClockUser clockUser);
+
+    //修改用户打卡信息
+    int updateClockUser(ClockUser clockUser);
 }

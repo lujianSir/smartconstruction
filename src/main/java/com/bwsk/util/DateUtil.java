@@ -175,6 +175,30 @@ public class DateUtil {
         return map;
     }
 
+    public static String getHour(String startTime, String endTime, String format) throws Throwable {
+        //按照传入的格式生成一个simpledateformate对象
+        SimpleDateFormat sd = new SimpleDateFormat(format);
+        long nd = 1000 * 24 * 60 * 60;//一天的毫秒数
+        long nh = 1000 * 60 * 60;//一小时的毫秒数
+        long nm = 1000 * 60;//一分钟的毫秒数
+        long ns = 1000;//一秒钟的毫秒数
+        long diff;
+        //获得两个时间的毫秒时间差异
+        diff = sd.parse(endTime).getTime() - sd.parse(startTime).getTime();
+        long day = diff / nd;//计算差多少天
+        long hour = diff % nd / nh;//计算差多少小时
+        long min = diff % nd % nh / nm;//计算差多少分钟
+        long sec = diff % nd % nh % nm / ns;//计算差多少秒//输出结果
+        if (day > 0) {
+            hour = day * 24 + hour;
+        }
+        if (hour > 0) {
+            min = hour * 60 + min;
+        }
+        // System.out.println("时间相差：" + day + "天" + hour + "小时" + min + "分钟" + sec + "秒。");
+        return min + "";
+    }
+
     public static void main(String[] args) throws Throwable {
 
 //        String a = dayForWeek("2020-07-06");
@@ -186,7 +210,9 @@ public class DateUtil {
 //            System.out.println(format.format(date));
 //        }
 
-        String httpArg = "2020-05-01";
-        System.out.println(getWeeKMsg(httpArg));
+//        String httpArg = "2020-05-01";
+//        System.out.println(getWeeKMsg(httpArg));
+        String min = getHour("2014-05-27 17:00:00", "2014-05-27 18:40:58", "yyyy-MM-dd HH:mm");
+        System.out.println("---------相隔分钟数： " + min);
     }
 }

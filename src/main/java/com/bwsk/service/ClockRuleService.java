@@ -24,5 +24,5 @@ public interface ClockRuleService {
     Result<?> queryClockRuleByUidAndCid(String currentTime, RuleUser ruleUser, String x2, String y2) throws Throwable;
 
     //打卡操作
-    Result<?> insertOrUpdateClockUser(ClockUser clockUser);
+    Result<?> insertOrUpdateClockUser(ClockUser clockUser) throws Throwable;
 }

@@ -178,26 +178,44 @@ public class ClockRuleServiceImpl implements ClockRuleService {
     }
 
     @Override
-    public Result<?> insertOrUpdateClockUser(ClockUser clockUser) {
+    public Result<?> insertOrUpdateClockUser(ClockUser clockUser) throws Throwable {
         RuleUser ruleUser = new RuleUser();
         ruleUser.setCrid(clockUser.getCrid());
-        ClockRule clockRule = clockRuleMapper.queryClockRuleByUidAndCid(ruleUser);
-        if (clockRule.getTsstyle() == 1) {//4次打卡
-            String standardfourtime = clockRule.getFourtime();//标准最后一次打卡时间
+        ruleUser.setUid(clockUser.getUid());
+        ruleUser.setCid(clockUser.getCid());
+        ClockRule cRule = clockRuleMapper.queryClockRuleByUidAndCid(ruleUser);
+        if (cRule.getTsstyle() == 1) {//4次打卡
+            String standardfourtime = cRule.getFourtime();//标准最后一次打卡时间
             if (standardfourtime != null && !standardfourtime.equals("")) {//到最后一次打卡
                 if (clockUser.getFourstyle() == 1) {//正常打卡  为2则早退 不存在加班
                     String actualfourtime = clockUser.getFourtime();//实际最后一次打卡时间
+                    String min = DateUtil.getHour(clockUser.getCurrentday() + " " + standardfourtime, clockUser.getCurrentday() + " " + actualfourtime, "yyyy-MM-dd HH:mm");
+                    clockUser.setWorkovertime(min);
                 }
             }
 
         } else {//2次打卡
-            String standardsecondtime = clockRule.getSencondtime();//标准最后一次打卡时间
+            String standardsecondtime = cRule.getSencondtime();//标准最后一次打卡时间
             if (standardsecondtime != null && !standardsecondtime.equals("")) {
                 if (clockUser.getSencondstyle() == 1) {//正常打卡  为2则早退 不存在加班
                     String actualsecondtime = clockUser.getSencondtime();//
+                    String min = DateUtil.getHour(clockUser.getCurrentday() + standardsecondtime, clockUser.getCurrentday() + actualsecondtime, "yyyy-MM-dd HH:mm");
+                    clockUser.setWorkovertime(min);
                 }
             }
         }
-        return null;
+
+        int row = 0;
+        if (clockUser.getCuid() > 0) {//修改
+            row = clockRuleMapper.updateClockUser(clockUser);
+        } else {//添加
+            row = clockRuleMapper.insertClockUser(clockUser);
+        }
+        if (row > 0) {
+            return Result.success("打卡成功");
+        } else {
+            return Result.error(500, "打卡失败");
+        }
+
     }
 }

@@ -1,9 +1,6 @@
 package com.bwsk.controller.app;
 
-import com.bwsk.entity.AddressMessage;
-import com.bwsk.entity.ClockRule;
-import com.bwsk.entity.Result;
-import com.bwsk.entity.RuleUser;
+import com.bwsk.entity.*;
 import com.bwsk.service.ClockRuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -91,5 +88,15 @@ public class ClockRuleController {
         return clockRuleService.queryClockRuleByUidAndCid(currentTime, ruleUser, x2, y2);
     }
 
+    /**
+     * 打卡操作
+     *
+     * @param clockUser
+     * @return
+     */
+    @RequestMapping(value = "/insertOrUpdateClockUser", method = RequestMethod.POST)
+    public Result<?> insertOrUpdateClockUser(ClockUser clockUser) throws Throwable {
+        return clockRuleService.insertOrUpdateClockUser(clockUser);
+    }
 
 }
