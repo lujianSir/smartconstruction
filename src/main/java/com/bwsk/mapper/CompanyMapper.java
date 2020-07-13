@@ -3,6 +3,8 @@ package com.bwsk.mapper;
 import com.bwsk.entity.ApplayCompanyUser;
 import com.bwsk.entity.Company;
 import com.bwsk.entity.CompanyUser;
+import com.bwsk.entity.Dept;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -44,5 +46,11 @@ public interface CompanyMapper {
 
     //查询已经加入的人员
     List<CompanyUser> queryCompanyUser(CompanyUser companyUser);
+
+    //通过企业ID查询部门以及对应的人数s
+    List<Dept> queryDeptFromCompany(Company company);
+
+    //查询所有的人包括已经在部门下的
+    List<CompanyUser> queryAllUserByDeptId(@Param("dept") Dept dept, @Param("username") String username);
 
 }

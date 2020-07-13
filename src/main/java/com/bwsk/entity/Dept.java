@@ -1,5 +1,7 @@
 package com.bwsk.entity;
 
+import java.util.List;
+
 /**
  * 部门实体
  */
@@ -13,6 +15,25 @@ public class Dept {
 
     private String deptremark;//部门备注
 
+    private List<User> userList;
+
+    private String totaluser;//
+
+    public String getTotaluser() {
+        return totaluser;
+    }
+
+    public void setTotaluser(String totaluser) {
+        this.totaluser = totaluser;
+    }
+
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
 
     public int getDeptid() {
         return deptid;

@@ -1,6 +1,7 @@
 package com.bwsk.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 公司实体
@@ -28,9 +29,19 @@ public class Company implements Serializable {
 
     private String creattime;// 创建的时间
 
+    private List<Dept> deptList;//该企业下面的部门
+
     private int applaystatus;//是否申请
 
-    private int creatstatus;//是否是新建
+    private int creatstatus;//是否已经加入
+
+    public List<Dept> getDeptList() {
+        return deptList;
+    }
+
+    public void setDeptList(List<Dept> deptList) {
+        this.deptList = deptList;
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;

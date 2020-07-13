@@ -1,9 +1,6 @@
 package com.bwsk.service;
 
-import com.bwsk.entity.ApplayCompanyUser;
-import com.bwsk.entity.Company;
-import com.bwsk.entity.CompanyUser;
-import com.bwsk.entity.Result;
+import com.bwsk.entity.*;
 
 import java.util.List;
 
@@ -35,4 +32,10 @@ public interface CompanyService {
 
     //查询已经加入的人
     Result<?> queryCompanyUser(CompanyUser companyUser);
+
+    //通过企业ID查询部门以及对应的人数s
+    Result<?> queryDeptFromCompany(Company company);
+
+    //查询所有的人包括已经在部门下的
+    Result<?> queryAllUserByDeptId(Dept dept, String username);
 }

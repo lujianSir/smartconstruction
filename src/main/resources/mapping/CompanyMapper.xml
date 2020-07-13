@@ -2,6 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bwsk.mapper.CompanyMapper">
 
+    <resultMap id="deptResult" type="com.bwsk.entity.Dept">
+        <result property="deptid" column="deptid"/>
+        <result property="deptname" column="deptname"/>
+        <collection property="userList" resultMap="userResult"/>
+    </resultMap>
+
+    <resultMap id="userResult" type="com.bwsk.entity.User">
+        <result property="uid" column="uid"/>
+        <result property="username" column="username"/>
+    </resultMap>
+
+
     <!--添加公司信息  -->
     <insert id="insertCompany" parameterType="com.bwsk.entity.Company" useGeneratedKeys="true" keyProperty="cid">
         insert into company
@@ -137,7 +149,7 @@
     </insert>
 
     <!--查询申请的人-->
-    <select id="queryApplayCompanyUser" parameterType="com.bwsk.entity.ApplayCompanyUser">
+    <select id="queryApplayCompanyUser" resultType="com.bwsk.entity.ApplayCompanyUser">
           select a.*,b.username username ,b.utelphone telphone from applaycompanyuser a LEFT JOIN user b on a.uid=b.uid
           where a.cid=#{cid}  ORDER BY a.creattime desc
     </select>
@@ -148,7 +160,42 @@
     </delete>
 
     <!--查询已加入的人-->
-    <select id="queryCompanyUser" parameterType="com.bwsk.entity.CompanyUser">
+    <select id="queryCompanyUser" resultType="com.bwsk.entity.CompanyUser">
         select a.*,b.username username ,b.upic url from companyuser a LEFT JOIN user b on a.uid=b.uid   where a.cid=#{cid}
+    </select>
+
+    <!--通过企业ID查询部门以及对应的人数s-->
+    <select id="queryDeptFromCompany" resultMap="deptResult">
+        SELECT
+            c.deptname,
+            c.deptid,
+            e.username,
+            e.uid
+        FROM
+            company a
+        LEFT JOIN dept c on a.cid=c.cid
+        LEFT JOIN deptuser d on c.deptid=d.deptid
+        LEFT JOIN user e on d.uid=e.uid
+        WHERE
+            a.cid = #{cid}
+    </select>
+
+    <!--查询所有的人包括已经在部门下的-->
+    <select id="queryAllUserByDeptId" resultType="com.bwsk.entity.CompanyUser">
+        SELECT
+        companyuser.uid,
+        user.username,
+        user.upic url
+        <if test="dept.deptid!=null and dept.deptid !=''">
+            and case when companyuser.uid in (select uid from deptuser where deptid=#{dept.deptid}) then 1 else 0 end
+            userstyle
+        </if>
+        FROM
+        companyuser LEFT JOIN user on companyuser.uid=user.uid
+        WHERE
+        companyuser.cid = #{dept.cid}
+        <if test=" username!=null and username!=''">
+            and user.username like concat ('%',#{username},'%')
+        </if>
     </select>
 </mapper>

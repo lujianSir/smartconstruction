@@ -133,4 +133,26 @@ public class CompanyController {
     public Result<?> deleteApplayCompanyUser(CompanyUser companyUser) {
         return companyService.deleteApplayCompanyUser(companyUser);
     }
+
+    /**
+     * 通过企业ID查询部门以及对应的人数s
+     *
+     * @param company
+     * @return
+     */
+    @RequestMapping(value = "/queryDeptFromCompany", method = RequestMethod.POST)
+    public Result<?> queryDeptFromCompany(Company company) {
+        return companyService.queryDeptFromCompany(company);
+    }
+
+    /**
+     * 查询所有的人包括已经在部门下的
+     *
+     * @param dept
+     * @return
+     */
+    @RequestMapping(value = "/queryAllUserByDeptId", method = RequestMethod.POST)
+    public Result<?> queryAllUserByDeptId(Dept dept, String username) {
+        return companyService.queryAllUserByDeptId(dept, username);
+    }
 }

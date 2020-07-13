@@ -1,9 +1,6 @@
 package com.bwsk.service.impl;
 
-import com.bwsk.entity.ApplayCompanyUser;
-import com.bwsk.entity.Company;
-import com.bwsk.entity.CompanyUser;
-import com.bwsk.entity.Result;
+import com.bwsk.entity.*;
 import com.bwsk.mapper.CompanyMapper;
 import com.bwsk.service.CompanyService;
 import com.bwsk.util.Utils;
@@ -109,6 +106,39 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public Result<?> queryCompanyUser(CompanyUser companyUser) {
         List<CompanyUser> list = companyMapper.queryCompanyUser(companyUser);
+        return Result.success(list);
+    }
+
+    @Override
+    public Result<?> queryDeptFromCompany(Company company) {
+        List<Dept> deptList = companyMapper.queryDeptFromCompany(company);
+        if (deptList.size() > 0) {
+            for (int i = 0; i < deptList.size(); i++) {
+                List<User> userList = deptList.get(i).getUserList();
+                if (userList.size() > 0) {
+                    deptList.get(i).setTotaluser(userList.size() + "人");
+                } else {
+                    deptList.get(i).setTotaluser("0人");
+                }
+
+            }
+        }
+        return Result.success(deptList);
+    }
+
+    @Override
+    public Result<?> queryAllUserByDeptId(Dept dept, String username) {
+        List<CompanyUser> list = companyMapper.queryAllUserByDeptId(dept, username);
+        if (list.size() > 0) {
+            for (int i = 0; i < list.size(); i++) {
+                CompanyUser companyUser = list.get(i);
+                if (companyUser.getUserstyle() == 1) {
+                    list.get(i).setFlag(true);
+                } else {
+                    list.get(i).setFlag(false);
+                }
+            }
+        }
         return Result.success(list);
     }
 

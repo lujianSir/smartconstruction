@@ -15,6 +15,27 @@ public class CompanyUser implements Serializable {
 
     private String url;//图片
 
+    private int userstyle;//
+
+    private boolean flag;//
+
+
+    public int getUserstyle() {
+        return userstyle;
+    }
+
+    public void setUserstyle(int userstyle) {
+        this.userstyle = userstyle;
+    }
+
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+
     public String getUsername() {
         return username;
     }
