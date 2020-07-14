@@ -98,7 +98,39 @@ public class DeptServiceImpl implements DeptService {
     }
 
     @Override
-    public Result<?> queryUserNotDept() {
-        return Result.success(deptMapper.queryUserNotDept());
+    public Result<?> queryUserNotDept(Dept dept, String username) {
+        return Result.success(deptMapper.queryUserNotDept(dept, username));
+    }
+
+    @Override
+    public DeptUser queryDeptByUid(int cid, int uid) {
+        return deptMapper.queryDeptByUid(cid, uid);
+
+    }
+
+    @Override
+    public Result<?> updateDeptUserByUidAndDeptid(Dept dept, String users, String cid) {
+        List<DeptUser> list = new ArrayList<DeptUser>();
+        if (users != null && !users.equals("")) {
+            String[] us = users.split(",");
+            for (int i = 0; i < us.length; i++) {
+                DeptUser duser = deptMapper.queryDeptByUid(Integer.parseInt(cid), Integer.parseInt(us[i]));
+                if (duser != null) {
+                    deptMapper.deleteDeptByUserId(Integer.parseInt(us[i]), duser.getDeptid());
+
+                }
+                DeptUser deptUser = new DeptUser();
+                deptUser.setUid(Integer.parseInt(us[i]));
+                deptUser.setDeptid(dept.getDeptid());
+                list.add(deptUser);
+            }
+        }
+        deptMapper.deleteDeptUserByDeptId(dept.getDeptid());
+        int row = deptMapper.insertDeptByUsers(list);
+        if (row > 0) {
+            return Result.success("添加成功");
+        } else {
+            return Result.error(501, "添加失败");
+        }
     }
 }

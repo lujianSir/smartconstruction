@@ -185,9 +185,9 @@
         SELECT
         companyuser.uid,
         user.username,
-        user.upic url
+        user.upic url,
         <if test="dept.deptid!=null and dept.deptid !=''">
-            and case when companyuser.uid in (select uid from deptuser where deptid=#{dept.deptid}) then 1 else 0 end
+            case when companyuser.uid in (select uid from deptuser where deptid=#{dept.deptid}) then 1 else 0 end
             userstyle
         </if>
         FROM

@@ -1,6 +1,7 @@
 package com.bwsk.controller.app;
 
 import com.bwsk.entity.Dept;
+import com.bwsk.entity.DeptUser;
 import com.bwsk.entity.Result;
 import com.bwsk.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,18 @@ public class DeptController {
      * @return
      */
     @RequestMapping(value = "/insertDept", method = RequestMethod.POST)
-    public Result<?> insertDept(Dept dept) {
-        return deptService.insertDept(dept);
+    public Result<?> insertDept(Dept dept, String users) {
+        try {
+            deptService.insertDept(dept);
+            if (users != null && !users.equals("")) {
+                deptService.insertDeptByUsers(users, dept.getDeptid());
+            }
+            return Result.success("添加成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Result.error(500, "服务器错误");
+        }
+
     }
 
     /**
@@ -36,8 +47,31 @@ public class DeptController {
      * @return
      */
     @RequestMapping(value = "/updateDeptByDeptId", method = RequestMethod.POST)
-    public Result<?> updateDeptByDeptId(Dept dept) {
-        return deptService.updateDeptByDeptId(dept);
+    public Result<?> updateDeptByDeptId(Dept dept, String users, String cid, int status) {
+        if (status == 0) {
+            String msg = "";
+            if (users != null && !users.equals("")) {
+                String[] us = users.split(",");
+                for (int i = 0; i < us.length; i++) {
+                    DeptUser deptUser = deptService.queryDeptByUid(Integer.parseInt(cid), Integer.parseInt(us[i]));
+                    if (deptUser != null) {
+                        if (deptUser.getDeptid() != dept.getDeptid()) {
+                            msg += deptUser.getUsername() + ",";
+                        }
+                    }
+                }
+            }
+            if (!msg.equals("")) {
+                msg += "已经存在别的部门中，是否移动过来？";
+                return Result.error(300, msg);
+            } else {
+                deptService.updateDeptByDeptId(dept);
+                return deptService.updateDeptUserByUidAndDeptid(dept, users, cid);
+            }
+        } else {
+            deptService.updateDeptByDeptId(dept);
+            return deptService.updateDeptUserByUidAndDeptid(dept, users, cid);
+        }
     }
 
     /**
@@ -103,7 +137,7 @@ public class DeptController {
      * @return
      */
     @RequestMapping(value = "/queryUserNotDept", method = RequestMethod.POST)
-    public Result<?> queryUserNotDept() {
-        return deptService.queryUserNotDept();
+    public Result<?> queryUserNotDept(Dept dept, String username) {
+        return deptService.queryUserNotDept(dept, username);
     }
 }

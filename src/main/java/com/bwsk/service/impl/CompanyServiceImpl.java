@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -112,6 +113,7 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public Result<?> queryDeptFromCompany(Company company) {
         List<Dept> deptList = companyMapper.queryDeptFromCompany(company);
+        deptList.removeAll(Collections.singleton(null));
         if (deptList.size() > 0) {
             for (int i = 0; i < deptList.size(); i++) {
                 List<User> userList = deptList.get(i).getUserList();
@@ -122,6 +124,7 @@ public class CompanyServiceImpl implements CompanyService {
                 }
 
             }
+
         }
         return Result.success(deptList);
     }
@@ -129,16 +132,16 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public Result<?> queryAllUserByDeptId(Dept dept, String username) {
         List<CompanyUser> list = companyMapper.queryAllUserByDeptId(dept, username);
-        if (list.size() > 0) {
-            for (int i = 0; i < list.size(); i++) {
-                CompanyUser companyUser = list.get(i);
-                if (companyUser.getUserstyle() == 1) {
-                    list.get(i).setFlag(true);
-                } else {
-                    list.get(i).setFlag(false);
-                }
-            }
-        }
+//        if (list.size() > 0) {
+//            for (int i = 0; i < list.size(); i++) {
+//                CompanyUser companyUser = list.get(i);
+//                if (companyUser.getUserstyle() == 1) {
+//                    list.get(i).setFlag(true);
+//                } else {
+//                    list.get(i).setFlag(false);
+//                }
+//            }
+//        }
         return Result.success(list);
     }
 

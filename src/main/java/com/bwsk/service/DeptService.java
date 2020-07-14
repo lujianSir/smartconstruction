@@ -1,6 +1,7 @@
 package com.bwsk.service;
 
 import com.bwsk.entity.Dept;
+import com.bwsk.entity.DeptUser;
 import com.bwsk.entity.Result;
 
 public interface DeptService {
@@ -27,5 +28,11 @@ public interface DeptService {
     Result<?> queryUserByDeptId(int deptid);
 
     //查询用户不在部门的
-    Result<?> queryUserNotDept();
+    Result<?> queryUserNotDept(Dept dept, String username);
+
+    //通过用户ID查询部门ID
+    DeptUser queryDeptByUid(int cid, int uid);
+
+    Result<?> updateDeptUserByUidAndDeptid(Dept dept, String users, String cid);
+
 }

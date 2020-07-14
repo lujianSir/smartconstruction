@@ -32,5 +32,11 @@ public interface DeptMapper {
     List<DeptUser> queryUserByDeptId(int deptid);
 
     //查询用户不在部门的
-    List<User> queryUserNotDept();
+    List<User> queryUserNotDept(@Param("dept") Dept dept, @Param("username") String username);
+
+    //通过用户ID查询部门ID
+    DeptUser queryDeptByUid(@Param("cid") int cid, @Param("uid") int uid);
+
+    //根据部门ID删除对应下面绑定的所有人员
+    void deleteDeptUserByDeptId(int deptid);
 }

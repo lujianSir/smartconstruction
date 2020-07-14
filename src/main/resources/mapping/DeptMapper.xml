@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bwsk.mapper.DeptMapper">
     <!--添加部门-->
-    <insert id="insertDept" parameterType="com.bwsk.entity.Dept">
+    <insert id="insertDept" parameterType="com.bwsk.entity.Dept" useGeneratedKeys="true" keyProperty="deptid">
         insert  into dept (deptname,deptremark,cid) values(#{deptname},#{deptremark},#{cid})
     </insert>
 
@@ -55,6 +55,41 @@
 
     <!--查询用户不在部门的-->
     <select id="queryUserNotDept" resultType="com.bwsk.entity.User">
-        select * from user where uid not in (select uid from deptuser)
+        SELECT
+        b.*
+        FROM
+        companyuser a LEFT JOIN user b on a.uid=b.uid
+        WHERE
+        a.cid = #{dept.cid}
+        <if test="username!=null and username !=''">
+            and b.username like concat('%',#{username},'%')
+        </if>
+
+        AND a.uid NOT IN (
+        SELECT
+        b.uid
+        FROM
+        dept a
+        INNER JOIN deptuser b ON a.deptid = b.deptid
+        WHERE
+        cid = #{dept.cid}
+        )
     </select>
+
+    <!--查询用户存在的部门-->
+    <select id="queryDeptByUid" resultType="com.bwsk.entity.DeptUser">
+       SELECT
+            a.*,c.username
+        FROM
+            deptuser a
+        LEFT JOIN dept b ON a.deptid = b.deptid
+        LEFT JOIN user c on a.uid=c.uid
+        WHERE
+            a.uid = #{uid}
+        AND b.cid = #{cid}
+    </select>
+
+    <delete id="deleteDeptUserByDeptId" parameterType="int">
+        delete  from deptuser where deptid=#{deptid}
+    </delete>
 </mapper>
