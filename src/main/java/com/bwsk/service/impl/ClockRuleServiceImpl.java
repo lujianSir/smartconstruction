@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Service
 @Transactional
@@ -127,7 +126,7 @@ public class ClockRuleServiceImpl implements ClockRuleService {
     }
 
     @Override
-    public Result<?> queryClockRuleByUidAndCid(String currentTime, RuleUser ruleUser, String x2, String y2) throws Throwable {
+    public Result<?> queryClockRuleByUidAndCid(String currentTime, RuleUser ruleUser, String x2, String y2, String msg, String currentdata) throws Throwable {
         ClockRule clockRule = clockRuleMapper.queryClockRuleByUidAndCid(ruleUser);
         //判断该用户是否存在打卡规则
         if (clockRule == null) {
@@ -135,9 +134,9 @@ public class ClockRuleServiceImpl implements ClockRuleService {
         }
         String ruledata = clockRule.getRuledata();//获取打卡规则的日期
         int holidaystatus = clockRule.getHolidaystatus(); //法定节假日是否休息  1-休息 2-打卡
-        Map<String, String> map = DateUtil.getWeeKMsg(currentTime);
-        String currentdata = map.get("data");//当前星期几
-        String msg = map.get("msg");// 当前是上班、周末、还是节假日
+        //       Map<String, String> map = DateUtil.getWeeKMsg(currentTime);
+//        String currentdata = map.get("data");//当前星期几
+//        String msg = map.get("msg");// 当前是上班、周末、还是节假日
         if (holidaystatus == 1) {
             if (msg.equals("节假日")) {
                 return Result.error(501, "节假日不需要打卡");
@@ -156,8 +155,8 @@ public class ClockRuleServiceImpl implements ClockRuleService {
         }
         if (addressMessages.size() > 0) {
             for (int i = 0; i < addressMessages.size(); i++) {
-                String x1 = addressMessages.get(i).getAmlatitude();//获取经度
-                String y1 = addressMessages.get(i).getAmlongitude();//获取纬度
+                String x1 = addressMessages.get(i).getAmlongitude();//获取经度
+                String y1 = addressMessages.get(i).getAmlatitude();//获取纬度
                 boolean flag = LocationUtils.checkDistance(Double.parseDouble(x1), Double.parseDouble(y1), Double.parseDouble(x2), Double.parseDouble(y2), addressMessages.get(i).getAmrange());
                 if (flag) {
                     clockRule.setFlag(true);
@@ -170,10 +169,15 @@ public class ClockRuleServiceImpl implements ClockRuleService {
         clockUser.setCurrentday(currentTime.substring(0, 9));
         clockUser.setUid(ruleUser.getUid());
         clockUser.setCid(ruleUser.getCid());
-        clockUser = clockRuleMapper.queryClockUserByUidAndCid(clockUser);
-        if (clockUser.getCuid() > 0) {
-            clockRule.setIsclock(clockUser.getCuid());
+        clockUser.setCurrentday(currentTime);
+        ClockUser cUser = clockRuleMapper.queryClockUserByUidAndCid(clockUser);
+        if (cUser == null) {
+            clockRuleMapper.insertClockUser(clockUser);
+            clockRule.setClockUser(clockUser);
+        } else {
+            clockRule.setClockUser(cUser);
         }
+
         return Result.success(clockRule);
     }
 

@@ -250,7 +250,7 @@
     </select>
 
     <!--添加用户打卡信息-->
-    <insert id="insertClockUser" parameterType="com.bwsk.entity.ClockUser">
+    <insert id="insertClockUser" parameterType="com.bwsk.entity.ClockUser" useGeneratedKeys="true" keyProperty="cuid">
         insert into clockuser
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="uid != null and uid!=''">

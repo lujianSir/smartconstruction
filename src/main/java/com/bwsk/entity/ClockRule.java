@@ -41,6 +41,16 @@ public class ClockRule implements Serializable {
 
     private int isclock;//是否已经打卡过
 
+    private ClockUser clockUser;
+
+    public ClockUser getClockUser() {
+        return clockUser;
+    }
+
+    public void setClockUser(ClockUser clockUser) {
+        this.clockUser = clockUser;
+    }
+
     public int getIsclock() {
         return isclock;
     }

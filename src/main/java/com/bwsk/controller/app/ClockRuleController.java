@@ -84,8 +84,8 @@ public class ClockRuleController {
      * @throws Throwable
      */
     @RequestMapping(value = "/queryClockRuleByUidAndCid", method = RequestMethod.POST)
-    public Result<?> queryClockRuleByUidAndCid(String currentTime, RuleUser ruleUser, String x2, String y2) throws Throwable {
-        return clockRuleService.queryClockRuleByUidAndCid(currentTime, ruleUser, x2, y2);
+    public Result<?> queryClockRuleByUidAndCid(String currentTime, RuleUser ruleUser, String x2, String y2, String msg, String currentdata) throws Throwable {
+        return clockRuleService.queryClockRuleByUidAndCid(currentTime, ruleUser, x2, y2, msg, currentdata);
     }
 
     /**
