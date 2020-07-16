@@ -20,6 +20,15 @@ public interface ClockRuleService {
     //添加打卡规则
     Result<?> insertClockRule(ClockRule clockRule);
 
+    //修改打卡规则
+    Result<?> updateClockRule(ClockRule clockRule);
+
+    //根据ID查询打卡规则
+    Result<?> queryClockRuleByCrid(ClockRule clockRule);
+
+    //查询当前用户创建过的打卡规则
+    Result<?> queryClockRulesByCidAndUid(ClockRule clockRule);
+
     //查询当前用户的打卡规则
     Result<?> queryClockRuleByUidAndCid(String currentTime, RuleUser ruleUser, String x2, String y2, String msg, String currentdata) throws Throwable;
 

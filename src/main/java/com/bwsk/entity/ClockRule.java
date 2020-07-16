@@ -1,6 +1,7 @@
 package com.bwsk.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 打卡规则
@@ -17,9 +18,17 @@ public class ClockRule implements Serializable {
 
     private int crstyle;//考勤方式  1.地点
 
+    private String crstylename;
+
     private String amids;//地址信息
 
+    private List<AddressMessage> addressMessageList;//地址信息
+
+    private int totalamid;//地址总数
+
     private int userrulestyle;// 人员设置  1.人员  2.部门
+
+    private String userrulestylename;
 
     private String users;//所有的人员
 
@@ -44,6 +53,38 @@ public class ClockRule implements Serializable {
     private int isclock;//是否已经打卡过
 
     private ClockUser clockUser;
+
+    public List<AddressMessage> getAddressMessageList() {
+        return addressMessageList;
+    }
+
+    public void setAddressMessageList(List<AddressMessage> addressMessageList) {
+        this.addressMessageList = addressMessageList;
+    }
+
+    public int getTotalamid() {
+        return totalamid;
+    }
+
+    public void setTotalamid(int totalamid) {
+        this.totalamid = totalamid;
+    }
+
+    public String getCrstylename() {
+        return crstylename;
+    }
+
+    public void setCrstylename(String crstylename) {
+        this.crstylename = crstylename;
+    }
+
+    public String getUserrulestylename() {
+        return userrulestylename;
+    }
+
+    public void setUserrulestylename(String userrulestylename) {
+        this.userrulestylename = userrulestylename;
+    }
 
     public int getUid() {
         return uid;

@@ -99,4 +99,37 @@ public class ClockRuleController {
         return clockRuleService.insertOrUpdateClockUser(clockUser);
     }
 
+    /**
+     * 查询当前用户创建的打卡规则
+     *
+     * @param clockRule
+     * @return
+     */
+    @RequestMapping(value = "/queryClockRulesByCidAndUid", method = RequestMethod.POST)
+    public Result<?> queryClockRulesByCidAndUid(ClockRule clockRule) {
+        return clockRuleService.queryClockRulesByCidAndUid(clockRule);
+    }
+
+    /**
+     * 根据ID查询打卡规则
+     *
+     * @param clockRule
+     * @return
+     */
+    @RequestMapping(value = "/queryClockRuleByCrid", method = RequestMethod.POST)
+    public Result<?> queryClockRuleByCrid(ClockRule clockRule) {
+        return clockRuleService.queryClockRuleByCrid(clockRule);
+    }
+
+    /**
+     * 修改打卡规则
+     *
+     * @param clockRule
+     * @return
+     */
+    @RequestMapping(value = "/updateClockRule", method = RequestMethod.POST)
+    public Result<?> updateClockRule(ClockRule clockRule) {
+        return clockRuleService.updateClockRule(clockRule);
+    }
+
 }

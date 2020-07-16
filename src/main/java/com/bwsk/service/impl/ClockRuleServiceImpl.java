@@ -126,6 +126,43 @@ public class ClockRuleServiceImpl implements ClockRuleService {
     }
 
     @Override
+    public Result<?> updateClockRule(ClockRule clockRule) {
+        clockRuleMapper.updateClockRule(clockRule);
+        return Result.success("操作成功");
+    }
+
+    @Override
+    public Result<?> queryClockRuleByCrid(ClockRule clockRule) {
+        ClockRule rule = clockRuleMapper.queryClockRuleByCrid(clockRule);
+        String amid = rule.getAmids();
+        String[] amids = amid.split(",");
+        List<AddressMessage> addressMessageList = clockRuleMapper.queryAddressMessageByAmids(amids);
+        rule.setAddressMessageList(addressMessageList);
+        return Result.success(rule);
+    }
+
+    @Override
+    public Result<?> queryClockRulesByCidAndUid(ClockRule clockRule) {
+        List<ClockRule> list = clockRuleMapper.queryClockRulesByCidAndUid(clockRule);
+        if (list.size() > 0) {
+            for (int i = 0; i < list.size(); i++) {
+                ClockRule crule = list.get(i);
+                if (crule.getUserrulestyle() == 1) {
+                    list.get(i).setUserrulestylename("人员");
+                } else {
+                    list.get(i).setUserrulestylename("部门");
+                }
+                String ids = crule.getAmids();
+                String[] amids = ids.split(",");
+                List<AddressMessage> addressMessages = clockRuleMapper.queryAddressMessageByAmids(amids);
+                list.get(i).setTotalamid(addressMessages.size());
+                list.get(i).setAmids(addressMessages.get(0).getAmname() + "(" + addressMessages.get(0).getAmrange() + ")米" + addressMessages.get(0).getAmdetail());
+            }
+        }
+        return Result.success(list);
+    }
+
+    @Override
     public Result<?> queryClockRuleByUidAndCid(String currentTime, RuleUser ruleUser, String x2, String y2, String msg, String currentdata) throws Throwable {
         ClockRule clockRule = clockRuleMapper.queryClockRuleByUidAndCid(ruleUser);
         //判断该用户是否存在打卡规则

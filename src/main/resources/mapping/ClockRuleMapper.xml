@@ -426,4 +426,74 @@
         where cuid=#{cuid}
     </update>
 
+    <select id="queryClockRulesByCidAndUid" resultType="com.bwsk.entity.ClockRule">
+        SELECT
+            *
+        FROM
+            clockrule
+        WHERE
+            uid = #{uid}
+        AND cid = #{cid}
+    </select>
+
+    <select id="queryAddressMessageByAmid" resultType="com.bwsk.entity.AddressMessage">
+        select * from addressmessage where amid=#{amid}
+    </select>
+
+    <select id="queryClockRuleByCrid" resultType="com.bwsk.entity.ClockRule">
+        select * from clockrule where crid=#{crid}
+    </select>
+
+    <update id="updateClockRule" parameterType="com.bwsk.entity.ClockRule">
+        update clockrule
+        <set>
+            <if test="cid != null and cid!=''">
+                cid= #{cid},
+            </if>
+            <if test="crname != null and crname !=''">
+                crname=#{crname},
+            </if>
+            <if test="crstyle != null and crstyle !=''">
+                crstyle=#{crstyle},
+            </if>
+            <if test="amids != null and amids!=''">
+                amids=#{amids},
+            </if>
+            <if test="userrulestyle != null and userrulestyle!=''">
+                userrulestyle=#{userrulestyle},
+            </if>
+            <if test="users != null and users!=''">
+                users=#{users},
+            </if>
+            <if test="deptids != null and deptids!=''">
+                deptids=#{deptids},
+            </if>
+            <if test="firsttime != null and firsttime!=''">
+                firsttime=#{firsttime},
+            </if>
+            <if test="sencondtime != null and sencondtime!=''">
+                sencondtime=#{sencondtime},
+            </if>
+            <if test="tsstyle != null and tsstyle!=''">
+                tsstyle=#{tsstyle},
+            </if>
+            <if test="threetime != null and threetime!=''">
+                threetime=#{threetime},
+            </if>
+            <if test="fourtime != null and fourtime!=''">
+                fourtime=#{fourtime},
+            </if>
+            <if test="ruledata != null and ruledata!=''">
+                ruledata=#{ruledata},
+            </if>
+            <if test="holidaystatus != null and holidaystatus!=''">
+                holidaystatus=#{holidaystatus},
+            </if>
+            <if test="uid != null and uid!=''">
+                uid=#{uid},
+            </if>
+
+        </set>
+        where crid=#{crid}
+    </update>
 </mapper>

@@ -35,6 +35,9 @@ public interface ClockRuleMapper {
     //添加打卡规则
     int insertClockRule(ClockRule clockRule);
 
+    //修改打卡规则
+    int updateClockRule(ClockRule clockRule);
+
     //批量添加用户与打卡
     int insertRuleUsers(List<RuleUser> list);
 
@@ -49,4 +52,13 @@ public interface ClockRuleMapper {
 
     //修改用户打卡信息
     int updateClockUser(ClockUser clockUser);
+
+    //查询当前用户创建过的打卡规则
+    List<ClockRule> queryClockRulesByCidAndUid(ClockRule clockRule);
+
+    //查询规则地址
+    AddressMessage queryAddressMessageByAmid(int amid);
+
+    //根据ID查询打卡规则
+    ClockRule queryClockRuleByCrid(ClockRule clockRule);
 }
