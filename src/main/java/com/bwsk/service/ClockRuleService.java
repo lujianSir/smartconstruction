@@ -34,4 +34,7 @@ public interface ClockRuleService {
 
     //打卡操作
     Result<?> insertOrUpdateClockUser(ClockUser clockUser) throws Throwable;
+
+    //删除打卡规则
+    Result<?> deleteClockRule(ClockRule clockRule);
 }

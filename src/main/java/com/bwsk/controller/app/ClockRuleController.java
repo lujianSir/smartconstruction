@@ -132,4 +132,15 @@ public class ClockRuleController {
         return clockRuleService.updateClockRule(clockRule);
     }
 
+    /**
+     * 根据规则ID删除规则
+     *
+     * @param clockRule
+     * @return
+     */
+    @RequestMapping(value = "/deleteClockRule", method = RequestMethod.POST)
+    public Result<?> deleteClockRule(ClockRule clockRule) {
+        return clockRuleService.deleteClockRule(clockRule);
+    }
+
 }

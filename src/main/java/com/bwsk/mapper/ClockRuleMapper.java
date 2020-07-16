@@ -61,4 +61,10 @@ public interface ClockRuleMapper {
 
     //根据ID查询打卡规则
     ClockRule queryClockRuleByCrid(ClockRule clockRule);
+
+    //根据CRID删除规则
+    void deleteClockRule(ClockRule clockRule);
+
+    //根据CRID删除规则与用户的绑定
+    void deleteRuleUser(ClockRule clockRule);
 }

@@ -259,4 +259,11 @@ public class ClockRuleServiceImpl implements ClockRuleService {
         }
 
     }
+
+    @Override
+    public Result<?> deleteClockRule(ClockRule clockRule) {
+        clockRuleMapper.deleteClockRule(clockRule);
+        clockRuleMapper.deleteRuleUser(clockRule);
+        return Result.success("删除成功");
+    }
 }

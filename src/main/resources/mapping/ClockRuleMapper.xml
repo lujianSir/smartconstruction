@@ -496,4 +496,12 @@
         </set>
         where crid=#{crid}
     </update>
+
+    <delete id="deleteClockRule" parameterType="com.bwsk.entity.ClockRule">
+        delete  from clockrule where crid=#{crid}
+    </delete>
+
+    <delete id="deleteRuleUser" parameterType="com.bwsk.entity.ClockRule">
+        delete  from  ruleuser where crid=#{crid}
+    </delete>
 </mapper>
