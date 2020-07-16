@@ -85,7 +85,7 @@ public class CompanyController {
      * @return
      */
     @RequestMapping(value = "/queryCompanyByCnameOrCabbreviation", method = RequestMethod.POST)
-    public Result<?> insertApplayCompanyUser(Company company) {
+    public Result<?> queryCompanyByCnameOrCabbreviation(Company company) {
         return companyService.queryCompanyByCnameOrCabbreviation(company);
     }
 
