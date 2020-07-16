@@ -145,6 +145,9 @@
             <if test="holidaystatus != null and holidaystatus!=''">
                 holidaystatus,
             </if>
+            <if test="uid != null and uid!=''">
+                uid,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="cid != null and cid!=''">
@@ -188,6 +191,9 @@
             </if>
             <if test="holidaystatus != null and holidaystatus!=''">
                 #{holidaystatus},
+            </if>
+            <if test="uid != null and uid!=''">
+                #{uid},
             </if>
         </trim>
     </insert>

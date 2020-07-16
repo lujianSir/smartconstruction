@@ -11,6 +11,8 @@ public class ClockRule implements Serializable {
 
     private int cid;//公司ID
 
+    private int uid;//创建人
+
     private String crname;//规则名称
 
     private int crstyle;//考勤方式  1.地点
@@ -42,6 +44,14 @@ public class ClockRule implements Serializable {
     private int isclock;//是否已经打卡过
 
     private ClockUser clockUser;
+
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(int uid) {
+        this.uid = uid;
+    }
 
     public ClockUser getClockUser() {
         return clockUser;
