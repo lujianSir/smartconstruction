@@ -274,6 +274,9 @@
             <if test="firstrrmark != null and firstrrmark!=''">
                 firstrrmark,
             </if>
+            <if test="firtstposition != null and firtstposition!=''">
+                firtstposition,
+            </if>
             <if test="sencondtime != null and sencondtime!=''">
                 sencondtime,
             </if>
@@ -282,6 +285,9 @@
             </if>
             <if test="sencondrmark != null and sencondrmark!=''">
                 sencondrmark,
+            </if>
+            <if test="sencondposition != null and sencondposition!=''">
+                sencondposition,
             </if>
             <if test="threetime != null and threetime!=''">
                 threetime,
@@ -292,6 +298,9 @@
             <if test="threeremark != null and threeremark!=''">
                 threeremark,
             </if>
+            <if test="threeposition != null and threeposition!=''">
+                threeposition,
+            </if>
             <if test="fourtime != null and fourtime!=''">
                 fourtime,
             </if>
@@ -300,6 +309,9 @@
             </if>
             <if test="fourremark != null and fourremark!=''">
                 fourremark,
+            </if>
+            <if test="fourposition != null and fourposition!=''">
+                fourposition,
             </if>
             <if test="workovertime != null and workovertime!=''">
                 workovertime,
@@ -327,6 +339,9 @@
             <if test="firstrrmark != null and firstrrmark!=''">
                 #{firstrrmark},
             </if>
+            <if test="firtstposition != null and firtstposition!=''">
+                #{firtstposition},
+            </if>
             <if test="sencondtime != null and sencondtime!=''">
                 #{sencondtime},
             </if>
@@ -335,6 +350,9 @@
             </if>
             <if test="sencondrmark != null and sencondrmark!=''">
                 #{sencondrmark},
+            </if>
+            <if test="sencondposition != null and sencondposition!=''">
+                #{sencondposition},
             </if>
             <if test="threetime != null and threetime!=''">
                 #{threetime},
@@ -345,6 +363,9 @@
             <if test="threeremark != null and threeremark!=''">
                 #{threeremark},
             </if>
+            <if test="threeposition != null and threeposition!=''">
+                #{threeposition},
+            </if>
             <if test="fourtime != null and fourtime!=''">
                 #{fourtime},
             </if>
@@ -353,6 +374,9 @@
             </if>
             <if test="fourremark != null and fourremark!=''">
                 #{fourremark},
+            </if>
+            <if test="fourposition != null and fourposition!=''">
+                #{fourposition},
             </if>
             <if test="workovertime != null and workovertime!=''">
                 #{workovertime},
@@ -386,6 +410,9 @@
             <if test="firstrrmark != null and firstrrmark!=''">
                 firstrrmark=#{firstrrmark},
             </if>
+            <if test="firtstposition != null and firtstposition!=''">
+                firtstposition=#{firtstposition},
+            </if>
             <if test="sencondtime != null and sencondtime!=''">
                 sencondtime=#{sencondtime},
             </if>
@@ -394,6 +421,9 @@
             </if>
             <if test="sencondrmark != null and sencondrmark!=''">
                 sencondrmark=#{sencondrmark},
+            </if>
+            <if test="sencondposition != null and sencondposition!=''">
+                sencondposition=#{sencondposition},
             </if>
             <if test="threetime != null and threetime!=''">
                 threetime=#{threetime},
@@ -404,6 +434,9 @@
             <if test="threeremark != null and threeremark!=''">
                 threeremark=#{threeremark},
             </if>
+            <if test="threeposition != null and threeposition!=''">
+                threeposition=#{threeposition},
+            </if>
             <if test="fourtime != null and fourtime!=''">
                 fourtime=#{fourtime},
             </if>
@@ -412,6 +445,9 @@
             </if>
             <if test="fourremark != null and fourremark!=''">
                 fourremark=#{fourremark},
+            </if>
+            <if test="fourposition != null and fourposition!=''">
+                fourposition=#{fourposition},
             </if>
             <if test="workovertime != null and workovertime!=''">
                 workovertime=#{workovertime},

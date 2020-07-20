@@ -20,11 +20,15 @@ public class ClockUser implements Serializable {
 
     private String firstrrmark;//第一次迟到备注
 
+    private String firtstposition;//第一次打卡的位置
+
     private String sencondtime;//第二次打卡时间
 
     private int sencondstyle;//是否迟到(1-正常，2-早退)
 
     private String sencondrmark;//第二次早退备注
+
+    private String sencondposition;//第二次打卡位置
 
     private String threetime;//第三次打卡时间
 
@@ -32,13 +36,49 @@ public class ClockUser implements Serializable {
 
     private String threeremark;//第三次迟到备注
 
+    private String threeposition;//第三次打卡位置
+
     private String fourtime;//第四次打卡时间
 
     private int fourstyle;//是否迟到(1-正常，2-早退)
 
     private String fourremark;//第四次早退备注
 
+    private String fourposition;//第四次打卡位置
+
     private String workovertime;//加班时长(按分钟计算)
+
+    public String getFirtstposition() {
+        return firtstposition;
+    }
+
+    public void setFirtstposition(String firtstposition) {
+        this.firtstposition = firtstposition;
+    }
+
+    public String getSencondposition() {
+        return sencondposition;
+    }
+
+    public void setSencondposition(String sencondposition) {
+        this.sencondposition = sencondposition;
+    }
+
+    public String getThreeposition() {
+        return threeposition;
+    }
+
+    public void setThreeposition(String threeposition) {
+        this.threeposition = threeposition;
+    }
+
+    public String getFourposition() {
+        return fourposition;
+    }
+
+    public void setFourposition(String fourposition) {
+        this.fourposition = fourposition;
+    }
 
     public String getFirstrrmark() {
         return firstrrmark;

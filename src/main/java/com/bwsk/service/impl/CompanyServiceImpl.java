@@ -171,6 +171,8 @@ public class CompanyServiceImpl implements CompanyService {
         CurrentUserCompany usercompany = companyMapper.queryCurrentUserCompanyByUid(currentUserCompany);
         if (usercompany != null) {
             companyMapper.updateCurrentUserCompany(currentUserCompany);
+        } else {
+            companyMapper.insertCurrentUserCompany(currentUserCompany);
         }
         return Result.success();
     }
