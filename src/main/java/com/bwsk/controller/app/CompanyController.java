@@ -38,6 +38,16 @@ public class CompanyController {
     }
 
     /**
+     * @param companyUser
+     * @return
+     */
+    @RequestMapping(value = "/queryCompanyUserByUid", method = RequestMethod.POST)
+    public Result<?> queryCompanyUserByUid(CompanyUser companyUser) {
+        List<Company> list = companyService.queryCompanyUserByUid(companyUser);
+        return Result.success(list);
+    }
+
+    /**
      * 添加或者修改公司信息
      *
      * @param company

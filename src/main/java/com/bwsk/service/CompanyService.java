@@ -9,6 +9,9 @@ public interface CompanyService {
     // 通过用户ID或者公司ID查询所有的公司信息
     List<Company> queryCompanyByUidOrCid(Company company);
 
+    //查询用户创建以及申请通过的企业
+    List<Company> queryCompanyUserByUid(CompanyUser companyUser);
+
     // 添加或者修改公司信息
     Result<?> insertOrUpdateCompany(Company company);
 

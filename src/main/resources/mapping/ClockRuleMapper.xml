@@ -118,10 +118,10 @@
             <if test="userrulestyle != null and userrulestyle!=''">
                 userrulestyle,
             </if>
-            <if test="users != null and users!=''">
+            <if test="users != null">
                 users,
             </if>
-            <if test="deptids != null and deptids!=''">
+            <if test="deptids != null">
                 deptids,
             </if>
             <if test="firsttime != null and firsttime!=''">
@@ -165,10 +165,10 @@
             <if test="userrulestyle != null and userrulestyle!=''">
                 #{userrulestyle},
             </if>
-            <if test="users != null and users!=''">
+            <if test="users != null">
                 #{users},
             </if>
-            <if test="deptids != null and deptids!=''">
+            <if test="deptids != null">
                 #{deptids},
             </if>
             <if test="firsttime != null and firsttime!=''">
@@ -462,10 +462,10 @@
             <if test="userrulestyle != null and userrulestyle!=''">
                 userrulestyle=#{userrulestyle},
             </if>
-            <if test="users != null and users!=''">
+            <if test="users != null">
                 users=#{users},
             </if>
-            <if test="deptids != null and deptids!=''">
+            <if test="deptids != null">
                 deptids=#{deptids},
             </if>
             <if test="firsttime != null and firsttime!=''">
@@ -504,4 +504,5 @@
     <delete id="deleteRuleUser" parameterType="com.bwsk.entity.ClockRule">
         delete  from  ruleuser where crid=#{crid}
     </delete>
+
 </mapper>

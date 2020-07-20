@@ -161,7 +161,15 @@
 
     <!--查询已加入的人-->
     <select id="queryCompanyUser" resultType="com.bwsk.entity.CompanyUser">
-        select a.*,b.username username ,b.upic url from companyuser a LEFT JOIN user b on a.uid=b.uid   where a.cid=#{cid}
+        select a.*,b.username username ,b.upic url from companyuser a LEFT JOIN user b on a.uid=b.uid
+        <where>
+            <if test="cid!=null and cid !=''">
+                and a.cid=#{cid}
+            </if>
+            <if test="username!=null and username !=''">
+                and b.username like concat('%',#{username},'%')
+            </if>
+        </where>
     </select>
 
     <!--通过企业ID查询部门以及对应的人数s-->
@@ -198,4 +206,37 @@
             and user.username like concat ('%',#{username},'%')
         </if>
     </select>
+
+    <select id="queryCompanyUserByUid" resultType="com.bwsk.entity.Company">
+        SELECT
+            a.*,
+            b.username,
+						case when a.cid in (select cid from currentusercompany   where uid=#{uid}) then 1 else 0 end currentcompany
+        FROM
+            company a LEFT JOIN user b on a.uid=b.uid
+        WHERE
+            a.cid IN (
+                SELECT
+                    cid
+                FROM
+                    companyuser
+                WHERE
+                    uid = #{uid}
+            )
+        ORDER BY
+            currentcompany  DESC
+
+    </select>
+
+    <insert id="insertCurrentUserCompany" parameterType="com.bwsk.entity.CurrentUserCompany">
+        insert into currentusercompany(cid,uid) values (#{cid},#{uid})
+    </insert>
+
+    <select id="queryCurrentUserCompanyByUid" resultType="com.bwsk.entity.CurrentUserCompany">
+        select * from currentusercompany where uid=#{uid}
+    </select>
+
+    <update id="updateCurrentUserCompany" parameterType="com.bwsk.entity.CurrentUserCompany">
+        update currentusercompany set cid=#{cid} where uid=#{uid}
+    </update>
 </mapper>

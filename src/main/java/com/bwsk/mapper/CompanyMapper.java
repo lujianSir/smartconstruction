@@ -1,9 +1,6 @@
 package com.bwsk.mapper;
 
-import com.bwsk.entity.ApplayCompanyUser;
-import com.bwsk.entity.Company;
-import com.bwsk.entity.CompanyUser;
-import com.bwsk.entity.Dept;
+import com.bwsk.entity.*;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +11,9 @@ public interface CompanyMapper {
 
     // 通过用户ID查询所有的公司信息
     List<Company> queryCompanyByUidOrCid(Company company);
+
+    //查询用户创建以及申请通过的企业
+    List<Company> queryCompanyUserByUid(CompanyUser companyUser);
 
     // 添加企业信息
     int insertCompany(Company company);
@@ -37,6 +37,12 @@ public interface CompanyMapper {
 
     //用户创建企业的时候进行绑定
     void insertCompanyUser(CompanyUser companyUser);
+
+    void insertCurrentUserCompany(CurrentUserCompany currentUserCompany);
+
+    CurrentUserCompany queryCurrentUserCompanyByUid(CurrentUserCompany currentUserCompany);
+
+    void updateCurrentUserCompany(CurrentUserCompany currentUserCompany);
 
     //删除申请人
     void deleteApplayCompanyUser(CompanyUser companyUser);

@@ -35,6 +35,16 @@ public class Company implements Serializable {
 
     private int creatstatus;//是否已经加入
 
+    private int currentcompany;//判断当前的企业
+
+    public int getCurrentcompany() {
+        return currentcompany;
+    }
+
+    public void setCurrentcompany(int currentcompany) {
+        this.currentcompany = currentcompany;
+    }
+
     public List<Dept> getDeptList() {
         return deptList;
     }

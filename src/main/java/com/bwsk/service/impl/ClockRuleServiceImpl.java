@@ -127,8 +127,69 @@ public class ClockRuleServiceImpl implements ClockRuleService {
 
     @Override
     public Result<?> updateClockRule(ClockRule clockRule) {
-        clockRuleMapper.updateClockRule(clockRule);
-        return Result.success("操作成功");
+        int cid = clockRule.getCid();
+        List<RuleUser> list;
+        String msg = "";
+        if (clockRule.getUsers() != null && !clockRule.getUsers().equals("")) {//判断添加企业用户是否已经存在规则
+            String[] users = clockRule.getUsers().split(",");
+            list = clockRuleMapper.queryRuleUserByUidAndCid(cid, users);
+            if (list.size() > 0) {
+                msg += "用户：";
+                for (int i = 0; i < list.size(); i++) {
+                    msg += list.get(i).getUsername() + "已存在" + list.get(i).getCrname();
+                    if (i < list.size() - 1) {
+                        msg += ",";
+                    }
+                }
+                msg += "，请解除相应的绑定!";
+                return Result.error(500, msg);
+            }
+        }
+        if (clockRule.getDeptids() != null && !clockRule.getDeptids().equals("")) {//判断该企业、部门下面的用户是否已经存在打卡规则
+            List<String> deptusers = new ArrayList<String>();
+            String[] clocks = clockRule.getDeptids().split(",");//获取所有的部门
+            for (int i = 0; i < clocks.length; i++) {
+                int deptid = Integer.parseInt(clocks[i]);
+                List<DeptUser> deptUsers = deptMapper.queryUserByDeptId(deptid);
+                if (deptUsers.size() > 0) {
+                    for (DeptUser deptUser : deptUsers) {
+                        deptusers.add(deptUser.getUid() + "");
+                    }
+                }
+            }
+            list = clockRuleMapper.queryRuleUserListByUidAndCid(cid, deptusers);
+            if (list.size() > 0) {
+                msg += "用户：";
+                for (int i = 0; i < list.size(); i++) {
+                    msg += list.get(i).getUsername() + "已存在" + list.get(i).getCrname();
+                    if (i < list.size() - 1) {
+                        msg += ",";
+                    }
+                }
+                msg += "，请解除相应的绑定!";
+                return Result.error(501, msg);
+            }
+            clockRule.setUsers(deptusers.toString());
+        }
+        int row = clockRuleMapper.updateClockRule(clockRule);
+        clockRuleMapper.deleteRuleUser(clockRule);
+        if (clockRule.getUsers() != null && !clockRule.getUsers().equals("")) {
+            String[] users = clockRule.getUsers().split(",");
+            List<RuleUser> ruleUsers = new ArrayList<RuleUser>();
+            for (int m = 0; m < users.length; m++) {
+                RuleUser ruleUser = new RuleUser();
+                ruleUser.setUid(Integer.parseInt(users[m]));
+                ruleUser.setCid(cid);
+                ruleUser.setCrid(clockRule.getCrid());
+                ruleUsers.add(ruleUser);
+            }
+            clockRuleMapper.insertRuleUsers(ruleUsers);
+        }
+        if (row > 0) {
+            return Result.success("修改成功");
+        } else {
+            return Result.error(500, "修改失败");
+        }
     }
 
     @Override
@@ -163,7 +224,8 @@ public class ClockRuleServiceImpl implements ClockRuleService {
     }
 
     @Override
-    public Result<?> queryClockRuleByUidAndCid(String currentTime, RuleUser ruleUser, String x2, String y2, String msg, String currentdata) throws Throwable {
+    public Result<?> queryClockRuleByUidAndCid(String currentTime, RuleUser ruleUser, String x2, String y2, String
+            msg, String currentdata) throws Throwable {
         ClockRule clockRule = clockRuleMapper.queryClockRuleByUidAndCid(ruleUser);
         //判断该用户是否存在打卡规则
         if (clockRule == null) {
