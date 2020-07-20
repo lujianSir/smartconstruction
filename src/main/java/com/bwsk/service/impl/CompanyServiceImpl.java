@@ -65,7 +65,11 @@ public class CompanyServiceImpl implements CompanyService {
                 CurrentUserCompany currentUserCompany = new CurrentUserCompany();
                 currentUserCompany.setCid(company.getCid());
                 currentUserCompany.setUid(company.getUid());
-                companyMapper.insertCurrentUserCompany(currentUserCompany);
+
+                CurrentUserCompany usercompany = companyMapper.queryCurrentUserCompanyByUid(currentUserCompany);
+                if (usercompany == null) {
+                    companyMapper.insertCurrentUserCompany(currentUserCompany);
+                }
                 return Result.success("添加成功");
             }
         }
@@ -110,8 +114,6 @@ public class CompanyServiceImpl implements CompanyService {
         CurrentUserCompany usercompany = companyMapper.queryCurrentUserCompanyByUid(currentUserCompany);
         if (usercompany == null) {
             companyMapper.insertCurrentUserCompany(currentUserCompany);
-        } else {
-            companyMapper.updateCurrentUserCompany(currentUserCompany);
         }
         companyMapper.deleteApplayCompanyUser(companyUser);
         return Result.success("操作成功");
@@ -162,6 +164,22 @@ public class CompanyServiceImpl implements CompanyService {
 //            }
 //        }
         return Result.success(list);
+    }
+
+    @Override
+    public Result<?> updateCurrentCompany(CurrentUserCompany currentUserCompany) {
+        CurrentUserCompany usercompany = companyMapper.queryCurrentUserCompanyByUid(currentUserCompany);
+        if (usercompany != null) {
+            companyMapper.updateCurrentUserCompany(currentUserCompany);
+        }
+        return Result.success();
+    }
+
+    @Override
+    public Result<?> deleteCurrentCompany(CurrentUserCompany currentUserCompany) {
+        companyMapper.deleteCurrentUserCompany(currentUserCompany);
+        companyMapper.deleteCompanyUser(currentUserCompany);
+        return Result.success();
     }
 
 }

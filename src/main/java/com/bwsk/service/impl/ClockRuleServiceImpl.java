@@ -134,15 +134,25 @@ public class ClockRuleServiceImpl implements ClockRuleService {
             String[] users = clockRule.getUsers().split(",");
             list = clockRuleMapper.queryRuleUserByUidAndCid(cid, users);
             if (list.size() > 0) {
-                msg += "用户：";
-                for (int i = 0; i < list.size(); i++) {
-                    msg += list.get(i).getUsername() + "已存在" + list.get(i).getCrname();
-                    if (i < list.size() - 1) {
-                        msg += ",";
+                for (int j = 0; j < list.size(); j++) {
+                    if (list.get(j).getCrid() == clockRule.getCrid()) {
+                        list.remove(j);
                     }
                 }
-                msg += "，请解除相应的绑定!";
-                return Result.error(500, msg);
+                if (list.size() > 0) {
+                    msg += "用户：";
+                    for (int i = 0; i < list.size(); i++) {
+                        if (list.get(i).getCrid() != clockRule.getCrid()) {
+                            msg += list.get(i).getUsername() + "已存在" + list.get(i).getCrname();
+                            if (i < list.size() - 1) {
+                                msg += ",";
+                            }
+                        }
+                    }
+                    msg += "，请解除相应的绑定!";
+                    return Result.error(500, msg);
+                }
+
             }
         }
         if (clockRule.getDeptids() != null && !clockRule.getDeptids().equals("")) {//判断该企业、部门下面的用户是否已经存在打卡规则
@@ -229,7 +239,7 @@ public class ClockRuleServiceImpl implements ClockRuleService {
         ClockRule clockRule = clockRuleMapper.queryClockRuleByUidAndCid(ruleUser);
         //判断该用户是否存在打卡规则
         if (clockRule == null) {
-            return Result.error(500, "当前没有打卡规则，请联系管理员!");
+            return Result.error(300, "当前没有打卡规则，请联系管理员!");
         }
         String ruledata = clockRule.getRuledata();//获取打卡规则的日期
         int holidaystatus = clockRule.getHolidaystatus(); //法定节假日是否休息  1-休息 2-打卡
@@ -238,11 +248,11 @@ public class ClockRuleServiceImpl implements ClockRuleService {
 //        String msg = map.get("msg");// 当前是上班、周末、还是节假日
         if (holidaystatus == 1) {
             if (msg.equals("节假日")) {
-                return Result.error(501, "节假日不需要打卡");
+                return Result.error(300, "节假日不需要打卡");
             }
         }
         if (ruledata.indexOf(currentdata) == -1) {//不包括  也是不在这个范围内
-            return Result.error(502, "周末不需要打卡");
+            return Result.error(300, "周末不需要打卡");
         }
 
         //判断是否在打卡范围内

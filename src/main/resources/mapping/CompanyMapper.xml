@@ -239,4 +239,12 @@
     <update id="updateCurrentUserCompany" parameterType="com.bwsk.entity.CurrentUserCompany">
         update currentusercompany set cid=#{cid} where uid=#{uid}
     </update>
+
+    <delete id="deleteCurrentUserCompany" parameterType="com.bwsk.entity.CurrentUserCompany">
+        delete from   currentusercompany where  uid=#{uid} and  cid=#{cid}
+    </delete>
+
+    <delete id="deleteCompanyUser" parameterType="com.bwsk.entity.CurrentUserCompany">
+        delete from companyuser where uid=#{uid} and  cid=#{cid}
+    </delete>
 </mapper>

@@ -44,6 +44,12 @@ public interface CompanyMapper {
 
     void updateCurrentUserCompany(CurrentUserCompany currentUserCompany);
 
+    //删除企业绑定的人员
+    void deleteCurrentUserCompany(CurrentUserCompany currentUserCompany);
+
+    //删除企业绑定的人员
+    void deleteCompanyUser(CurrentUserCompany currentUserCompany);
+
     //删除申请人
     void deleteApplayCompanyUser(CompanyUser companyUser);
 

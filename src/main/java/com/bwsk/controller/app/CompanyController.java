@@ -165,4 +165,26 @@ public class CompanyController {
     public Result<?> queryAllUserByDeptId(Dept dept, String username) {
         return companyService.queryAllUserByDeptId(dept, username);
     }
+
+    /**
+     * 切换企业
+     *
+     * @param currentUserCompany
+     * @return
+     */
+    @RequestMapping(value = "/updateCurrentCompany", method = RequestMethod.POST)
+    public Result<?> updateCurrentCompany(CurrentUserCompany currentUserCompany) {
+        return companyService.updateCurrentCompany(currentUserCompany);
+    }
+
+    /**
+     * 退出企业
+     *
+     * @param currentUserCompany
+     * @return
+     */
+    @RequestMapping(value = "/deleteCurrentCompany", method = RequestMethod.POST)
+    public Result<?> deleteCurrentCompany(CurrentUserCompany currentUserCompany) {
+        return companyService.deleteCurrentCompany(currentUserCompany);
+    }
 }

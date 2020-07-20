@@ -41,4 +41,10 @@ public interface CompanyService {
 
     //查询所有的人包括已经在部门下的
     Result<?> queryAllUserByDeptId(Dept dept, String username);
+
+    //切换企业
+    Result<?> updateCurrentCompany(CurrentUserCompany currentUserCompany);
+
+    //退出企业（非创建者）
+    Result<?> deleteCurrentCompany(CurrentUserCompany currentUserCompany);
 }
