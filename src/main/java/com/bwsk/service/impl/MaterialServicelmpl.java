@@ -47,7 +47,7 @@ public class MaterialServicelmpl implements MaterialService {
 
     @Override
     public int deleteAllMaterial(int pid) {
-        return 0;
+        return materialMapper.deleteAllMaterial(pid);
     }
 
 }
