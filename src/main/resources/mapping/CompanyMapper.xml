@@ -224,7 +224,7 @@
                     uid = #{uid}
             )
         ORDER BY
-            currentcompany  DESC
+            a.creattime  DESC
 
     </select>
 
@@ -247,4 +247,8 @@
     <delete id="deleteCompanyUser" parameterType="com.bwsk.entity.CurrentUserCompany">
         delete from companyuser where uid=#{uid} and  cid=#{cid}
     </delete>
+
+    <select id="queryCurrentCompanyUserByUid" resultType="com.bwsk.entity.CurrentUserCompany">
+         select a.*,b.cname from currentusercompany a LEFT JOIN  company b on a.cid=b.cid where a.uid=#{uid}
+    </select>
 </mapper>

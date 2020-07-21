@@ -9,6 +9,16 @@ public class CurrentUserCompany {
 
     private int cid;//
 
+    private String cname;//
+
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        this.cname = cname;
+    }
+
     public int getUid() {
         return uid;
     }

@@ -47,4 +47,7 @@ public interface CompanyService {
 
     //退出企业（非创建者）
     Result<?> deleteCurrentCompany(CurrentUserCompany currentUserCompany);
+
+    //通过UID查询当前用户对应的企业
+    Result<?> queryCurrentCompanyUserByUid(int uid);
 }

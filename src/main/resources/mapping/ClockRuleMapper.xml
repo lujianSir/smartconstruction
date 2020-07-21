@@ -221,7 +221,7 @@
             <if test="uid!=null and uid !=''">
                 and b.uid = #{uid}
             </if>
-            <if test="cid!=null and cid !=''">
+            <if test="cid!=null and cid !='' or cid==0">
                 and a.cid = #{cid}
             </if>
         </where>

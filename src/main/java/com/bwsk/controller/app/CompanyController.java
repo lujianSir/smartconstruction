@@ -187,4 +187,15 @@ public class CompanyController {
     public Result<?> deleteCurrentCompany(CurrentUserCompany currentUserCompany) {
         return companyService.deleteCurrentCompany(currentUserCompany);
     }
+
+    /**
+     * 通过UID查询当前用户对应的企业
+     *
+     * @param uid
+     * @return
+     */
+    @RequestMapping(value = "/queryCurrentCompanyUserByUid", method = RequestMethod.POST)
+    public Result<?> queryCurrentCompanyUserByUid(int uid) {
+        return companyService.queryCurrentCompanyUserByUid(uid);
+    }
 }

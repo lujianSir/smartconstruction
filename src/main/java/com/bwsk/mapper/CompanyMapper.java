@@ -65,4 +65,5 @@ public interface CompanyMapper {
     //查询所有的人包括已经在部门下的
     List<CompanyUser> queryAllUserByDeptId(@Param("dept") Dept dept, @Param("username") String username);
 
+    CurrentUserCompany queryCurrentCompanyUserByUid(int uid);
 }

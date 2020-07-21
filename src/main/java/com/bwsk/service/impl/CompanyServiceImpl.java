@@ -184,4 +184,15 @@ public class CompanyServiceImpl implements CompanyService {
         return Result.success();
     }
 
+    @Override
+    public Result<?> queryCurrentCompanyUserByUid(int uid) {
+        CurrentUserCompany currentUserCompany = companyMapper.queryCurrentCompanyUserByUid(uid);
+        if (currentUserCompany == null) {
+            currentUserCompany = new CurrentUserCompany();
+            currentUserCompany.setUid(uid);
+            currentUserCompany.setCid(0);
+        }
+        return Result.success(currentUserCompany);
+    }
+
 }
