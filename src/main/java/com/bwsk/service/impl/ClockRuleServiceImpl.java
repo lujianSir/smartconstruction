@@ -249,11 +249,11 @@ public class ClockRuleServiceImpl implements ClockRuleService {
 //        String msg = map.get("msg");// 当前是上班、周末、还是节假日
         if (holidaystatus == 1) {
             if (msg.equals("节假日")) {
-                return Result.error(300, "节假日不需要打卡");
+                return Result.error(300, "当天不需要打卡");
             }
         }
         if (ruledata.indexOf(currentdata) == -1) {//不包括  也是不在这个范围内
-            return Result.error(300, "周末不需要打卡");
+            return Result.error(300, "当天不需要打卡");
         }
 
         //判断是否在打卡范围内
