@@ -129,22 +129,23 @@ public class ClockRuleServiceImpl implements ClockRuleService {
     public Result<?> updateClockRule(ClockRule clockRule) {
         int cid = clockRule.getCid();
         List<RuleUser> list;
+        List<RuleUser> listnew = new ArrayList<RuleUser>();
         String msg = "";
         if (clockRule.getUsers() != null && !clockRule.getUsers().equals("")) {//判断添加企业用户是否已经存在规则
             String[] users = clockRule.getUsers().split(",");
             list = clockRuleMapper.queryRuleUserByUidAndCid(cid, users);
             if (list.size() > 0) {
                 for (int j = 0; j < list.size(); j++) {
-                    if (list.get(j).getCrid() == clockRule.getCrid()) {
-                        list.remove(j);
+                    if (list.get(j).getCrid() != clockRule.getCrid()) {
+                        listnew.add(list.get(j));
                     }
                 }
-                if (list.size() > 0) {
+                if (listnew.size() > 0) {
                     msg += "用户：";
-                    for (int i = 0; i < list.size(); i++) {
-                        if (list.get(i).getCrid() != clockRule.getCrid()) {
-                            msg += list.get(i).getUsername() + "已存在" + list.get(i).getCrname();
-                            if (i < list.size() - 1) {
+                    for (int i = 0; i < listnew.size(); i++) {
+                        if (listnew.get(i).getCrid() != clockRule.getCrid()) {
+                            msg += listnew.get(i).getUsername() + "已存在" + listnew.get(i).getCrname();
+                            if (i < listnew.size() - 1) {
                                 msg += ",";
                             }
                         }

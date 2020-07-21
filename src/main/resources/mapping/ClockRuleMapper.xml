@@ -80,7 +80,7 @@
         a.*, b.username,c.crname
         FROM
         ruleuser a
-        LEFT JOIN USER b ON a.uid = b.uid LEFT JOIN clockrule c on a.crid=c.crid where a.cid=#{cid} and a.uid in
+        LEFT JOIN user b ON a.uid = b.uid LEFT JOIN clockrule c on a.crid=c.crid where a.cid=#{cid} and a.uid in
         <foreach collection="users" item="uid" open="(" close=")" separator=",">
             #{uid}
         </foreach>
@@ -92,7 +92,7 @@
         a.*, b.username,c.crname
         FROM
         ruleuser a
-        LEFT JOIN USER b ON a.uid = b.uid LEFT JOIN clockrule c on a.crid=c.crid where a.cid=#{cid} and a.uid in
+        LEFT JOIN user b ON a.uid = b.uid LEFT JOIN clockrule c on a.crid=c.crid where a.cid=#{cid} and a.uid in
         <foreach item="item" collection="list" separator="," open="(" close=")" index="">
             #{item}
         </foreach>
