@@ -101,6 +101,11 @@ public class FaceImageServiceImpl implements FaceImageService {
         }
     }
 
+    @Override
+    public Result<?> queryFaceImageByCid(FaceUserImage faceImage) {
+        return Result.success(faceImageMapper.queryFaceImageByCid(faceImage));
+    }
+
     //人脸检测(检测是否是人脸)
     public String getFacedetection(String realpath) {
         String message = "";

@@ -14,4 +14,8 @@ public interface FaceImageService {
 
     //删除人脸图片
     Result<?> deleteFaceImage(FaceUserImage faceImage);
+
+    //通过企业ID查询所有的人以及已经上传的图片
+    Result<?> queryFaceImageByCid(FaceUserImage faceImage);
+
 }

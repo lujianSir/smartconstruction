@@ -13,4 +13,32 @@
     <select id="queryFaceUserImageByFuid" resultType="com.bwsk.entity.FaceUserImage">
         select * from faceuserimage where fuid=#{fuid}
     </select>
+
+    <select id="queryFaceImageByCid" resultType="com.bwsk.entity.FaceUserImage">
+        SELECT
+        a.*, b.username,
+        c.fictitiousurl,
+        CASE
+        WHEN a.uid IN (
+        SELECT
+        uid
+        FROM
+        faceuserimage
+        WHERE
+        cid = #{cid}
+        ) THEN
+        1
+        ELSE
+        0
+        END facestyle
+        FROM
+        companyuser a
+        LEFT JOIN USER b ON a.uid = b.uid
+        LEFT JOIN faceuserimage c ON b.uid = c.uid
+        WHERE
+        a.cid =#{cid}
+        <if test="uid!=null and uid !=''">
+            and a.uid =#{uid}
+        </if>
+    </select>
 </mapper>

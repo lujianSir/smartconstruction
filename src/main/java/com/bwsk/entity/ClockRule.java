@@ -52,7 +52,17 @@ public class ClockRule implements Serializable {
 
     private int isclock;//是否已经打卡过
 
+    private int facestyle;// 1开启 2关闭
+
     private ClockUser clockUser;
+
+    public int getFacestyle() {
+        return facestyle;
+    }
+
+    public void setFacestyle(int facestyle) {
+        this.facestyle = facestyle;
+    }
 
     public List<AddressMessage> getAddressMessageList() {
         return addressMessageList;

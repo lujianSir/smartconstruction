@@ -148,6 +148,9 @@
             <if test="uid != null and uid!=''">
                 uid,
             </if>
+            <if test="facestyle != null and facestyle!=''">
+                facestyle,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="cid != null and cid!=''">
@@ -194,6 +197,9 @@
             </if>
             <if test="uid != null and uid!=''">
                 #{uid},
+            </if>
+            <if test="facestyle != null and facestyle!=''">
+                #{facestyle},
             </if>
         </trim>
     </insert>
@@ -528,7 +534,9 @@
             <if test="uid != null and uid!=''">
                 uid=#{uid},
             </if>
-
+            <if test="facestyle != null and facestyle!=''">
+                facestyle=#{facestyle},
+            </if>
         </set>
         where crid=#{crid}
     </update>
