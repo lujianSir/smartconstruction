@@ -41,7 +41,7 @@ public class FaceImageController {
     }
 
     /**
-     * 通过企业ID查询所有的人以及已经上传的图片
+     * 通过企业ID查询所有的人以及已经上传的图片1
      *
      * @param faceImage
      * @return
