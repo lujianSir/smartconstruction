@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bwsk.mapper.FaceImageMapper">
+    <!--添加人脸图片-->
+    <insert id="insertFaceUserImage" parameterType="com.bwsk.entity.FaceUserImage">
+          insert into faceuserimage (uid,fictitiousurl,actualurl,cid) values (#{uid},#{fictitiousurl},#{actualurl},#{cid})
+    </insert>
+
+    <delete id="deleteFaceUserImage" parameterType="com.bwsk.entity.FaceUserImage">
+        delete from faceuserimage where fuid=#{fuid}
+    </delete>
+
+    <select id="queryFaceUserImageByFuid" resultType="com.bwsk.entity.FaceUserImage">
+        select * from faceuserimage where fuid=#{fuid}
+    </select>
+</mapper>

@@ -24,12 +24,14 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/image/user/**").addResourceLocations("file:/" + newrootPath + "/user/");
         registry.addResourceHandler("/image/video/**").addResourceLocations("file:/" + newrootPath + "/video/");
         registry.addResourceHandler("/image/picture/**").addResourceLocations("file:/" + newrootPath + "/picture/");
+        registry.addResourceHandler("/image/face/**").addResourceLocations("file:/" + newrootPath + "/picture/");
 //        registry.addResourceHandler("/image/picture/**")
 //                .addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/picture/");// linux
 //        registry.addResourceHandler("/image/video/**").addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/video/");//
 //        registry.addResourceHandler("/image/picture/**")
 //                .addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/picture/");// linux
 //        registry.addResourceHandler("/image/user/**").addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/user/");//
+//        registry.addResourceHandler("/image/face/**").addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/face/");//
         WebMvcConfigurer.super.addResourceHandlers(registry);
     }
 
