@@ -52,12 +52,13 @@ public class FaceImageServiceImpl implements FaceImageService {
                 System.out.println(msg.equals(""));
                 if (!msg.equals("")) {//不是
                     imageDelete(filePath);
-                    return Result.error(503, msg);
+                    return Result.error(503, "照片不对");
                 } else {
                     if (number == 1) {//录入
                         // 录入文件信息
                         FaceUserImage faceUserImage = new FaceUserImage();
                         faceUserImage.setUid(faceImage.getUid());
+                        faceUserImage.setCid(faceImage.getCid());
                         faceUserImage.setActualurl(filePath);
                         String fvirtualurl = "/image/face/" + filename;
                         faceUserImage.setFictitiousurl(fvirtualurl);
