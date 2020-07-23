@@ -549,4 +549,7 @@
         delete  from  ruleuser where crid=#{crid}
     </delete>
 
+    <select id="queryAllRuleUser" resultType="com.bwsk.entity.RuleUser">
+        select * from ruleuser
+    </select>
 </mapper>

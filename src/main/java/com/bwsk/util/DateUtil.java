@@ -17,13 +17,23 @@ import java.util.*;
 public class DateUtil {
 
     /**
-     * 获取当前时间
+     * 获取当前时间 年月日 时分秒
      *
      * @return
      */
     public static String getCurrentDatetime() {
         return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
     }
+
+    /**
+     * 获取当前时间 年月日
+     *
+     * @return
+     */
+    public static String getCurrentDate() {
+        return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+    }
+
 
     /**
      * 将字符串转换成日期
@@ -199,6 +209,34 @@ public class DateUtil {
         return min + "";
     }
 
+
+    public static List<String> getWorkDays(String date1, String date2) throws Exception {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        //首先得到两个日期之间的所有日期信息
+        List<String> allDays = new ArrayList<>();
+        int dayTime = 24 * 60 * 60 * 1000;
+        long d1 = format.parse(date1).getTime();
+        long d2 = format.parse(date2).getTime();
+        while (d2 >= d1) {
+            String time = format.format(d1);
+            allDays.add(time);
+            d1 += dayTime;
+        }
+
+        //将得到的所有日期遍历，将每个日期的星期信息取出，然后将周日和周六的过滤掉即可
+        Calendar calendar = Calendar.getInstance();
+        List<String> workdays = new ArrayList<>();
+        for (String str : allDays) {
+            calendar.setTime(format.parse(str));
+            int week = calendar.get(Calendar.DAY_OF_WEEK);
+            if (week != 1 && week != 7) {
+                workdays.add(str);
+            }
+        }
+        return workdays;
+    }
+
+
     public static void main(String[] args) throws Throwable {
 
 //        String a = dayForWeek("2020-07-06");
@@ -212,7 +250,9 @@ public class DateUtil {
 
 //        String httpArg = "2020-05-01";
 //        System.out.println(getWeeKMsg(httpArg));
-        String min = getHour("2014-05-27 17:00:00", "2014-05-27 18:40:58", "yyyy-MM-dd HH:mm");
-        System.out.println("---------相隔分钟数： " + min);
+//        String min = getHour("2014-05-27 17:00:00", "2014-05-27 18:40:58", "yyyy-MM-dd HH:mm");
+//        System.out.println("---------相隔分钟数： " + min);
+        List<String> result = getWorkDays("2020-07-01", "2020-07-23");
+        System.out.println(result);
     }
 }

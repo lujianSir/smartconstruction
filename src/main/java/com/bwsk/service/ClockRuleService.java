@@ -2,6 +2,8 @@ package com.bwsk.service;
 
 import com.bwsk.entity.*;
 
+import java.util.List;
+
 public interface ClockRuleService {
 
     //添加考勤地点信息
@@ -37,4 +39,8 @@ public interface ClockRuleService {
 
     //删除打卡规则
     Result<?> deleteClockRule(ClockRule clockRule);
+
+    //查询所有的有规则的用户
+    List<RuleUser> queryAllRuleUser();
+
 }

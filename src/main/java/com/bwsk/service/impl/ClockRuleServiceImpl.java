@@ -279,6 +279,7 @@ public class ClockRuleServiceImpl implements ClockRuleService {
         clockUser.setCurrentday(currentTime.substring(0, 9));
         clockUser.setUid(ruleUser.getUid());
         clockUser.setCid(ruleUser.getCid());
+        clockUser.setCrid(ruleUser.getCrid());
         clockUser.setCurrentday(currentTime);
         ClockUser cUser = clockRuleMapper.queryClockUserByUidAndCid(clockUser);
         if (cUser == null) {
@@ -338,5 +339,10 @@ public class ClockRuleServiceImpl implements ClockRuleService {
         clockRuleMapper.deleteClockRule(clockRule);
         clockRuleMapper.deleteRuleUser(clockRule);
         return Result.success("删除成功");
+    }
+
+    @Override
+    public List<RuleUser> queryAllRuleUser() {
+        return clockRuleMapper.queryAllRuleUser();
     }
 }

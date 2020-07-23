@@ -4,11 +4,10 @@ import com.bwsk.entity.FaceUserImage;
 import com.bwsk.entity.Result;
 import com.bwsk.service.FaceImageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -16,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
  *
  * @author lujian
  */
-@Controller
+@RestController
 @RequestMapping("/app/face")
 public class FaceImageController {
 
@@ -24,16 +23,15 @@ public class FaceImageController {
     private FaceImageService faceImageService;
 
 
-    @RequestMapping("/test")
-    public String test() {
-        return "file";
-    }
+//    @RequestMapping("/test")
+//    public String test() {
+//        return "file";
+//    }
 
     /**
      * 实现文件上传
      */
     @RequestMapping(value = "/imageUpload", method = RequestMethod.POST)
-    @ResponseBody
     public Result<?> imageUpload(@RequestParam(value = "file", required = false) MultipartFile file, FaceUserImage faceImage, int number) {
         return faceImageService.imageUpload(file, faceImage, number);
     }
@@ -45,7 +43,6 @@ public class FaceImageController {
      * @return
      */
     @RequestMapping(value = "/deleteFaceImage", method = RequestMethod.POST)
-    @ResponseBody
     public Result<?> deleteFaceImage(FaceUserImage faceImage) {
         return faceImageService.deleteFaceImage(faceImage);
     }
@@ -57,7 +54,6 @@ public class FaceImageController {
      * @return
      */
     @RequestMapping(value = "/queryFaceImageByCid", method = RequestMethod.POST)
-    @ResponseBody
     public Result<?> queryFaceImageByCid(FaceUserImage faceImage) {
         return faceImageService.queryFaceImageByCid(faceImage);
     }

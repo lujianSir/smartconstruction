@@ -68,4 +68,7 @@ public interface ClockRuleMapper {
     //根据CRID删除规则与用户的绑定
     void deleteRuleUser(ClockRule clockRule);
 
+    //查询所有的有规则的用户
+    List<RuleUser> queryAllRuleUser();
+
 }
