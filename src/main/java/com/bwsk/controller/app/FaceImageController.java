@@ -4,7 +4,11 @@ import com.bwsk.entity.FaceUserImage;
 import com.bwsk.entity.Result;
 import com.bwsk.service.FaceImageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -12,12 +16,18 @@ import org.springframework.web.multipart.MultipartFile;
  *
  * @author lujian
  */
-@RestController
+@Controller
 @RequestMapping("/app/face")
 public class FaceImageController {
 
     @Autowired
     private FaceImageService faceImageService;
+
+
+    @RequestMapping("/test")
+    public String test() {
+        return "file";
+    }
 
     /**
      * 实现文件上传

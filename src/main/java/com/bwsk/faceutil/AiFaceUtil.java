@@ -2,6 +2,7 @@ package com.bwsk.faceutil;
 
 import com.baidu.aip.face.AipFace;
 import com.baidu.aip.face.MatchRequest;
+import com.bwsk.util.TrustHttp;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -42,6 +43,7 @@ public class AiFaceUtil {
         options.put("face_field", "age");// 返回的人脸信息
         options.put("max_face_num", "1");// 最大人脸识别数1
         options.put("face_type", "LIVE");// 照骗类型 生活照
+        TrustHttp.trustEveryone();
         JSONObject res = client.detect(image.getImage(), image.getImageType(), options);
         String result = res.get("result").toString();
         if (result == null || result.equals("null")) {
@@ -64,6 +66,7 @@ public class AiFaceUtil {
         options.put("user_info", "user's info");
         options.put("quality_control", "NORMAL");
         options.put("liveness_control", "LOW");
+        TrustHttp.trustEveryone();
         // 人脸注册
         JSONObject res = client.addUser(image.getImage(), image.getImageType(), groupId, userId, options);
 
@@ -87,14 +90,21 @@ public class AiFaceUtil {
         options.put("user_id", userId);
         //JSONObject jsobj1 = new JSONObject();
         String message = "";
+        TrustHttp.trustEveryone();
         // 人脸注册
         JSONObject res = client.search(image.getImage(), image.getImageType(), groupId, options);
         JSONObject result = res.getJSONObject("result");
         JSONArray user_list = result.getJSONArray("user_list");
         for (int i = 0; i < user_list.length(); i++) {
             JSONObject job = user_list.getJSONObject(i);// 把每一个对象转成json对象
-            double jsonId = (double) job.get("score"); // 得到每个对象中的id值
-            int score = (int) jsonId;
+            int score = 0;
+            System.out.println(job.get("score"));
+            if (job.get("score").equals(100)) {
+                score = (int) job.get("score");
+            } else {
+                double jsonId = (double) job.get("score"); // 得到每个对象中的id值
+                score = (int) jsonId;
+            }
             if (score > 80) {
                 // jsobj1.put("message", "相似度" + score + "%,是同一个人");
                 message = "同一个人";
@@ -102,7 +112,7 @@ public class AiFaceUtil {
                 // jsobj1.put("message", "相似度只有" + score + "%,不是同一个人");
                 message = "不是同一个人";
             }
-            System.out.println(jsonId);
+            // System.out.println(jsonId);
         }
         return message;
     }
@@ -121,6 +131,7 @@ public class AiFaceUtil {
         jsonArray = result.getJSONArray("group_id_list");// 获取数组
         boolean flag = false;
         if (jsonArray.isEmpty()) {
+            TrustHttp.trustEveryone();
             JSONObject message = client.groupAdd(groupId, null);
             System.out.println(message);
         } else {
@@ -153,6 +164,7 @@ public class AiFaceUtil {
 
         String groupIdList = "你的人脸库名称";
 
+        TrustHttp.trustEveryone();
         // 人脸搜索
         JSONObject res = client.search(imageU.getImage(), imageU.getImageType(), groupIdList, options);
         return res.toString(2);
@@ -169,6 +181,7 @@ public class AiFaceUtil {
     public static String FacedeleteUser(AipFace client, String groupId, String userId) {
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
+        TrustHttp.trustEveryone();
         // 用户删除
         JSONObject res = client.deleteUser(groupId, userId, options);
         return res.toString(2);

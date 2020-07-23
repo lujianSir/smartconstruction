@@ -2,7 +2,6 @@ package com.bwsk.service.impl;
 
 import com.baidu.aip.face.AipFace;
 import com.bwsk.entity.FaceUserImage;
-import com.bwsk.entity.FileInfo;
 import com.bwsk.entity.Result;
 import com.bwsk.faceutil.AiFaceObject;
 import com.bwsk.faceutil.AiFaceUtil;
@@ -28,6 +27,7 @@ public class FaceImageServiceImpl implements FaceImageService {
     @Override
     public Result<?> imageUpload(MultipartFile file, FaceUserImage faceImage, int number) {
         // TODO Auto-generated method stub
+        String filePath = "";
         if (!file.isEmpty()) {
             try {
                 // 文件1存放服务端的位置
@@ -41,7 +41,7 @@ public class FaceImageServiceImpl implements FaceImageService {
                 if (!dir.exists()) {
                     dir.mkdirs();
                 }
-                String filePath = dir.getAbsolutePath() + File.separator + filename;
+                filePath = dir.getAbsolutePath() + File.separator + filename;
 
                 // 写文件到服务器
                 File serverFile = new File(filePath);
@@ -49,6 +49,7 @@ public class FaceImageServiceImpl implements FaceImageService {
 
                 //检测是否是人脸
                 String msg = getFacedetection(filePath);
+                System.out.println(msg.equals(""));
                 if (!msg.equals("")) {//不是
                     imageDelete(filePath);
                     return Result.error(503, msg);
@@ -81,6 +82,7 @@ public class FaceImageServiceImpl implements FaceImageService {
                 }
 
             } catch (Exception e) {
+                imageDelete(filePath);
                 return Result.error(501, "服务端错误");
             }
         } else {
@@ -121,6 +123,8 @@ public class FaceImageServiceImpl implements FaceImageService {
                 JSONObject jsobj1 = new JSONObject();
                 jsobj1.put("message", "照片不对，需要生活照");
                 message = jsobj1.toString();
+            } else {
+                message = "";
             }
         } else {
             message = "{'message':'照片不存在'}";
@@ -164,9 +168,8 @@ public class FaceImageServiceImpl implements FaceImageService {
     public String imageDelete(String fvirtualurl) {
         // TODO Auto-generated method stub
         try {
-            FileInfo fileinfo = new FileInfo();
             // 删除文件
-            File file = new File(fileinfo.getFrealurl());
+            File file = new File(fvirtualurl);
             if (file.exists()) {
                 file.delete();
             }

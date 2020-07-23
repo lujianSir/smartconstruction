@@ -1334,3 +1334,375 @@ You may wish to exclude one of them to ensure predictable runtime behavior
 2020-07-23 11:54:43.338  INFO 10036 --- [main] c.b.SmartconstructionApplicationTests    : Started SmartconstructionApplicationTests in 4.271 seconds (JVM running for 5.471)
 2020-07-23 11:54:44.296  INFO 10036 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
 2020-07-23 11:54:44.296  INFO 10036 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:13:53.303  INFO 10140 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 10140 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 12:13:53.305 DEBUG 10140 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 12:13:53.305  INFO 10140 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 12:13:54.007  INFO 10140 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-23 12:13:54.010  INFO 10140 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-23 12:13:54.049  INFO 10140 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 Redis repository interfaces.
+2020-07-23 12:13:54.568  INFO 10140 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-23 12:13:54.576  INFO 10140 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 12:13:54.577  INFO 10140 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-23 12:13:54.678  INFO 10140 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 12:13:54.679  INFO 10140 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1330 ms
+2020-07-23 12:13:55.608  INFO 10140 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:13:55.815  INFO 10140 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-23 12:13:55.856  INFO 10140 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-23 12:13:55.868  INFO 10140 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.951 seconds (JVM running for 4.26)
+2020-07-23 12:14:17.635  INFO 10140 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 12:14:17.635  INFO 10140 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 12:14:17.640  INFO 10140 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-07-23 12:14:17.675  INFO 10140 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 12:14:17.773  INFO 10140 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 12:15:05.707  INFO 10140 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-23 12:15:05.708  INFO 10140 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:15:05.721  INFO 10140 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-23 12:15:05.728  INFO 10140 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-23 12:15:12.188  INFO 9680 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 9680 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 12:15:12.193 DEBUG 9680 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 12:15:12.193  INFO 9680 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 12:15:12.839  INFO 9680 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-23 12:15:12.841  INFO 9680 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-23 12:15:12.881  INFO 9680 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29ms. Found 0 Redis repository interfaces.
+2020-07-23 12:15:13.290  INFO 9680 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-23 12:15:13.297  INFO 9680 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 12:15:13.297  INFO 9680 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-23 12:15:13.382  INFO 9680 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 12:15:13.382  INFO 9680 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1134 ms
+2020-07-23 12:15:14.109  INFO 9680 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:15:14.281  INFO 9680 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-23 12:15:14.314  INFO 9680 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-23 12:15:14.324  INFO 9680 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.539 seconds (JVM running for 3.058)
+2020-07-23 12:15:25.676  INFO 9680 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 12:15:25.676  INFO 9680 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 12:15:25.681  INFO 9680 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-07-23 12:16:12.685  INFO 12544 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 12544 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 12:16:12.688 DEBUG 12544 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 12:16:12.688  INFO 12544 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 12:16:31.204  INFO 13308 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 13308 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 12:16:31.207 DEBUG 13308 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 12:16:31.208  INFO 13308 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 12:16:31.934  INFO 13308 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-23 12:16:31.936  INFO 13308 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-23 12:16:31.973  INFO 13308 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 Redis repository interfaces.
+2020-07-23 12:16:32.444  INFO 13308 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-23 12:16:32.451  INFO 13308 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 12:16:32.452  INFO 13308 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-23 12:16:32.549  INFO 13308 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 12:16:32.549  INFO 13308 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1289 ms
+2020-07-23 12:16:33.421  INFO 13308 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:16:33.630  INFO 13308 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-23 12:16:33.672  INFO 13308 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-23 12:16:33.684  INFO 13308 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 3.043 seconds (JVM running for 3.732)
+2020-07-23 12:16:40.392  INFO 13308 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-23 12:16:40.393  INFO 13308 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:18:43.580  INFO 1276 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 1276 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 12:18:43.585 DEBUG 1276 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 12:18:43.586  INFO 1276 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 12:18:44.532  INFO 1276 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-23 12:18:44.534  INFO 1276 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-23 12:18:44.574  INFO 1276 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 Redis repository interfaces.
+2020-07-23 12:18:45.671  INFO 1276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-23 12:18:45.679  INFO 1276 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 12:18:45.679  INFO 1276 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-23 12:18:46.127  INFO 1276 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 12:18:46.127  INFO 1276 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2479 ms
+2020-07-23 12:18:46.952  INFO 1276 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:18:47.156  INFO 1276 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-23 12:18:47.195  INFO 1276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-23 12:18:47.206  INFO 1276 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 4.127 seconds (JVM running for 4.806)
+2020-07-23 12:18:50.478  INFO 1276 --- [http-nio-7000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 12:18:50.478  INFO 1276 --- [http-nio-7000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 12:18:50.484  INFO 1276 --- [http-nio-7000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-07-23 12:19:06.306  INFO 1276 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 12:19:06.422  INFO 1276 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 12:22:27.727  INFO 1276 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-23 12:22:27.728  INFO 1276 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:22:27.744  INFO 1276 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-23 12:22:27.751  INFO 1276 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-23 12:22:34.224  INFO 8432 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 8432 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 12:22:34.227 DEBUG 8432 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 12:22:34.228  INFO 8432 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 12:22:34.949  INFO 8432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-23 12:22:34.952  INFO 8432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-23 12:22:34.993  INFO 8432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 Redis repository interfaces.
+2020-07-23 12:22:35.489  INFO 8432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-23 12:22:35.498  INFO 8432 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 12:22:35.498  INFO 8432 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-23 12:22:35.605  INFO 8432 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 12:22:35.606  INFO 8432 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1331 ms
+2020-07-23 12:22:36.468  INFO 8432 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:22:36.678  INFO 8432 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-23 12:22:36.719  INFO 8432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-23 12:22:36.730  INFO 8432 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.992 seconds (JVM running for 3.657)
+2020-07-23 12:22:47.460  INFO 8432 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 12:22:47.460  INFO 8432 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 12:22:47.465  INFO 8432 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-07-23 12:22:50.737  INFO 8432 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 12:22:51.143  INFO 8432 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 12:27:44.491  INFO 8432 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-23 12:27:44.492  INFO 8432 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:27:44.507  INFO 8432 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-23 12:27:44.512  INFO 8432 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-23 12:27:53.712  INFO 12444 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 12444 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 12:27:53.714 DEBUG 12444 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 12:27:53.715  INFO 12444 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 12:27:54.395  INFO 12444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-23 12:27:54.397  INFO 12444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-23 12:27:54.439  INFO 12444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 Redis repository interfaces.
+2020-07-23 12:27:54.931  INFO 12444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-23 12:27:54.939  INFO 12444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 12:27:54.939  INFO 12444 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-23 12:27:55.033  INFO 12444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 12:27:55.033  INFO 12444 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1268 ms
+2020-07-23 12:27:55.933  INFO 12444 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:27:56.148  INFO 12444 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-23 12:27:56.190  INFO 12444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-23 12:27:56.202  INFO 12444 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.955 seconds (JVM running for 3.593)
+2020-07-23 12:28:07.283  INFO 12444 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 12:28:07.283  INFO 12444 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 12:28:07.287  INFO 12444 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-07-23 12:28:07.358  INFO 12444 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 12:28:07.459  INFO 12444 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 12:28:53.129  WARN 12444 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s566ms650µs818ns).
+2020-07-23 12:29:59.195  INFO 12444 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-23 12:29:59.196  INFO 12444 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:29:59.211  INFO 12444 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-23 12:29:59.222  INFO 12444 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-23 12:30:04.622  INFO 11176 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 11176 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 12:30:04.625 DEBUG 11176 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 12:30:04.625  INFO 11176 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 12:30:05.328  INFO 11176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-23 12:30:05.330  INFO 11176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-23 12:30:05.371  INFO 11176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 Redis repository interfaces.
+2020-07-23 12:30:05.837  INFO 11176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-23 12:30:05.845  INFO 11176 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 12:30:05.845  INFO 11176 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-23 12:30:05.942  INFO 11176 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 12:30:05.942  INFO 11176 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1270 ms
+2020-07-23 12:30:06.812  INFO 11176 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:30:07.021  INFO 11176 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-23 12:30:07.065  INFO 11176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-23 12:30:07.077  INFO 11176 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.936 seconds (JVM running for 3.587)
+2020-07-23 12:31:34.173  INFO 11176 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 12:31:34.173  INFO 11176 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 12:31:34.178  INFO 11176 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-07-23 12:31:34.263  INFO 11176 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 12:31:34.364  INFO 11176 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 12:32:14.199  INFO 11176 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-23 12:32:14.201  INFO 11176 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:32:14.286  INFO 11176 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-23 12:32:14.295  INFO 11176 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-23 12:32:20.013  INFO 11844 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 11844 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 12:32:20.015 DEBUG 11844 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 12:32:20.016  INFO 11844 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 12:32:20.628  INFO 11844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-23 12:32:20.630  INFO 11844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-23 12:32:20.665  INFO 11844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25ms. Found 0 Redis repository interfaces.
+2020-07-23 12:32:21.050  INFO 11844 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-23 12:32:21.056  INFO 11844 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 12:32:21.056  INFO 11844 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-23 12:32:21.141  INFO 11844 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 12:32:21.141  INFO 11844 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1085 ms
+2020-07-23 12:32:21.902  INFO 11844 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:32:22.079  INFO 11844 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-23 12:32:22.113  INFO 11844 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-23 12:32:22.123  INFO 11844 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.622 seconds (JVM running for 3.146)
+2020-07-23 12:32:27.922  INFO 11844 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 12:32:27.923  INFO 11844 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 12:32:27.927  INFO 11844 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-07-23 12:32:28.052  INFO 11844 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 12:32:28.138  INFO 11844 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 12:33:03.757  INFO 3012 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 3012 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 12:33:03.760 DEBUG 3012 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 12:33:03.761  INFO 3012 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 12:33:04.515  INFO 3012 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-23 12:33:04.517  INFO 3012 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-23 12:33:04.562  INFO 3012 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31ms. Found 0 Redis repository interfaces.
+2020-07-23 12:33:05.286  INFO 3012 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-23 12:33:05.296  INFO 3012 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 12:33:05.297  INFO 3012 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-23 12:33:05.392  INFO 3012 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 12:33:05.393  INFO 3012 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1577 ms
+2020-07-23 12:33:06.314  INFO 3012 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:33:06.548  INFO 3012 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-23 12:33:06.804  INFO 3012 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-23 12:33:06.820  INFO 3012 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 3.563 seconds (JVM running for 4.261)
+2020-07-23 12:33:29.666  INFO 3012 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 12:33:29.667  INFO 3012 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 12:33:29.671  INFO 3012 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-07-23 12:33:29.824  INFO 3012 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 12:33:29.936  INFO 3012 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 12:35:24.604  WARN 3012 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48s793ms523µs361ns).
+2020-07-23 12:35:28.717  WARN 3012 --- [http-nio-7000-exec-1] s.w.m.s.StandardServletMultipartResolver : Failed to perform cleanup of multipart items
+
+java.lang.NullPointerException: null
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2794) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.connector.Request.getParts(Request.java:2771) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.connector.RequestFacade.getParts(RequestFacade.java:1098) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at javax.servlet.http.HttpServletRequestWrapper.getParts(HttpServletRequestWrapper.java:359) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.multipart.support.StandardServletMultipartResolver.cleanupMultipart(StandardServletMultipartResolver.java:97) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.cleanupMultipart(DispatcherServlet.java:1219) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1076) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2020-07-23 12:35:28.726  INFO 3012 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-23 12:35:28.727  INFO 3012 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:35:28.741  INFO 3012 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-23 12:35:28.746  INFO 3012 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-23 12:36:31.593  INFO 11304 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 11304 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 12:36:31.596 DEBUG 11304 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 12:36:31.597  INFO 11304 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 12:36:32.294  INFO 11304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-23 12:36:32.296  INFO 11304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-23 12:36:32.335  INFO 11304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 Redis repository interfaces.
+2020-07-23 12:36:32.831  INFO 11304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-23 12:36:32.840  INFO 11304 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 12:36:32.840  INFO 11304 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-23 12:36:32.949  INFO 11304 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 12:36:32.949  INFO 11304 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1301 ms
+2020-07-23 12:36:33.803  INFO 11304 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 12:36:34.002  INFO 11304 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-23 12:36:34.040  INFO 11304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-23 12:36:34.052  INFO 11304 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.913 seconds (JVM running for 3.574)
+2020-07-23 12:38:08.545  INFO 11304 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 12:38:08.546  INFO 11304 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 12:38:08.551  INFO 11304 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-07-23 12:38:08.696  INFO 11304 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 12:38:08.796  INFO 11304 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 14:11:53.389  WARN 11304 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m33s52ms866µs339ns).
+2020-07-23 14:16:47.940  INFO 11304 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-23 14:16:47.941  INFO 11304 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-23 14:16:47.954  INFO 11304 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-23 14:16:47.957  INFO 11304 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-23 14:17:10.926  INFO 10392 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 10392 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 14:17:10.929 DEBUG 10392 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 14:17:10.929  INFO 10392 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 14:17:11.605  INFO 10392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-23 14:17:11.608  INFO 10392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-23 14:17:11.651  INFO 10392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 Redis repository interfaces.
+2020-07-23 14:17:12.125  INFO 10392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-23 14:17:12.132  INFO 10392 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 14:17:12.133  INFO 10392 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-23 14:17:12.230  INFO 10392 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 14:17:12.231  INFO 10392 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1256 ms
+2020-07-23 14:17:13.049  INFO 10392 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 14:17:13.255  INFO 10392 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-23 14:17:13.294  INFO 10392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-23 14:17:13.305  INFO 10392 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.844 seconds (JVM running for 3.497)
+2020-07-23 14:17:19.116  INFO 10392 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 14:17:19.116  INFO 10392 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 14:17:19.122  INFO 10392 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-07-23 14:17:19.192  INFO 10392 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 14:17:19.289  INFO 10392 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 14:18:24.457  INFO 10392 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-23 14:18:24.458  INFO 10392 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-23 14:18:24.517  INFO 10392 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-23 14:18:24.531  INFO 10392 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-23 14:18:29.921  INFO 12432 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 12432 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 14:18:29.924 DEBUG 12432 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 14:18:29.924  INFO 12432 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 14:18:30.578  INFO 12432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-23 14:18:30.580  INFO 12432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-23 14:18:30.618  INFO 12432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 Redis repository interfaces.
+2020-07-23 14:18:31.131  INFO 12432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-23 14:18:31.143  INFO 12432 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 14:18:31.144  INFO 12432 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-23 14:18:31.256  INFO 12432 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 14:18:31.257  INFO 12432 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1276 ms
+2020-07-23 14:18:32.083  INFO 12432 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 14:18:32.291  INFO 12432 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-23 14:18:32.329  INFO 12432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-23 14:18:32.341  INFO 12432 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.97 seconds (JVM running for 3.631)
+2020-07-23 14:18:37.828  INFO 12432 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 14:18:37.829  INFO 12432 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 14:18:37.833  INFO 12432 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-07-23 14:18:37.900  INFO 12432 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 14:18:37.995  INFO 12432 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 14:18:55.292  INFO 12432 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-23 14:18:55.294  INFO 12432 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-23 14:18:55.351  INFO 12432 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-23 14:18:55.359  INFO 12432 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-23 14:19:08.715  INFO 10604 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 10604 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 14:19:08.719 DEBUG 10604 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 14:19:08.719  INFO 10604 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 14:19:09.433  INFO 10604 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-23 14:19:09.436  INFO 10604 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-23 14:19:09.478  INFO 10604 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 Redis repository interfaces.
+2020-07-23 14:19:09.947  INFO 10604 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-23 14:19:09.958  INFO 10604 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 14:19:09.959  INFO 10604 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-23 14:19:10.064  INFO 10604 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 14:19:10.064  INFO 10604 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1292 ms
+2020-07-23 14:19:10.948  INFO 10604 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 14:19:11.159  INFO 10604 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-23 14:19:11.199  INFO 10604 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-23 14:19:11.210  INFO 10604 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 3.005 seconds (JVM running for 3.656)
+2020-07-23 14:19:13.761  INFO 10604 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 14:19:13.761  INFO 10604 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 14:19:13.766  INFO 10604 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-07-23 14:19:13.840  INFO 10604 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 14:19:13.984  INFO 10604 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-23 14:21:26.081  WARN 10604 --- [http-nio-7000-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-07-23 14:21:39.956  INFO 10604 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-23 14:21:39.957  INFO 10604 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-23 14:21:39.973  INFO 10604 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-23 14:21:39.978  INFO 10604 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-23 14:21:47.254  INFO 664 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 664 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-23 14:21:47.257 DEBUG 664 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-23 14:21:47.257  INFO 664 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-23 14:21:47.952  INFO 664 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-23 14:21:47.954  INFO 664 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-23 14:21:47.992  INFO 664 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25ms. Found 0 Redis repository interfaces.
+2020-07-23 14:21:48.389  INFO 664 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-23 14:21:48.395  INFO 664 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-23 14:21:48.396  INFO 664 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-23 14:21:48.486  INFO 664 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-23 14:21:48.486  INFO 664 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1189 ms
+2020-07-23 14:21:49.214  INFO 664 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-23 14:21:49.386  INFO 664 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-23 14:21:49.422  INFO 664 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-23 14:21:49.432  INFO 664 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.534 seconds (JVM running for 3.06)
+2020-07-23 14:21:50.835  INFO 664 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-23 14:21:50.836  INFO 664 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-23 14:21:50.840  INFO 664 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-07-23 14:21:50.877  INFO 664 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-23 14:21:50.958  INFO 664 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
