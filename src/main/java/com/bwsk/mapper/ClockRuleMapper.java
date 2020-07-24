@@ -71,4 +71,6 @@ public interface ClockRuleMapper {
     //查询所有的有规则的用户
     List<RuleUser> queryAllRuleUser();
 
+    //根据日期查询当前打卡情况
+    ClockUser queryClockUserByUidAndCidAndCridAndCurrentDay(ClockUser clockUser);
 }

@@ -555,4 +555,8 @@
     <select id="queryAllRuleUser" resultType="com.bwsk.entity.RuleUser">
         select * from ruleuser
     </select>
+
+    <select id="queryClockUserByUidAndCidAndCridAndCurrentDay" resultType="com.bwsk.entity.ClockUser">
+          select * from clockuser where uid =#{uid} and cid =#{cid} and crid=#{crid} and currentday=#{currentday}
+    </select>
 </mapper>

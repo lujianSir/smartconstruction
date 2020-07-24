@@ -1,6 +1,7 @@
 package com.bwsk.controller.app;
 
 import com.bwsk.entity.ClockStatistics;
+import com.bwsk.entity.ClockUser;
 import com.bwsk.entity.Result;
 import com.bwsk.service.ClockStatisticsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,4 +32,14 @@ public class ClockStatisticsController {
         return clockStatisticsService.queryClockStatisticsByUidAndCidAndCrid(clockStatistics);
     }
 
+    /**
+     * 通过uid cid crid currentday查询当天打卡情况
+     *
+     * @param clockUser
+     * @return
+     */
+    @RequestMapping(value = "/queryClockUserByUidAndCidAndCridAndCurrentDay", method = RequestMethod.POST)
+    public Result<?> queryClockUserByUidAndCidAndCridAndCurrentDay(ClockUser clockUser) {
+        return clockStatisticsService.queryClockUserByUidAndCidAndCridAndCurrentDay(clockUser);
+    }
 }

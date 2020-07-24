@@ -81,4 +81,9 @@ public class ClockStatisticsServiceImpl implements ClockStatisticsService {
         return Result.success(clockStatistics);
     }
 
+    @Override
+    public Result<?> queryClockUserByUidAndCidAndCridAndCurrentDay(ClockUser clockUser) {
+        return Result.success(clockRuleMapper.queryClockUserByUidAndCidAndCridAndCurrentDay(clockUser));
+    }
+
 }
