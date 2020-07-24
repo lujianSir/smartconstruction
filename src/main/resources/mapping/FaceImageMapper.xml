@@ -15,7 +15,21 @@
     </delete>
 
     <select id="queryFaceUserImageByFuid" resultType="com.bwsk.entity.FaceUserImage">
-        select * from faceuserimage where fuid=#{fuid}
+        select * from faceuserimage
+        <where>
+            <if test="uid != null and uid !=''">
+                and uid=#{uid}
+            </if>
+            <if test="cid !=null and cid !=''">
+                and cid=#{cid}
+            </if>
+            <if test="crid !=null and crid !=''">
+                and crid=#{crid}
+            </if>
+            <if test="fuid !=null and fuid !=''">
+                and fuid=#{fuid}
+            </if>
+        </where>
     </select>
 
     <select id="queryFaceImageByCid" resultType="com.bwsk.entity.FaceUserImage">

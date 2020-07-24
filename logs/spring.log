@@ -655,3 +655,83 @@ You may wish to exclude one of them to ensure predictable runtime behavior
 2020-07-24 16:39:13.329  INFO 11908 --- [main] c.b.SmartconstructionApplicationTests    : Started SmartconstructionApplicationTests in 3.545 seconds (JVM running for 4.461)
 2020-07-24 16:39:13.550  INFO 11908 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
 2020-07-24 16:39:13.552  INFO 11908 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-24 16:55:08.643  WARN 12052 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/D:/kaifa/jdk1.8/maven/Maven-Repository/org/json/json/20180813/json-20180813.jar!/org/json/JSONObject.class
+	jar:file:/D:/kaifa/jdk1.8/maven/Maven-Repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-07-24 16:55:08.657  INFO 12052 --- [main] c.b.SmartconstructionApplicationTests    : Starting SmartconstructionApplicationTests on SW131 with PID 12052 (started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-24 16:55:08.658 DEBUG 12052 --- [main] c.b.SmartconstructionApplicationTests    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-24 16:55:08.658  INFO 12052 --- [main] c.b.SmartconstructionApplicationTests    : No active profile set, falling back to default profiles: default
+2020-07-24 16:55:09.255  INFO 12052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-24 16:55:09.257  INFO 12052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-24 16:55:09.298  INFO 12052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 Redis repository interfaces.
+2020-07-24 16:55:11.260  INFO 12052 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-24 16:55:11.793  INFO 12052 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-24 16:55:11.865  INFO 12052 --- [main] c.b.SmartconstructionApplicationTests    : Started SmartconstructionApplicationTests in 3.539 seconds (JVM running for 4.452)
+2020-07-24 16:55:12.105  INFO 12052 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-24 16:55:12.107  INFO 12052 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-24 17:22:13.325  WARN 6156 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/D:/kaifa/jdk1.8/maven/Maven-Repository/org/json/json/20180813/json-20180813.jar!/org/json/JSONObject.class
+	jar:file:/D:/kaifa/jdk1.8/maven/Maven-Repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-07-24 17:22:13.338  INFO 6156 --- [main] c.b.SmartconstructionApplicationTests    : Starting SmartconstructionApplicationTests on SW131 with PID 6156 (started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-24 17:22:13.338 DEBUG 6156 --- [main] c.b.SmartconstructionApplicationTests    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-24 17:22:13.339  INFO 6156 --- [main] c.b.SmartconstructionApplicationTests    : No active profile set, falling back to default profiles: default
+2020-07-24 17:22:13.929  INFO 6156 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-24 17:22:13.932  INFO 6156 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-24 17:22:13.976  INFO 6156 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29ms. Found 0 Redis repository interfaces.
+2020-07-24 17:22:15.994  INFO 6156 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-24 17:22:16.456  INFO 6156 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-24 17:22:16.513  INFO 6156 --- [main] c.b.SmartconstructionApplicationTests    : Started SmartconstructionApplicationTests in 3.515 seconds (JVM running for 4.386)
+2020-07-24 17:22:16.749  INFO 6156 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-24 17:22:16.750  INFO 6156 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-24 17:38:35.522  WARN 7740 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/D:/kaifa/jdk1.8/maven/Maven-Repository/org/json/json/20180813/json-20180813.jar!/org/json/JSONObject.class
+	jar:file:/D:/kaifa/jdk1.8/maven/Maven-Repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-07-24 17:38:35.536  INFO 7740 --- [main] c.b.SmartconstructionApplicationTests    : Starting SmartconstructionApplicationTests on SW131 with PID 7740 (started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-24 17:38:35.536 DEBUG 7740 --- [main] c.b.SmartconstructionApplicationTests    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-24 17:38:35.537  INFO 7740 --- [main] c.b.SmartconstructionApplicationTests    : No active profile set, falling back to default profiles: default
+2020-07-24 17:38:36.171  INFO 7740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-24 17:38:36.173  INFO 7740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-24 17:38:36.216  INFO 7740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29ms. Found 0 Redis repository interfaces.
+2020-07-24 17:38:38.270  INFO 7740 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-24 17:38:38.728  INFO 7740 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-24 17:38:38.805  INFO 7740 --- [main] c.b.SmartconstructionApplicationTests    : Started SmartconstructionApplicationTests in 3.644 seconds (JVM running for 4.661)
+2020-07-24 17:38:39.054  INFO 7740 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-24 17:38:39.056  INFO 7740 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-24 17:43:37.837  WARN 11796 --- [main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/D:/kaifa/jdk1.8/maven/Maven-Repository/org/json/json/20180813/json-20180813.jar!/org/json/JSONObject.class
+	jar:file:/D:/kaifa/jdk1.8/maven/Maven-Repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-07-24 17:43:37.852  INFO 11796 --- [main] c.b.SmartconstructionApplicationTests    : Starting SmartconstructionApplicationTests on SW131 with PID 11796 (started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-24 17:43:37.853 DEBUG 11796 --- [main] c.b.SmartconstructionApplicationTests    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-24 17:43:37.853  INFO 11796 --- [main] c.b.SmartconstructionApplicationTests    : No active profile set, falling back to default profiles: default
+2020-07-24 17:43:38.471  INFO 11796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-24 17:43:38.475  INFO 11796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-24 17:43:38.523  INFO 11796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30ms. Found 0 Redis repository interfaces.
+2020-07-24 17:43:40.536  INFO 11796 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-24 17:43:41.001  INFO 11796 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-24 17:43:41.064  INFO 11796 --- [main] c.b.SmartconstructionApplicationTests    : Started SmartconstructionApplicationTests in 3.548 seconds (JVM running for 4.456)
+2020-07-24 17:43:41.339  INFO 11796 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-24 17:43:41.341  INFO 11796 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

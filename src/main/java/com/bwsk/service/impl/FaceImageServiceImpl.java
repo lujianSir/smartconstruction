@@ -55,6 +55,14 @@ public class FaceImageServiceImpl implements FaceImageService {
                     return Result.error(503, "照片不对");
                 } else {
                     if (number == 1) {//录入
+
+                        FaceUserImage oldfaceimage = faceImageMapper.queryFaceUserImageByFuid(faceImage);
+                        if (oldfaceimage != null) {
+                            faceImageMapper.deleteFaceUserImage(oldfaceimage);
+                            imageDelete(oldfaceimage.getActualurl());
+                            faceDelete(oldfaceimage.getUid() + "", oldfaceimage.getCid() + "_" + oldfaceimage.getCrid());
+                        }
+
                         // 录入文件信息
                         FaceUserImage faceUserImage = new FaceUserImage();
                         faceUserImage.setUid(faceImage.getUid());
