@@ -82,7 +82,14 @@ public class FaceImageServiceImpl implements FaceImageService {
                             return Result.error(504, "识别失败");
                         }
                     } else {// 3更新人脸
-                        int row = faceImageMapper.updateFaceUserImage(faceImage);
+                        FaceUserImage faceUserImage = new FaceUserImage();
+                        faceUserImage.setUid(faceImage.getUid());
+                        faceUserImage.setCid(faceImage.getCid());
+                        faceUserImage.setCrid(faceImage.getCrid());
+                        faceUserImage.setActualurl(filePath);
+                        String fvirtualurl = "/image/face/" + filename;
+                        faceUserImage.setFictitiousurl(fvirtualurl);
+                        int row = faceImageMapper.updateFaceUserImage(faceUserImage);
                         if (row > 0) {
                             faceUpdate(faceImage.getUid() + "", faceImage.getCid() + "_" + faceImage.getCrid(), filePath);
                             return Result.success("更新成功");
