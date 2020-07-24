@@ -203,4 +203,13 @@ public class AiFaceUtil {
         JSONObject res = client.updateUser(imageU.getImage(), imageU.getImageType(), groupId, userId, options);
         return res.toString(2);
     }
+
+    public static String FaceGroupDelete(AipFace client, String groupId) {
+        // 传入可选参数调用接口
+        HashMap<String, String> options = new HashMap<String, String>();
+        TrustHttp.trustEveryone();
+        // 用户组删除
+        JSONObject res = client.groupDelete(groupId, options);
+        return res.toString(2);
+    }
 }

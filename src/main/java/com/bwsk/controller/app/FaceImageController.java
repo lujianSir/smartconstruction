@@ -1,7 +1,10 @@
 package com.bwsk.controller.app;
 
+import com.baidu.aip.face.AipFace;
 import com.bwsk.entity.FaceUserImage;
 import com.bwsk.entity.Result;
+import com.bwsk.faceutil.AiFaceObject;
+import com.bwsk.faceutil.AiFaceUtil;
 import com.bwsk.service.FaceImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,6 +59,18 @@ public class FaceImageController {
     @RequestMapping(value = "/queryFaceImageByCid", method = RequestMethod.POST)
     public Result<?> queryFaceImageByCid(FaceUserImage faceImage) {
         return faceImageService.queryFaceImageByCid(faceImage);
+    }
+
+    /**
+     * 删除百度云上面的用户组
+     *
+     * @param groupid
+     * @return
+     */
+    @RequestMapping(value = "/faceGroupDelete", method = RequestMethod.POST)
+    public Result<?> faceGroupDelete(String groupid) {
+        AipFace client = AiFaceObject.getClient();
+        return Result.success(AiFaceUtil.FaceGroupDelete(client, groupid));
     }
 
 }
