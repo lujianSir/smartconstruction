@@ -186,4 +186,21 @@ public class AiFaceUtil {
         JSONObject res = client.deleteUser(groupId, userId, options);
         return res.toString(2);
     }
+
+    /**
+     * 更新人脸
+     *
+     * @param client
+     * @param groupId
+     * @param userId
+     * @return
+     */
+    public static String FaceUpdateUser(AipFace client, Image imageU, String groupId, String userId) {
+        // 传入可选参数调用接口
+        HashMap<String, String> options = new HashMap<String, String>();
+        TrustHttp.trustEveryone();
+        // 人脸更新
+        JSONObject res = client.updateUser(imageU.getImage(), imageU.getImageType(), groupId, userId, options);
+        return res.toString(2);
+    }
 }

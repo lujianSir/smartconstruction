@@ -10,6 +10,8 @@ public class FaceUserImage implements Serializable {
 
     private int cid;//
 
+    private int crid;//哪个规则
+
     private String fictitiousurl;//虚拟地址
 
     private String actualurl;//实际地址
@@ -17,6 +19,14 @@ public class FaceUserImage implements Serializable {
     private String username;//姓名
 
     private String facestyle;// 1 -有人脸 2-没有人脸
+
+    public int getCrid() {
+        return crid;
+    }
+
+    public void setCrid(int crid) {
+        this.crid = crid;
+    }
 
     public String getUsername() {
         return username;

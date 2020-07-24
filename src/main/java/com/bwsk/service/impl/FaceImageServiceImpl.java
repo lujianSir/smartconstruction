@@ -59,6 +59,7 @@ public class FaceImageServiceImpl implements FaceImageService {
                         FaceUserImage faceUserImage = new FaceUserImage();
                         faceUserImage.setUid(faceImage.getUid());
                         faceUserImage.setCid(faceImage.getCid());
+                        faceUserImage.setCrid(faceImage.getCrid());
                         faceUserImage.setActualurl(filePath);
                         String fvirtualurl = "/image/face/" + filename;
                         faceUserImage.setFictitiousurl(fvirtualurl);
@@ -66,18 +67,26 @@ public class FaceImageServiceImpl implements FaceImageService {
                         int row = faceImageMapper.insertFaceUserImage(faceUserImage);
                         if (row > 0) {
                             faceRegist(filePath, faceImage.getUid() + "", faceImage.getCid() + "");
-                            return Result.success(fvirtualurl);
+                            return Result.success("上传成功");
                         } else {
                             return Result.error(500, "上传失败");
                         }
 
-                    } else {//打卡
-                        String message = faceSearch(filePath, faceImage.getUid() + "", faceImage.getCid() + "");
+                    } else if (number == 2) {//打卡
+                        String message = faceSearch(filePath, faceImage.getUid() + "", faceImage.getCid() + "_" + faceImage.getCrid());
+                        System.out.println("打卡状态:" + message);
                         imageDelete(filePath);
                         if (message.equals("同一个人")) {
                             return Result.success("识别成功");
                         } else {
                             return Result.error(504, "识别失败");
+                        }
+                    } else {// 3更新人脸
+                        String message = faceUpdate(faceImage.getUid() + "", faceImage.getCid() + "_" + faceImage.getCrid(), filePath);
+                        if (!message.equals("")) {
+                            return Result.success("更新成功");
+                        } else {
+                            return Result.error(505, "更新失败");
                         }
                     }
                 }
@@ -97,7 +106,7 @@ public class FaceImageServiceImpl implements FaceImageService {
         int row = faceImageMapper.deleteFaceUserImage(faceImage);
         if (row > 0) {//删除成功
             imageDelete(faceImage.getActualurl());
-            faceDelete(faceImage.getUid() + "", faceImage.getCid() + "");
+            faceDelete(faceImage.getUid() + "", faceImage.getCid() + "_" + faceImage.getCrid());
             return Result.success("删除成功");
         } else {
             return Result.error(500, "删除失败");
@@ -161,6 +170,17 @@ public class FaceImageServiceImpl implements FaceImageService {
     public String faceDelete(String userId, String groupId) {
         AipFace client = AiFaceObject.getClient();
         String message = AiFaceUtil.FacedeleteUser(client, groupId, userId);
+        return message;
+    }
+
+    //更新用户图片
+    public String faceUpdate(String userId, String groupId, String realpath) {
+        AipFace client = AiFaceObject.getClient();
+        Image image = new Image();
+        String img = Base64Convert.GetImageStr(realpath);
+        image.setImage(img);
+        image.setImageType("BASE64");
+        String message = AiFaceUtil.FaceUpdateUser(client, image, groupId, userId);
         return message;
     }
 

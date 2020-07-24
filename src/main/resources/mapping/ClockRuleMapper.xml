@@ -470,12 +470,15 @@
 
     <select id="queryClockRulesByCidAndUid" resultType="com.bwsk.entity.ClockRule">
         SELECT
-            *
+        *
         FROM
-            clockrule
+        clockrule
         WHERE
-            uid = #{uid}
+        uid = #{uid}
         AND cid = #{cid}
+        <if test="facestyle !=null and facestyle !=''">
+            and facestyle =#{facestyle}
+        </if>
     </select>
 
     <select id="queryAddressMessageByAmid" resultType="com.bwsk.entity.AddressMessage">
