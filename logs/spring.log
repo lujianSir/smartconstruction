@@ -353,3 +353,246 @@ You may wish to exclude one of them to ensure predictable runtime behavior
 2020-07-24 14:34:45.564  INFO 1504 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 2020-07-24 14:44:14.609  WARN 1504 --- [http-nio-7000-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
 Field error in object 'faceUserImage' on field 'uid': rejected value [undefined]; codes [typeMismatch.faceUserImage.uid,typeMismatch.uid,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [faceUserImage.uid,uid]; arguments []; default message [uid]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'uid'; nested exception is java.lang.NumberFormatException: For input string: "undefined"]]
+2020-07-24 14:49:24.239  WARN 1504 --- [http-nio-7000-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'faceUserImage' on field 'uid': rejected value [undefined]; codes [typeMismatch.faceUserImage.uid,typeMismatch.uid,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [faceUserImage.uid,uid]; arguments []; default message [uid]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'uid'; nested exception is java.lang.NumberFormatException: For input string: "undefined"]]
+2020-07-24 14:49:35.833  WARN 1504 --- [http-nio-7000-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'faceUserImage' on field 'uid': rejected value [undefined]; codes [typeMismatch.faceUserImage.uid,typeMismatch.uid,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [faceUserImage.uid,uid]; arguments []; default message [uid]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'uid'; nested exception is java.lang.NumberFormatException: For input string: "undefined"]]
+2020-07-24 14:49:41.771  WARN 1504 --- [http-nio-7000-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'faceUserImage' on field 'uid': rejected value [undefined]; codes [typeMismatch.faceUserImage.uid,typeMismatch.uid,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [faceUserImage.uid,uid]; arguments []; default message [uid]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'uid'; nested exception is java.lang.NumberFormatException: For input string: "undefined"]]
+2020-07-24 14:50:54.022  WARN 1504 --- [http-nio-7000-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'faceUserImage' on field 'uid': rejected value [undefined]; codes [typeMismatch.faceUserImage.uid,typeMismatch.uid,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [faceUserImage.uid,uid]; arguments []; default message [uid]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'uid'; nested exception is java.lang.NumberFormatException: For input string: "undefined"]]
+2020-07-24 15:38:20.378  INFO 11412 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 11412 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-24 15:38:20.380 DEBUG 11412 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-24 15:38:20.381  INFO 11412 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-24 15:38:21.105  INFO 11412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-24 15:38:21.108  INFO 11412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-24 15:38:21.149  INFO 11412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 Redis repository interfaces.
+2020-07-24 15:38:21.646  INFO 11412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-24 15:38:21.653  INFO 11412 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-24 15:38:21.654  INFO 11412 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-24 15:38:21.752  INFO 11412 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-24 15:38:21.753  INFO 11412 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1328 ms
+2020-07-24 15:38:22.597  INFO 11412 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-24 15:38:22.796  INFO 11412 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-24 15:38:22.833  INFO 11412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-24 15:38:22.845  INFO 11412 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.945 seconds (JVM running for 3.631)
+2020-07-24 15:40:26.484  INFO 11412 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-24 15:40:26.484  INFO 11412 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-24 15:40:26.490  INFO 11412 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-07-24 15:40:26.525  INFO 11412 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-24 15:40:26.625  INFO 11412 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-24 15:40:34.272 ERROR 11412 --- [http-nio-7000-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'smartconstruction.clockusers' doesn't exist
+### The error may exist in file [D:\kaifa\IDEA_workspace\smartconstruction\target\classes\mapping\ClockStatisticsMapper.xml]
+### The error may involve com.bwsk.mapper.ClockStatisticsMapper.queryClockStatisticsByUidAndCidAndCrid-Inline
+### The error occurred while setting parameters
+### SQL: select * from clockuser         where cuid not in (         SELECT         cuid         FROM         clockusers          WHERE  uid =?                                           and cid =?                                           and crid =?                                           and currentday BETWEEN ? and ?          )                       and uid =?                                 and cid =?                                 and crid =?                                 and currentday BETWEEN ? and ?
+### Cause: java.sql.SQLSyntaxErrorException: Table 'smartconstruction.clockusers' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'smartconstruction.clockusers' doesn't exist] with root cause
+
+java.sql.SQLSyntaxErrorException: Table 'smartconstruction.clockusers' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.20.jar:8.0.20]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.5.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy116.execute(Unknown Source) ~[na:na]
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy64.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy75.queryClockStatisticsByUidAndCidAndCrid(Unknown Source) ~[na:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at com.sun.proxy.$Proxy76.queryClockStatisticsByUidAndCidAndCrid(Unknown Source) ~[na:na]
+	at com.bwsk.service.impl.ClockStatisticsServiceImpl.queryClockStatisticsByUidAndCidAndCrid(ClockStatisticsServiceImpl.java:25) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366) ~[spring-tx-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118) ~[spring-tx-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at com.sun.proxy.$Proxy77.queryClockStatisticsByUidAndCidAndCrid(Unknown Source) ~[na:na]
+	at com.bwsk.controller.app.ClockStatisticsController.queryClockStatisticsByUidAndCidAndCrid(ClockStatisticsController.java:31) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.35.jar:9.0.35]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2020-07-24 15:40:50.709  INFO 11412 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-24 15:40:50.710  INFO 11412 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-24 15:40:50.724  INFO 11412 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-24 15:40:50.731  INFO 11412 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-24 15:41:07.580  INFO 11376 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 11376 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-24 15:41:07.583 DEBUG 11376 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-24 15:41:07.583  INFO 11376 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-24 15:41:08.253  INFO 11376 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-24 15:41:08.255  INFO 11376 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-24 15:41:08.296  INFO 11376 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 Redis repository interfaces.
+2020-07-24 15:41:08.773  INFO 11376 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-24 15:41:08.781  INFO 11376 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-24 15:41:08.781  INFO 11376 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-24 15:41:08.877  INFO 11376 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-24 15:41:08.878  INFO 11376 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1247 ms
+2020-07-24 15:41:09.719  INFO 11376 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-24 15:41:09.934  INFO 11376 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-24 15:41:09.971  INFO 11376 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-24 15:41:09.983  INFO 11376 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.891 seconds (JVM running for 3.548)
+2020-07-24 15:41:12.289  INFO 11376 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-24 15:41:12.289  INFO 11376 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-24 15:41:12.321  INFO 11376 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 32 ms
+2020-07-24 15:41:12.363  INFO 11376 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-24 15:41:12.483  INFO 11376 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-24 15:41:43.644  INFO 11376 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-24 15:41:43.645  INFO 11376 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-24 15:41:43.656  INFO 11376 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-24 15:41:43.666  INFO 11376 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-24 15:43:23.656  INFO 11244 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 11244 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-24 15:43:23.658 DEBUG 11244 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-24 15:43:23.659  INFO 11244 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-24 15:43:24.293  INFO 11244 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-24 15:43:24.295  INFO 11244 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-24 15:43:24.332  INFO 11244 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 Redis repository interfaces.
+2020-07-24 15:43:24.715  INFO 11244 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-24 15:43:24.721  INFO 11244 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-24 15:43:24.722  INFO 11244 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-24 15:43:24.807  INFO 11244 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-24 15:43:24.807  INFO 11244 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1101 ms
+2020-07-24 15:43:25.525  INFO 11244 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-24 15:43:25.694  INFO 11244 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-24 15:43:25.728  INFO 11244 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-24 15:43:25.739  INFO 11244 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.433 seconds (JVM running for 3.002)
+2020-07-24 15:43:29.882  INFO 11244 --- [http-nio-7000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-24 15:43:29.883  INFO 11244 --- [http-nio-7000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-24 15:43:29.887  INFO 11244 --- [http-nio-7000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-07-24 15:43:29.918  INFO 11244 --- [http-nio-7000-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-24 15:43:30.002  INFO 11244 --- [http-nio-7000-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-24 15:43:56.561  INFO 11984 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 11984 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-24 15:43:56.564 DEBUG 11984 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-24 15:43:56.565  INFO 11984 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-24 15:43:57.288  INFO 11984 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-24 15:43:57.290  INFO 11984 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-24 15:43:57.330  INFO 11984 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 Redis repository interfaces.
+2020-07-24 15:43:57.777  INFO 11984 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-24 15:43:57.784  INFO 11984 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-24 15:43:57.785  INFO 11984 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-24 15:43:57.885  INFO 11984 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-24 15:43:57.885  INFO 11984 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1277 ms
+2020-07-24 15:43:58.728  INFO 11984 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-24 15:43:58.956  INFO 11984 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-24 15:43:58.997  INFO 11984 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-24 15:43:59.008  INFO 11984 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.938 seconds (JVM running for 3.582)
+2020-07-24 15:44:00.499  INFO 11984 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-24 15:44:00.500  INFO 11984 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-24 15:44:00.504  INFO 11984 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-07-24 15:44:00.550  INFO 11984 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-24 15:44:00.651  INFO 11984 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-24 15:45:07.033  INFO 11984 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-07-24 15:45:07.034  INFO 11984 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-24 15:45:07.049  INFO 11984 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-07-24 15:45:07.057  INFO 11984 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-07-24 15:59:00.348  INFO 10228 --- [main] com.bwsk.SmartconstructionApplication    : Starting SmartconstructionApplication on SW131 with PID 10228 (D:\kaifa\IDEA_workspace\smartconstruction\target\classes started by Administrator in D:\kaifa\IDEA_workspace\smartconstruction)
+2020-07-24 15:59:00.350 DEBUG 10228 --- [main] com.bwsk.SmartconstructionApplication    : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-07-24 15:59:00.350  INFO 10228 --- [main] com.bwsk.SmartconstructionApplication    : No active profile set, falling back to default profiles: default
+2020-07-24 15:59:00.983  INFO 10228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-24 15:59:00.985  INFO 10228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-24 15:59:01.024  INFO 10228 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 Redis repository interfaces.
+2020-07-24 15:59:01.496  INFO 10228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7000 (http)
+2020-07-24 15:59:01.505  INFO 10228 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-24 15:59:01.505  INFO 10228 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-24 15:59:01.607  INFO 10228 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-24 15:59:01.607  INFO 10228 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1217 ms
+2020-07-24 15:59:02.446  INFO 10228 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-24 15:59:02.654  INFO 10228 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-24 15:59:02.690  INFO 10228 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7000 (http) with context path ''
+2020-07-24 15:59:02.702  INFO 10228 --- [main] com.bwsk.SmartconstructionApplication    : Started SmartconstructionApplication in 2.847 seconds (JVM running for 3.487)
+2020-07-24 15:59:07.073  INFO 10228 --- [http-nio-7000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-24 15:59:07.074  INFO 10228 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-24 15:59:07.080  INFO 10228 --- [http-nio-7000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-07-24 15:59:07.121  INFO 10228 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-24 15:59:07.229  INFO 10228 --- [http-nio-7000-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.

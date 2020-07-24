@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bwsk.mapper.ClockStatisticsMapper">
-    <select id="" resultType="com.bwsk.entity.ClockUser" parameterType="com.bwsk.entity.ClockStatistics">
+    <select id="queryClockStatisticsByUidAndCidAndCrid" resultType="com.bwsk.entity.ClockUser"
+            parameterType="com.bwsk.entity.ClockStatistics">
         select * from clockuser
+        where cuid not in (
+        SELECT
+        cuid
+        FROM
+        clockuser
         <where>
+            firststatus = 1 or firststatus=4
+            and sencondstyle=1 or sencondstyle=4
+
+            and threestatus=1 or threestatus=4
+
+            and fourstyle=1 or fourstyle=4
             <if test="uid !=null and uid !=''">
                 and uid =#{uid}
             </if>
@@ -16,7 +28,20 @@
             <if test="starttime !=null and starttime !='' and endtime!=null and endtime !='' ">
                 and currentday BETWEEN #{starttime} and #{endtime}
             </if>
-
         </where>
+        )
+        <if test="uid !=null and uid !=''">
+            and uid =#{uid}
+        </if>
+        <if test="cid !=null and cid !=''">
+            and cid =#{cid}
+        </if>
+        <if test="crid !=null and crid !=''">
+            and crid =#{crid}
+        </if>
+        <if test="starttime !=null and starttime !='' and endtime!=null and endtime !='' ">
+            and currentday BETWEEN #{starttime} and #{endtime}
+        </if>
+
     </select>
 </mapper>

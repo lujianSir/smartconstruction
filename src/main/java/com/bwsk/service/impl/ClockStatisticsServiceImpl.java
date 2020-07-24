@@ -36,10 +36,6 @@ public class ClockStatisticsServiceImpl implements ClockStatisticsService {
 
             for (int i = 0; i < list.size(); i++) {
                 ClockUser clockUser = list.get(i);
-                if ((clockUser.getFirststatus() == 1 || clockUser.getFirststatus() == 4) && (clockUser.getSencondstyle() == 1 || clockUser.getSencondstyle() == 4)
-                        && (clockUser.getThreestatus() == 1 || clockUser.getThreestatus() == 4) && (clockUser.getFourstyle() == 1 || clockUser.getFourstyle() == 4)) {
-                    list.remove(0);
-                }
                 //判断第一次打卡状态
                 if (clockUser.getFirststatus() == 0) {
                     shortagetotal += 1;
@@ -76,12 +72,13 @@ public class ClockStatisticsServiceImpl implements ClockStatisticsService {
                         earlytotal += 1;
                     }
                 }
-                clockStatistics.setLatetotal(latetotal);
-                clockStatistics.setEarlytotal(earlytotal);
-                clockStatistics.setShortagetotal(shortagetotal);
-                clockStatistics.setClockUserList(list);
             }
+            clockStatistics.setLatetotal(latetotal);
+            clockStatistics.setEarlytotal(earlytotal);
+            clockStatistics.setShortagetotal(shortagetotal);
+            clockStatistics.setClockUserList(list);
         }
         return Result.success(clockStatistics);
     }
+
 }
