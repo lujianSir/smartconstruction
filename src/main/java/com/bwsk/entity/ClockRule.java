@@ -54,7 +54,17 @@ public class ClockRule implements Serializable {
 
     private int facestyle;// 1开启 2关闭
 
+    private boolean facestylename;//
+
     private ClockUser clockUser;
+
+    public boolean isFacestylename() {
+        return facestylename;
+    }
+
+    public void setFacestylename(boolean facestylename) {
+        this.facestylename = facestylename;
+    }
 
     public int getFacestyle() {
         return facestyle;

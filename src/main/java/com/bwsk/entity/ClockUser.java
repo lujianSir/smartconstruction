@@ -16,7 +16,7 @@ public class ClockUser implements Serializable {
 
     private String firsttime;//第一次打卡时间
 
-    private int firststatus;//是否迟到(1-正常，2-迟到)
+    private int firststatus;//是否迟到(1-正常，2-迟到 ,3-早退 ,4-补卡)
 
     private String firstrrmark;//第一次迟到备注
 
@@ -24,7 +24,7 @@ public class ClockUser implements Serializable {
 
     private String sencondtime;//第二次打卡时间
 
-    private int sencondstyle;//是否迟到(1-正常，2-早退)
+    private int sencondstyle;//是否迟到(1-正常，2-迟到 ,3-早退 ,4-补卡)
 
     private String sencondrmark;//第二次早退备注
 
@@ -32,7 +32,7 @@ public class ClockUser implements Serializable {
 
     private String threetime;//第三次打卡时间
 
-    private int threestatus;//是否迟到(1-正常，2-迟到)
+    private int threestatus;//是否迟到(1-正常，2-迟到 ,3-早退 ,4-补卡)
 
     private String threeremark;//第三次迟到备注
 
@@ -40,7 +40,7 @@ public class ClockUser implements Serializable {
 
     private String fourtime;//第四次打卡时间
 
-    private int fourstyle;//是否迟到(1-正常，2-早退)
+    private int fourstyle;//是否迟到(1-正常，2-迟到 ,3-早退 ,4-补卡)
 
     private String fourremark;//第四次早退备注
 

@@ -11,6 +11,9 @@ public interface FaceImageMapper {
     //添加图片
     int insertFaceUserImage(FaceUserImage faceUserImage);
 
+    //修改图片
+    int updateFaceUserImage(FaceUserImage faceUserImage);
+
     //删除图片
     int deleteFaceUserImage(FaceUserImage faceUserImage);
 

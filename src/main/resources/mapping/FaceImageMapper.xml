@@ -3,8 +3,12 @@
 <mapper namespace="com.bwsk.mapper.FaceImageMapper">
     <!--添加人脸图片-->
     <insert id="insertFaceUserImage" parameterType="com.bwsk.entity.FaceUserImage">
-          insert into faceuserimage (uid,fictitiousurl,actualurl,cid) values (#{uid},#{fictitiousurl},#{actualurl},#{cid})
+          insert into faceuserimage (uid,fictitiousurl,actualurl,cid,crid) values (#{uid},#{fictitiousurl},#{actualurl},#{cid},#{crid})
     </insert>
+
+    <update id="updateFaceUserImage" parameterType="com.bwsk.entity.FaceUserImage">
+          update faceuserimage set fictitiousurl =#{fictitiousurl} ,actualurl =#{actualurl} where uid =#{uid} and cid=#{cid} and crid=#{crid}
+    </update>
 
     <delete id="deleteFaceUserImage" parameterType="com.bwsk.entity.FaceUserImage">
         delete from faceuserimage where fuid=#{fuid}

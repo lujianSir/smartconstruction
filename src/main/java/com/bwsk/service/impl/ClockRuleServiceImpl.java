@@ -206,6 +206,11 @@ public class ClockRuleServiceImpl implements ClockRuleService {
     @Override
     public Result<?> queryClockRuleByCrid(ClockRule clockRule) {
         ClockRule rule = clockRuleMapper.queryClockRuleByCrid(clockRule);
+        if (rule.getFacestyle() == 1) {
+            rule.setFacestylename(true);
+        } else {
+            rule.setFacestylename(false);
+        }
         String amid = rule.getAmids();
         String[] amids = amid.split(",");
         List<AddressMessage> addressMessageList = clockRuleMapper.queryAddressMessageByAmids(amids);

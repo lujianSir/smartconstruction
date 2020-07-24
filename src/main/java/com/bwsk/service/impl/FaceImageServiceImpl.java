@@ -66,7 +66,7 @@ public class FaceImageServiceImpl implements FaceImageService {
 
                         int row = faceImageMapper.insertFaceUserImage(faceUserImage);
                         if (row > 0) {
-                            faceRegist(filePath, faceImage.getUid() + "", faceImage.getCid() + "");
+                            faceRegist(filePath, faceImage.getUid() + "", faceImage.getCid() + "_" + faceImage.getCrid());
                             return Result.success("上传成功");
                         } else {
                             return Result.error(500, "上传失败");
@@ -82,8 +82,9 @@ public class FaceImageServiceImpl implements FaceImageService {
                             return Result.error(504, "识别失败");
                         }
                     } else {// 3更新人脸
-                        String message = faceUpdate(faceImage.getUid() + "", faceImage.getCid() + "_" + faceImage.getCrid(), filePath);
-                        if (!message.equals("")) {
+                        int row = faceImageMapper.updateFaceUserImage(faceImage);
+                        if (row > 0) {
+                            faceUpdate(faceImage.getUid() + "", faceImage.getCid() + "_" + faceImage.getCrid(), filePath);
                             return Result.success("更新成功");
                         } else {
                             return Result.error(505, "更新失败");
