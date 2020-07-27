@@ -21,17 +21,17 @@ public class WebMvcConfig implements WebMvcConfigurer {
         String newrootPath = System.getProperty("user.dir") + "/upload";
         newrootPath = newrootPath.replaceAll("\\\\", "/");
         // System.out.println("file:/" + newrootPath + "/模型描述/");
-//        registry.addResourceHandler("/image/user/**").addResourceLocations("file:/" + newrootPath + "/user/");
-//        registry.addResourceHandler("/image/video/**").addResourceLocations("file:/" + newrootPath + "/video/");
-//        registry.addResourceHandler("/image/picture/**").addResourceLocations("file:/" + newrootPath + "/picture/");
-//        registry.addResourceHandler("/image/face/**").addResourceLocations("file:/" + newrootPath + "/face/");
-        registry.addResourceHandler("/image/picture/**")
-                .addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/picture/");// linux
-        registry.addResourceHandler("/image/video/**").addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/video/");//
-        registry.addResourceHandler("/image/picture/**")
-                .addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/picture/");// linux
-        registry.addResourceHandler("/image/user/**").addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/user/");//
-        registry.addResourceHandler("/image/face/**").addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/face/");//
+        registry.addResourceHandler("/image/user/**").addResourceLocations("file:/" + newrootPath + "/user/");
+        registry.addResourceHandler("/image/video/**").addResourceLocations("file:/" + newrootPath + "/video/");
+        registry.addResourceHandler("/image/picture/**").addResourceLocations("file:/" + newrootPath + "/picture/");
+        registry.addResourceHandler("/image/face/**").addResourceLocations("file:/" + newrootPath + "/face/");
+//        registry.addResourceHandler("/image/picture/**")
+//                .addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/picture/");// linux
+//        registry.addResourceHandler("/image/video/**").addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/video/");//
+//        registry.addResourceHandler("/image/picture/**")
+//                .addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/picture/");// linux
+//        registry.addResourceHandler("/image/user/**").addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/user/");//
+//        registry.addResourceHandler("/image/face/**").addResourceLocations("file:/mnt/javaweb/smartconstruction/upload/face/");//
         WebMvcConfigurer.super.addResourceHandlers(registry);
     }
 
