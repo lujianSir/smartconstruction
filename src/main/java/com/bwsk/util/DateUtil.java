@@ -34,6 +34,20 @@ public class DateUtil {
         return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     }
 
+    /**
+     * 日期转换
+     *
+     * @param date
+     * @return
+     */
+    public static String getStringDate(Date date) {
+        return new SimpleDateFormat("yyyy-MM-dd").format(date);
+    }
+
+    public static Date parseStringToDate1(String time) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.parse(time);
+    }
 
     /**
      * 将字符串转换成日期
@@ -252,7 +266,10 @@ public class DateUtil {
 //        System.out.println(getWeeKMsg(httpArg));
 //        String min = getHour("2014-05-27 17:00:00", "2014-05-27 18:40:58", "yyyy-MM-dd HH:mm");
 //        System.out.println("---------相隔分钟数： " + min);
-        List<String> result = getWorkDays("2020-07-01", "2020-07-23");
-        System.out.println(result);
+//        List<String> result = getWorkDays("2020-07-01", "2020-07-23");
+//        System.out.println(result);
+
+        String sr = getStringDate(parseStringToDate1("2020-7-23"));
+        System.out.println(sr);
     }
 }

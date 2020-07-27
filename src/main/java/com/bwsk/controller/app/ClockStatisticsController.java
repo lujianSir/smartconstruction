@@ -4,10 +4,13 @@ import com.bwsk.entity.ClockStatistics;
 import com.bwsk.entity.ClockUser;
 import com.bwsk.entity.Result;
 import com.bwsk.service.ClockStatisticsService;
+import com.bwsk.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.text.ParseException;
 
 /**
  * 收款相关的接口
@@ -28,7 +31,9 @@ public class ClockStatisticsController {
      * @return
      */
     @RequestMapping(value = "/queryClockStatisticsByUidAndCidAndCrid", method = RequestMethod.POST)
-    public Result<?> queryClockStatisticsByUidAndCidAndCrid(ClockStatistics clockStatistics) {
+    public Result<?> queryClockStatisticsByUidAndCidAndCrid(ClockStatistics clockStatistics) throws ParseException {
+        clockStatistics.setStarttime(DateUtil.getStringDate(DateUtil.parseStringToDate1(clockStatistics.getStarttime())));
+        clockStatistics.setEndtime(DateUtil.getStringDate(DateUtil.parseStringToDate1(clockStatistics.getEndtime())));
         return clockStatisticsService.queryClockStatisticsByUidAndCidAndCrid(clockStatistics);
     }
 
@@ -39,7 +44,8 @@ public class ClockStatisticsController {
      * @return
      */
     @RequestMapping(value = "/queryClockUserByUidAndCidAndCridAndCurrentDay", method = RequestMethod.POST)
-    public Result<?> queryClockUserByUidAndCidAndCridAndCurrentDay(ClockUser clockUser) {
+    public Result<?> queryClockUserByUidAndCidAndCridAndCurrentDay(ClockUser clockUser) throws ParseException {
+        clockUser.setCurrentday(DateUtil.getStringDate(DateUtil.parseStringToDate1(clockUser.getCurrentday())));
         return clockStatisticsService.queryClockUserByUidAndCidAndCridAndCurrentDay(clockUser);
     }
 }
