@@ -35,43 +35,75 @@ public class ClockStatisticsServiceImpl implements ClockStatisticsService {
             int shortagetotal = 0;//缺卡
 
             for (int i = 0; i < list.size(); i++) {
+                String stylename = "";
                 ClockUser clockUser = list.get(i);
                 //判断第一次打卡状态
                 if (clockUser.getFirststatus() == 0) {
+                    stylename += "mark3 ";
                     shortagetotal += 1;
                 } else if (clockUser.getFirststatus() == 2) {
+                    stylename += "mark1 ";
                     latetotal += 1;
                 } else if (clockUser.getFirststatus() == 3) {
+                    stylename += "mark2 ";
                     earlytotal += 1;
                 }
                 //判断第二次打卡状态
                 if (clockUser.getSencondstyle() == 0) {
+                    if (!stylename.contains("mark3")) {
+                        stylename += "mark3 ";
+                    }
                     shortagetotal += 1;
                 } else if (clockUser.getSencondstyle() == 2) {
+                    if (!stylename.contains("mark1")) {
+                        stylename += "mark1 ";
+                    }
                     latetotal += 1;
                 } else if (clockUser.getSencondstyle() == 3) {
+                    if (!stylename.contains("mark2")) {
+                        stylename += "mark2 ";
+                    }
                     earlytotal += 1;
                 }
 
                 if (clockRule.getTsstyle() == 1) {//4次打卡
                     //判断第三次打卡状态
                     if (clockUser.getThreestatus() == 0) {
+                        if (!stylename.contains("mark3")) {
+                            stylename += "mark3 ";
+                        }
                         shortagetotal += 1;
                     } else if (clockUser.getThreestatus() == 2) {
+                        if (!stylename.contains("mark1")) {
+                            stylename += "mark1 ";
+                        }
                         latetotal += 1;
                     } else if (clockUser.getThreestatus() == 3) {
+                        if (!stylename.contains("mark2")) {
+                            stylename += "mark2 ";
+                        }
                         earlytotal += 1;
                     }
 
                     //判断第四次打卡状态
                     if (clockUser.getFourstyle() == 0) {
+                        if (!stylename.contains("mark3")) {
+                            stylename += "mark3 ";
+                        }
                         shortagetotal += 1;
                     } else if (clockUser.getFourstyle() == 2) {
+                        if (!stylename.contains("mark1")) {
+                            stylename += "mark1 ";
+                        }
                         latetotal += 1;
                     } else if (clockUser.getFourstyle() == 3) {
+                        if (!stylename.contains("mark2")) {
+                            stylename += "mark2 ";
+                        }
                         earlytotal += 1;
                     }
                 }
+                list.get(i).setStylename(stylename);
             }
             clockStatistics.setLatetotal(latetotal);
             clockStatistics.setEarlytotal(earlytotal);

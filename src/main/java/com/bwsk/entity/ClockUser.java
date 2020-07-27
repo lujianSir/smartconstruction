@@ -48,6 +48,17 @@ public class ClockUser implements Serializable {
 
     private String workovertime;//加班时长(按分钟计算)
 
+    private String stylename;//状态名称
+
+
+    public String getStylename() {
+        return stylename;
+    }
+
+    public void setStylename(String stylename) {
+        this.stylename = stylename;
+    }
+
     public String getFirtstposition() {
         return firtstposition;
     }

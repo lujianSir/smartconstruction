@@ -1,6 +1,7 @@
 package com.bwsk.service.impl;
 
 import com.bwsk.entity.*;
+import com.bwsk.mapper.ClockRuleMapper;
 import com.bwsk.mapper.CompanyMapper;
 import com.bwsk.service.CompanyService;
 import com.bwsk.util.Utils;
@@ -17,6 +18,9 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Autowired
     private CompanyMapper companyMapper;
+
+    @Autowired
+    private ClockRuleMapper clockRuleMapper;
 
     @Override
     public List<Company> queryCompanyByUidOrCid(Company company) {
@@ -191,6 +195,14 @@ public class CompanyServiceImpl implements CompanyService {
             currentUserCompany = new CurrentUserCompany();
             currentUserCompany.setUid(uid);
             currentUserCompany.setCid(0);
+        } else {
+            RuleUser ruleUser = new RuleUser();
+            ruleUser.setUid(currentUserCompany.getUid());
+            ruleUser.setCid(currentUserCompany.getCid());
+            ClockRule clockRule = clockRuleMapper.queryClockRuleByUidAndCid(ruleUser);
+            if (clockRule != null) {
+                currentUserCompany.setCrid(clockRule.getCrid());
+            }
         }
         return Result.success(currentUserCompany);
     }

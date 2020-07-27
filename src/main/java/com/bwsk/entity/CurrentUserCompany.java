@@ -9,7 +9,17 @@ public class CurrentUserCompany {
 
     private int cid;//
 
+    private int crid;//打卡规则
+
     private String cname;//
+
+    public int getCrid() {
+        return crid;
+    }
+
+    public void setCrid(int crid) {
+        this.crid = crid;
+    }
 
     public String getCname() {
         return cname;
