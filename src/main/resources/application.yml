@@ -16,8 +16,8 @@ spring:
     cache: false # 开发时关闭缓存,不然没法看到实时页面
   servlet:
     multipart:
-      max-file-size: 30MB #SpringBoot默认上传文件大小不能超过1MB
-      max-request-size: 30MB
+      max-file-size: 40MB #SpringBoot默认上传文件大小不能超过1MB
+      max-request-size: 40MB
 
   redis:
     database: 0  # 数据库，默认为0
